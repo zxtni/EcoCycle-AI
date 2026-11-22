@@ -8,6 +8,7 @@ from sqlalchemy import text
 from backend.auth import router as auth
 from backend.db import engine
 from backend.impact import router as impact
+from backend.locator import router as locator
 from backend.scans import router as scans
 
 app = FastAPI(title="EcoCycle AI", version="1.0", docs_url="/api/docs", openapi_url="/api/openapi.json")
@@ -41,6 +42,7 @@ async def origin_check(request: Request, call_next):
 app.include_router(auth)
 app.include_router(scans)
 app.include_router(impact)
+app.include_router(locator)
 
 
 @app.get("/api/health")
@@ -48,4 +50,5 @@ def health():
     with engine.connect() as conn:
         conn.execute(text("SELECT 1"))
     return {"status": "ready"}
+
 
