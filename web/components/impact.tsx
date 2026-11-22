@@ -62,7 +62,8 @@ export function Impact({overview=false, signedIn=true}:{overview?:boolean; signe
 }
 
 export function ValueForm({id, suggested}:{id:number; suggested?:string}) {
-  const [material,setMaterial]=useState(suggested||"plastic"),[weight,setWeight]=useState(""),[ward,setWard]=useState("Central");
+  const [material,setMaterial]=useState(suggested||""),[weight,setWeight]=useState(""),[ward,setWard]=useState("Central");
+  const [discarded,setDiscarded]=useState(false);
   const [table,setTable]=useState<{materials:Record<string,Factor>;wards:string[];version:string;price_source:string;impact_source:string}>();
   const [result,setResult]=useState<Breakdown>(),[error,setError]=useState(""),[busy,setBusy]=useState(false),[saved,setSaved]=useState(false),[estimated,setEstimated]=useState(false);
   useEffect(()=>{api<typeof table>("/materials").then(setTable).catch(error=>setError(message(error)));},[]);
@@ -70,7 +71,7 @@ export function ValueForm({id, suggested}:{id:number; suggested?:string}) {
     setBusy(true);setError("");
     try {
       const path=confirm ? "/scans/"+id+"/confirm" : "/materials/estimate";
-      setResult(await api<Breakdown>(path,post({material,weight:Number(weight),ward,weight_source:estimated?"estimated":"user"})));
+      setResult(await api<Breakdown>(path,post({material,weight:Number(weight),ward,weight_source:estimated?"estimated":"user",discarded_electronics:discarded})));
       setSaved(confirm);
     } catch (error) {
       setError(message(error));
@@ -79,15 +80,21 @@ export function ValueForm({id, suggested}:{id:number; suggested?:string}) {
   function invalidate() {setResult(undefined);setError("");}
   return <section className="card scan-result"><h2>Recycling estimate</h2><p>Enter your item’s weight. Save the record after you commit to recycling it.</p>
   {table && <form onSubmit={event=>{event.preventDefault();void submit(false);}}>
-    <label>Material<select disabled={saved} value={material} onChange={event=>{setMaterial(event.target.value);invalidate();}}>{Object.entries(table.materials).map(([key,factor])=><option key={key} value={key}>{factor.label}</option>)}</select></label>
+    <label>Material<select required disabled={busy||saved} value={material} onChange={event=>{
+      setMaterial(event.target.value);
+      setDiscarded(false);
+      if(estimated){setWeight("");setEstimated(false);}
+      invalidate();
+    }}><option value="">Choose a material</option>{Object.entries(table.materials).map(([key,factor])=><option key={key} value={key}>{key==="e-waste"?"Electronics for recycling":factor.label}</option>)}</select></label>
     <label>Weight (kg)<input required disabled={saved} type="number" min="0.001" max="10000" step="0.001" value={weight} onChange={event=>{setWeight(event.target.value);setEstimated(false);invalidate();}}/></label>
-    <Button type="button" variant="secondary" disabled={saved} onClick={()=>{setWeight(({plastic:"0.025",glass:"0.250",metal:"0.050","e-waste":"0.150"} as Record<string,string>)[material]);setEstimated(true);invalidate();}}>Use a typical item weight</Button>
+    <Button type="button" variant="secondary" disabled={!material||busy||saved} onClick={()=>{setWeight(({plastic:"0.025",glass:"0.250",metal:"0.050","e-waste":"0.150"} as Record<string,string>)[material]);setEstimated(true);invalidate();}}>Use a typical item weight</Button>
     {estimated && <p>Typical item assumption. Weigh the item for a more accurate result.</p>}
     <label>Ward<select disabled={saved} value={ward} onChange={event=>setWard(event.target.value)}><option>Central</option>{table.wards.map(item=><option key={item}>{item}</option>)}</select></label>
-    {!saved && <div><Button disabled={busy}>Calculate estimate</Button></div>}
+    {material==="e-waste" && <label className="checkbox"><input type="checkbox" checked={discarded} disabled={busy||saved} onChange={event=>setDiscarded(event.target.checked)}/>I am discarding this device for recycling.</label>}
+    {!saved && <div><Button disabled={busy||!material}>Calculate estimate</Button></div>}
   </form>}
   {error && <p role="alert" className="error">{error}</p>}
-  {result && table && <div className="estimate stack"><h3>₹{format(result.value_inr)} estimated value</h3><p>{format(result.weight)} kg × ₹{format(result.factor.inr_per_kg)}/kg. The buyer’s actual rate can vary.</p><p>{result.factor.recyclability_score}/100 recovery benchmark for {result.factor.proxy}.</p><div className="row">{stats.slice(0,3).map(({key,label,unit})=><span className="pill" key={key}>{format(result[key])} {unit} · {label}</span>)}</div><small>Factor version {result.version} · <a href={table.price_source}>Rate card</a> · <a href={table.impact_source}>EPA WARM</a> · <a href={result.factor.score_source}>Recovery data</a></small>{saved ? <p role="status">Saved to <Link href="/impact">your impact history</Link>.</p> : <div><Button disabled={busy} onClick={()=>void submit(true)}>Save to my impact</Button></div>}</div>}
+  {result && table && <div className="estimate stack"><h3>₹{format(result.value_inr)} estimated value</h3><p>{format(result.weight)} kg × ₹{format(result.factor.inr_per_kg)}/kg. The buyer’s actual rate can vary.</p><p>{result.factor.recyclability_score}/100 recovery benchmark for {result.factor.proxy}.</p><div className="row">{stats.slice(0,3).map(({key,label,unit})=><span className="pill" key={key}>{format(result[key])} {unit} · {label}</span>)}</div><small>Factor version {result.version} · <a href={table.price_source}>Rate card</a> · <a href={table.impact_source}>EPA WARM</a> · <a href={result.factor.score_source}>Recovery data</a></small>{saved ? <p role="status">Saved to <Link href="/impact">your impact history</Link>.</p> : <div><Button disabled={busy||(material==="e-waste"&&!discarded)} onClick={()=>void submit(true)}>Save to my impact</Button></div>}</div>}
   </section>;
 }
 

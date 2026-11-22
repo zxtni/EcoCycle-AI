@@ -13,6 +13,10 @@ type Result = {
   detections: {material: string; confidence: number; box: [number, number, number, number]}[];
 };
 
+function materialLabel(material: string) {
+  return material === "e-waste" ? "Electronics" : material;
+}
+
 export function Scanner() {
   const [image, setImage] = useState<File>();
   const [preview, setPreview] = useState("");
@@ -105,7 +109,7 @@ export function Scanner() {
               <img src={preview} alt="Your uploaded waste photo"/>
               {result?.detections.map(({material, confidence, box: [left, top, right, bottom]}, index) =>
                 <span className="scan-box" key={index} style={{left: left * 100 + "%", top: top * 100 + "%", width: (right - left) * 100 + "%", height: (bottom - top) * 100 + "%"}} aria-hidden="true">
-                  <span>{material} {Math.round(confidence * 100)}%</span>
+                  <span>{materialLabel(material)} {Math.round(confidence * 100)}%</span>
                 </span>)}
             </div> : <div className="viewfinder">
               <Focus size={62} strokeWidth={1.3} aria-hidden="true"/>
@@ -145,8 +149,10 @@ export function Scanner() {
     {result && <section className="card scan-result" aria-live="polite">
       <h2>{result.status === "detected" ? "Detected materials" : result.status === "blurry" ? "Try a clearer photo" : "No material detected"}</h2>
       {result.detections.length
-        ? <ul className="detection-list">{result.detections.map((item, index) => <li className="pill" key={index}><Tag size={15} aria-hidden="true"/>{item.material} · {Math.round(item.confidence * 100)}% confidence</li>)}</ul>
-        : <p>Use good light, get closer and keep the object in frame.</p>}
+        ? <ul className="detection-list">{result.detections.map((item, index) => <li className="pill" key={index}><Tag size={15} aria-hidden="true"/>{materialLabel(item.material)} · {Math.round(item.confidence * 100)}% confidence</li>)}</ul>
+        : <p>Move closer and photograph one item against a plain background. You can also select a material below if you know it.</p>}
+      {result.detections.some(item => item.material === "e-waste") &&
+        <p>The photo shows electronics. Record the device as e-waste only if you are discarding it for recycling.</p>}
       <details><summary>Wrong result?</summary>
         <form onSubmit={async event => {
           event.preventDefault();
@@ -166,6 +172,7 @@ export function Scanner() {
         {feedback && <p role="status">{feedback}</p>}
       </details>
     </section>}
-    {result && <ValueForm key={result.id} id={result.id} suggested={result.detections[0]?.material}/>}
+    {result && <ValueForm key={result.id} id={result.id}
+      suggested={result.detections.length === 1 && result.detections[0].material !== "e-waste" ? result.detections[0].material : undefined}/>}
   </>;
 }

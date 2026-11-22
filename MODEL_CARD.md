@@ -2,6 +2,10 @@
 
 ## Photo scanner
 
+The v2 runtime uses the same ONNX weights with a second pass over four overlapping crops for larger photos with fewer than two accepted detections. A controlled regression scene assembled from a held-out plastic photo produced two separate detections in v2 and none in v1. This is a synthetic test of scale and position. The dataset metrics below are for v1. V2 performance on cluttered user photos remains unmeasured.
+
+The scanner displays electronic objects as **Electronics**. A user must confirm that they are discarding the device for recycling before the app records e-waste. Small wearables and composite eyewear are outside the app’s validated item coverage.
+
 The scanner helps a citizen log a recyclable they can photograph up close. The API runs both bundled ONNX networks on CPU. It returns a material, score and normalized box for each accepted item. A user reviews the result before logging weight.
 
 ### How it learned

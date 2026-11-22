@@ -22,6 +22,7 @@ class Estimate(BaseModel):
 
 
 class Confirmation(Estimate):
+    discarded_electronics: bool = False
     weight_source: Literal["user", "estimated"] = "user"
     ward: str = Field(default="Central", min_length=1, max_length=80)
 
@@ -52,6 +53,8 @@ def estimate(body: Estimate):
 
 @router.post("/scans/{scan_id}/confirm")
 def confirm(scan_id: int, body: Confirmation, db: DB, user: Citizen):
+    if body.material == "e-waste" and not body.discarded_electronics:
+        raise HTTPException(422, "Confirm that you are discarding this electronic device for recycling.")
     breakdown = calculate(body.material, body.weight)
     breakdown["weight_source"] = body.weight_source
     if body.ward not in (*WARDS, "Central"):
