@@ -19,3 +19,48 @@ Use `docker compose up --build` for a local SQLite API. Start the frontend with 
 5. Set `GOOGLE_CLIENT_ID` after adding your Vercel origin to the Google OAuth web client. To provision the first admin, open the deployed service shell with Railway CLI's `railway ssh` and run `python -m backend.provision` with the bootstrap credentials in the service environment. Remove the bootstrap variables after provisioning.
 
 [Railway Dockerfile setup](https://docs.railway.com/builds/dockerfiles) · [Railway healthchecks](https://docs.railway.com/deployments/healthchecks) · [Railway volumes](https://docs.railway.com/volumes)
+
+## Deploy the API on an Ubuntu VPS with aaPanel
+
+1. From a root terminal on Ubuntu 24.04, install and start Docker and Compose.
+
+   ```bash
+   apt update
+   apt install -y docker.io docker-compose-v2 docker-buildx
+   systemctl enable --now docker
+   docker compose version
+   ```
+
+2. Clone the repository on the VPS. Create the Vercel project with root directory `web` and note its production HTTPS origin. In Supabase, open **Connect → Session pooler** and copy the PostgreSQL URI. Use a URL-encoded database password in the URI and include `sslmode=require`.
+
+   ```bash
+   git clone https://github.com/zxtni/EcoCycle-AI.git
+   cd EcoCycle-AI
+   install -m 600 .env.example .env
+   nano .env
+   ```
+
+   Set `DATABASE_URL` and `WEB_ORIGIN` in `.env`. Set `GOOGLE_CLIENT_ID` when OAuth is configured. Leave `ECO_API_PORT` unset to use host port 8108 or choose another unused port.
+
+3. Start the production API and confirm database readiness. The container applies Alembic migrations at startup. A named volume saves updated forecast artifacts across container restarts.
+
+   ```bash
+   docker compose -f compose.production.yaml up -d --build
+   docker compose -f compose.production.yaml ps
+   curl -fsS http://127.0.0.1:8108/api/health
+   ```
+
+4. Point an API subdomain to the VPS IP in DNS. In aaPanel, add the domain as a site, issue its HTTPS certificate, and proxy the site to `http://127.0.0.1:8108`. Disable proxy caching for the API and allow request bodies of at least 9 MiB for photo uploads. Verify `https://<your-api-domain>/api/health` before setting Vercel's `API_ORIGIN` to that HTTPS origin. Redeploy the frontend.
+
+5. Provision the first administrator through the running container. In the VPS terminal, use Bash's silent prompt to enter the password, then clear the shell variables after provisioning.
+
+   ```bash
+   read -r -p 'Admin email: ' ECO_ADMIN_EMAIL
+   read -r -s -p 'Admin password: ' ECO_ADMIN_PASSWORD
+   printf '\n'
+   export ECO_ADMIN_EMAIL ECO_ADMIN_PASSWORD
+   docker compose -f compose.production.yaml exec -T -e ECO_ADMIN_EMAIL -e ECO_ADMIN_PASSWORD api python -m backend.provision
+   unset ECO_ADMIN_EMAIL ECO_ADMIN_PASSWORD
+   ```
+
+See [Ubuntu Compose package](https://packages.ubuntu.com/noble/docker-compose-v2) and [aaPanel website configuration](https://www.aapanel.com/docs/SubaaPanel/Website.html).

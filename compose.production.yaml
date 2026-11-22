@@ -1,0 +1,22 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      APP_ENV: production
+      DATABASE_URL: "${DATABASE_URL:?Set the Supabase PostgreSQL URI in .env}"
+      WEB_ORIGIN: "${WEB_ORIGIN:?Set the Vercel HTTPS origin in .env}"
+      GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
+    ports:
+      - "127.0.0.1:${ECO_API_PORT:-8108}:8000"
+    volumes:
+      - forecast:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/api/health', timeout=5).close()"]
+      interval: 30s
+      timeout: 6s
+      start_period: 30s
+      retries: 3
+
+volumes:
+  forecast:
