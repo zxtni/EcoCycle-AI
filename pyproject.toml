@@ -1,0 +1,10 @@
+[tool.ruff]
+target-version = "py312"
+line-length = 110
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+check_untyped_defs = true
+exclude = ["vision_tools", "forecast_tools"]
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]

@@ -1,0 +1,17 @@
+.tools/
+.venv/
+.env
+*.db*
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.next/
+*.tsbuildinfo
+test-results/
+playwright-report/
+backend/runtime/
+.next-dev/
+.pnpm-store/
