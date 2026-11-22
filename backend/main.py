@@ -7,6 +7,7 @@ from sqlalchemy import text
 
 from backend.auth import router as auth
 from backend.db import engine
+from backend.scans import router as scans
 
 app = FastAPI(title="EcoCycle AI", version="1.0", docs_url="/api/docs", openapi_url="/api/openapi.json")
 origin = os.getenv("WEB_ORIGIN", "http://localhost:3000").rstrip("/")
@@ -37,6 +38,7 @@ async def origin_check(request: Request, call_next):
 
 
 app.include_router(auth)
+app.include_router(scans)
 
 
 @app.get("/api/health")

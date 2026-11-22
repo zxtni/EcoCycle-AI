@@ -1,0 +1,3 @@
+# Only training and evaluation need the ONNX graph editor.
+-r ../requirements.txt
+onnx>=1.17,<2

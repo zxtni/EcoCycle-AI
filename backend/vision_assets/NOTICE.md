@@ -1,0 +1,11 @@
+# Vision asset provenance
+
+The product ships both neural networks. Scanning works without a model download. Class scores are computed locally in the API process. All paths below are relative to this directory.
+
+| Asset | Origin and attribution | Changes and terms |
+| --- | --- | --- |
+| `regions.onnx` | Ultralytics YOLOv8n, trained on COCO. [Pinned ONNX export](https://huggingface.co/salim4n/yolov8n-detect-onnx/tree/98100409491fa67f62a2e780a4efe485b86dfd0b), [Ultralytics source for version 8.2.67](https://github.com/ultralytics/ultralytics/tree/v8.2.67) | Unmodified. Model metadata identifies Ultralytics, version 8.2.67, AGPL-3.0. See `LICENSE-YOLO.txt`. SHA-256 162ec5e9d2886fc411e4b81811c731e81a72c8f85571de1e0ab040833d92d4f2. |
+| `materials.onnx` | Google MobileNetV2. [Original TensorFlow project](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet), [ONNX conversion](https://huggingface.co/onnx-community/mobilenet_v2_1.0_224/tree/c5903ea5f5bb219f02c85a778af0fedf14f502d8) | Replaced the ImageNet output layer with the EcoCycle five-class head. MobileNet's original repository uses Apache-2.0. See `LICENSE-Apache-2.txt`. Rebuild with the accompanying training script. |
+| `demo-plastic.jpg` | Gary Thung and Mindy Yang, [TrashNet](https://github.com/garythung/trashnet/tree/6fa2b878c6c1b4304b91109070ce0edf9279bb31). The source filename is in `demo-source.txt`. | Unmodified test image distributed under the repository's MIT license. See `LICENSE-TrashNet.txt`. |
+| Electronic-device training images | Akshat Tamrakar, [E Waste Image Dataset, version 1](https://www.kaggle.com/datasets/akshat103/e-waste-image-dataset) | Kaggle lists Apache-2.0. The training script retrieves the archive. |
+| Independent street evaluation | Pedro Proença and Pedro Simões, [TACO](https://github.com/pedropro/TACO), with [pinned image mirror](https://huggingface.co/datasets/RandyHuynh5815/TACO-Waste-Recognition/tree/c23700b465af288488bd7b4544c4166b9a970edf) | The repository contains image paths, reference boxes and predictions. Original street photographs are downloaded only for evaluation. Respect the individual photographs' original terms. |

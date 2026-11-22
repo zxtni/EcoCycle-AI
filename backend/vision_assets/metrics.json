@@ -1,0 +1,63 @@
+{
+  "test_images": 728,
+  "target_images": 521,
+  "correct_target": 400,
+  "detected_target": 423,
+  "target_top1_accuracy": 0.7677543186180422,
+  "target_coverage": 0.8119001919385797,
+  "confusion": {
+    "other": {
+      "unassigned": 186,
+      "e-waste": 10,
+      "plastic": 10,
+      "metal": 1
+    },
+    "glass": {
+      "unassigned": 10,
+      "glass": 60,
+      "metal": 3,
+      "plastic": 9
+    },
+    "metal": {
+      "metal": 41,
+      "unassigned": 21,
+      "plastic": 3,
+      "glass": 1,
+      "e-waste": 2
+    },
+    "plastic": {
+      "plastic": 53,
+      "unassigned": 15,
+      "e-waste": 3,
+      "glass": 2
+    },
+    "e-waste": {
+      "e-waste": 246,
+      "unassigned": 52
+    }
+  },
+  "splits": {
+    "train": {
+      "other": 781,
+      "glass": 352,
+      "metal": 286,
+      "plastic": 347,
+      "e-waste": 2393
+    },
+    "test": {
+      "other": 207,
+      "glass": 82,
+      "metal": 68,
+      "plastic": 73,
+      "e-waste": 298
+    },
+    "val": {
+      "other": 146,
+      "glass": 65,
+      "metal": 56,
+      "plastic": 60,
+      "e-waste": 295
+    }
+  },
+  "materials_sha256": "81ffdbbb7820c6f5c46453b83f50a3de3b5a3166f902e6b709259597fe778e64"
+}
