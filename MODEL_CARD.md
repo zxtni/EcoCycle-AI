@@ -40,3 +40,7 @@ python -m backend.vision_tools.street_test ../ecocycle-model-cache
 ```
 
 Training uses a frozen feature extractor, balanced classes, `C=0.35` and seed 417. The original split and download pins are in the trainer. The training script writes the material ONNX file, the measured counts and a correctly recognized held-out plastic photo for the interactive demo. The packaged example is `plastic103.jpg` from TrashNet. Selecting a successful example makes the demo repeatable. The evaluation above includes every eligible test image. [Training script](backend/vision_tools/train.py) · [Asset attribution and licenses](backend/vision_assets/NOTICE.md)
+
+## Weekly hotspot forecast
+
+Seasonal ridge regression uses 66,876 recorded Austin recycling loads aggregated into 286 weeks, then allocates them to simulated Bengaluru wards. The chronological test had 312 ward-week rows. MAE was 1,564.57 kg and RMSE was 2,144.14 kg. The reported errors apply to synthetic ward allocations. See [data, splits and reproducibility](docs/forecast-method.md).

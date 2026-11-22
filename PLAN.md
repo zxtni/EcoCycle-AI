@@ -51,3 +51,8 @@ Waste labels vary by dataset. Household photos can differ from training examples
 ## Deviations
 
 Record specific fallbacks and limits here as they are measured.
+
+- Overpass can fail or omit material tags. The locator displays explicitly synthetic local sample points in demo mode.
+- The shipped two-stage scanner performs substantially better on close-up test photos than on a small annotated street-image sample. See MODEL_CARD.md.
+- Forecast ward allocations are simulated from Austin history; verified local Bengaluru waste measurements were unavailable.
+- Playwright used locally installed Brave. Deployment, provider OAuth, physical-device camera and Lighthouse targets remain outside this verification run.

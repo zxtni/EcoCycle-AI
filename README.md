@@ -25,3 +25,9 @@ node scripts/retrain.mjs
 ```
 
 See [deployment](DEPLOY.md), [model card](MODEL_CARD.md) and [the five-minute demo](DEMO_SCRIPT.md).
+
+## Screenshots
+
+![Citizen overview with demo activity](docs/overview.png)
+
+![Real scanner output at 390px](docs/mobile-scan.png)
