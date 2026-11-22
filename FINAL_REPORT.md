@@ -8,6 +8,12 @@ EcoCycle AI includes email/password sessions, configured Google sign-in, citizen
 
 A fresh Git clone installed dependencies, applied migrations and loaded demo data using `node scripts/setup.mjs`. Python lint, mypy, nine API and calculator tests, frontend lint, TypeScript, the frontend unit test and a production build all passed with `node scripts/check.mjs`. Playwright passed at widths of 375 and 390 pixels using locally installed Brave. Both runs signed in, uploaded a real image, detected plastic, saved an impact record and reached the locator results. Additional local API checks verified the seeded administrator, the 16 demo records, model metrics, center creation/edit/removal and audit entries. A fresh forecast retrain reproduced the saved metrics.
 
+## Additional production-build checks
+
+- Mobile Lighthouse on the production overview using Brave scored **96 performance, 100 accessibility and 96 best practices**. These are automated scores for the overview under local test conditions.
+- A fresh UTF-8 PostgreSQL 17.12 instance applied Alembic revision 001 and seeded 16 scan records.
+- Playwright on the production build captured a photo using a virtual camera, confirmed the standalone PWA manifest and verified that offline navigation served the cached fallback.
+
 ## Measured models
 
 | Evaluation | Result |
@@ -24,7 +30,7 @@ Demo accounts, saved demo scans, local sample collection points and Bengaluru wa
 
 ## Deployment and verification limits
 
-Vercel, Render, PostgreSQL and Google OAuth are configured through environment variables and documented. Live hosting, PostgreSQL migration execution, OAuth, physical-device camera behavior, and offline installation were outside local verification. The browser walkthrough verifies locator rendering and can use seed listings when Overpass is unavailable. Local Playwright used Brave. Lighthouse scores and formal WCAG AA conformance remain unmeasured. The hotspot map uses intensity-scaled ward circles, and suggested stops use straight-line distance. The rate limiter is per API process.
+Vercel, Render, PostgreSQL and Google OAuth are configured through environment variables and documented. Live hosting, Google OAuth, production database connectivity, and physical-device camera and installation remain unverified. The browser walkthrough verifies locator rendering and can use seed listings when Overpass is unavailable. Local Playwright used Brave. Formal WCAG AA conformance remains unaudited. The hotspot map uses intensity-scaled ward circles, and suggested stops use straight-line distance. The rate limiter is per API process.
 
 ## Commands
 
@@ -39,3 +45,4 @@ docker compose up --build
 ```
 
 For production, import the Render Blueprint, set the database and web-origin variables, deploy the Vercel project from `web/`, then provision the first administrator with `python -m backend.provision`. Follow [DEPLOY.md](DEPLOY.md).
+
