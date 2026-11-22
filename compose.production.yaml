@@ -5,10 +5,8 @@ services:
     environment:
       APP_ENV: production
       DATABASE_URL: "${DATABASE_URL:?Set the Supabase PostgreSQL URI in .env}"
-      WEB_ORIGIN: "${WEB_ORIGIN:?Set the Vercel HTTPS origin in .env}"
+      WEB_ORIGIN: "${WEB_ORIGIN:?Set the website HTTPS origin in .env}"
       GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
-    ports:
-      - "127.0.0.1:${ECO_API_PORT:-8108}:8000"
     volumes:
       - forecast:/data
     healthcheck:
@@ -16,6 +14,21 @@ services:
       interval: 30s
       timeout: 6s
       start_period: 30s
+      retries: 3
+
+  web:
+    build: ./web
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${ECO_WEB_PORT:-8108}:3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r => { if (!r.ok) process.exitCode = 1 }).catch(() => { process.exitCode = 1 })"]
+      interval: 30s
+      timeout: 10s
+      start_period: 15s
       retries: 3
 
 volumes:

@@ -20,7 +20,7 @@ Use `docker compose up --build` for a local SQLite API. Start the frontend with 
 
 [Railway Dockerfile setup](https://docs.railway.com/builds/dockerfiles) · [Railway healthchecks](https://docs.railway.com/deployments/healthchecks) · [Railway volumes](https://docs.railway.com/volumes)
 
-## Deploy the API on an Ubuntu VPS with aaPanel
+## Deploy the web app and API on one Ubuntu VPS with aaPanel
 
 1. From a root terminal on Ubuntu 24.04, install and start Docker and Compose.
 
@@ -31,26 +31,26 @@ Use `docker compose up --build` for a local SQLite API. Start the frontend with 
    docker compose version
    ```
 
-2. Clone the repository on the VPS. Create the Vercel project with root directory `web` and note its production HTTPS origin. In Supabase, open **Connect → Session pooler** and copy the PostgreSQL URI. Use a URL-encoded database password in the URI and include `sslmode=require`.
+2. Clone the repository on the VPS. In Supabase, open **Connect → Session pooler** and copy the PostgreSQL URI. Use a URL-encoded database password in the URI and include `sslmode=require`.
 
    ```bash
-   git clone https://github.com/zxtni/EcoCycle-AI.git
-   cd EcoCycle-AI
-   install -m 600 .env.example .env
+   git clone https://github.com/zxtni/EcoCycle-AI.git /opt/ecocycle-ai
+   cd /opt/ecocycle-ai
+   test -e .env || install -m 600 .env.example .env
    nano .env
    ```
 
-   Set `DATABASE_URL` and `WEB_ORIGIN` in `.env`. Set `GOOGLE_CLIENT_ID` when OAuth is configured. Leave `ECO_API_PORT` unset to use host port 8108 or choose another unused port.
+   Set `DATABASE_URL` and `WEB_ORIGIN=https://eco.zxtni.in` in `.env`. Set `GOOGLE_CLIENT_ID` when OAuth is configured for that origin. Leave `ECO_WEB_PORT` unset to use host port 8108 or choose another unused port.
 
-3. Start the production API and confirm database readiness. The container applies Alembic migrations at startup. A named volume saves updated forecast artifacts across container restarts.
+3. Start both services. The API container applies Alembic migrations at startup. A named volume saves refreshed forecasts. The Next.js container serves the site and forwards `/api/` requests across the Docker network. The VPS publishes only the web port, bound to localhost.
 
    ```bash
-   docker compose -f compose.production.yaml up -d --build
+   docker compose -f compose.production.yaml up -d --build --wait
    docker compose -f compose.production.yaml ps
    curl -fsS http://127.0.0.1:8108/api/health
    ```
 
-4. Point an API subdomain to the VPS IP in DNS. In aaPanel, add the domain as a site, issue its HTTPS certificate, and proxy the site to `http://127.0.0.1:8108`. Disable proxy caching for the API and allow request bodies of at least 9 MiB for photo uploads. Verify `https://<your-api-domain>/api/health` before setting Vercel's `API_ORIGIN` to that HTTPS origin. Redeploy the frontend.
+4. Point `eco.zxtni.in` to the VPS public IP in DNS. In aaPanel, add the domain as a site, issue its HTTPS certificate, and proxy the site to `http://127.0.0.1:8108`. Disable proxy caching for the API and allow request bodies of at least 9 MiB for photo uploads. Verify `https://eco.zxtni.in/` and `https://eco.zxtni.in/api/health`. Use this HTTPS URL for email sign-in, camera access and PWA installation.
 
 5. Provision the first administrator through the running container. In the VPS terminal, use Bash's silent prompt to enter the password, then clear the shell variables after provisioning.
 
