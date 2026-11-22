@@ -1,0 +1,57 @@
+{
+  "version": "BLR-2026-11-WARM16",
+  "price_source": "https://kabadify.com/rates",
+  "impact_source": "https://www.epa.gov/system/files/documents/2023-12/warm_v16.xls",
+  "price_attribution": "Kabadify Bengaluru, effective 8 September 2026. CC BY 4.0. Rates selected and grouped by EcoCycle AI.",
+  "score_method": "Observed US recycling rate by weight in 2018, used as a 0–100 benchmark for a representative category.",
+  "materials": {
+    "plastic": {
+      "label": "Plastic",
+      "proxy": "Mixed Plastics",
+      "price_category": "Mixed plastic",
+      "inr_per_kg": 5,
+      "carbon_kg_per_kg": 1.042542,
+      "energy_kwh_per_kg": 11.400706,
+      "recyclability_score": 8.7,
+      "score_category": "All plastics",
+      "score_source": "https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
+      "source_row": 35
+    },
+    "glass": {
+      "label": "Glass",
+      "proxy": "Glass",
+      "price_category": "Glass",
+      "inr_per_kg": 1,
+      "carbon_kg_per_kg": 0.326664,
+      "energy_kwh_per_kg": 0.773293,
+      "recyclability_score": 31.3,
+      "score_category": "Glass containers",
+      "score_source": "https://www.epa.gov/sites/default/files/2021-01/documents/2018_ff_fact_sheet_dec_2020_fnl_508.pdf",
+      "source_row": 5
+    },
+    "metal": {
+      "label": "Metal",
+      "proxy": "Steel Cans",
+      "price_category": "Iron",
+      "inr_per_kg": 22,
+      "carbon_kg_per_kg": 2.041844,
+      "energy_kwh_per_kg": 6.536859,
+      "recyclability_score": 70.9,
+      "score_category": "Steel cans",
+      "score_source": "https://www.epa.gov/sites/default/files/2021-01/documents/2018_ff_fact_sheet_dec_2020_fnl_508.pdf",
+      "source_row": 3
+    },
+    "e-waste": {
+      "label": "E-waste",
+      "proxy": "Mixed Electronics",
+      "price_category": "E-waste",
+      "inr_per_kg": 15,
+      "carbon_kg_per_kg": 1.018664,
+      "energy_kwh_per_kg": 4.615285,
+      "recyclability_score": 38.5,
+      "score_category": "Selected consumer electronics",
+      "score_source": "https://www.epa.gov/sites/default/files/2021-01/documents/2018_ff_fact_sheet_dec_2020_fnl_508.pdf",
+      "source_row": 46
+    }
+  }
+}

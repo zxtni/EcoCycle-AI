@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Camera, Upload, ScanLine } from "lucide-react";
 import { api, message } from "@/lib/api";
-import { Button } from "./ui/button";
+import { Button } from './ui/button';
+import { ValueForm } from './impact';
 
 type Result = {id: number; status: "detected" | "blurry" | "no_detection"; model: string; detections: {material: string; confidence: number; box: [number, number, number, number]}[]};
 
@@ -107,6 +108,8 @@ export function Scanner() {
         <p role="status">{feedback}</p>
       </details>
     </section>}
+    {result && <ValueForm key={result.id} id={result.id} suggested={result.detections[0]?.material}/> }
   </>;
 }
+
 
