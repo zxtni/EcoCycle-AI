@@ -14,3 +14,5 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: node scripts/setup.mjs
       - run: node scripts/check.mjs
+      - run: pnpm --dir web exec playwright install --with-deps chromium
+      - run: pnpm --dir web run e2e
