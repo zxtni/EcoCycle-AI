@@ -14,6 +14,7 @@ import { Impact } from "./impact";
 import { Locator } from "./locator";
 import { Municipality } from "./municipality";
 import { AdminPanel } from "./admin-panel";
+import { GuideMotion } from "./guide-motion";
 import { Button } from "./ui/button";
 import { api, message, type Person } from "@/lib/api";
 
@@ -100,11 +101,11 @@ function Overview({user, ready}: {user: Person | null; ready: boolean}) {
       </section>
       <div className="shortcut-grid">
         <Link href="/locator" className="shortcut shortcut-nearby">
-          <div className="shortcut-top"><span className="shortcut-icon"><MapPin size={22} aria-hidden="true"/></span><ArrowUpRight size={19} aria-hidden="true"/></div>
+          <div className="shortcut-top"><GuideMotion scene="nearby" className="shortcut-icon"/><ArrowUpRight size={19} aria-hidden="true"/></div>
           <div><h2>Find a drop-off</h2><p>Search nearby recycling centers.</p></div>
         </Link>
         <Link href="/impact" className="shortcut shortcut-impact">
-          <div className="shortcut-top"><span className="shortcut-icon"><ChartNoAxesCombined size={22} aria-hidden="true"/></span><ArrowUpRight size={19} aria-hidden="true"/></div>
+          <div className="shortcut-top"><GuideMotion scene="impact" className="shortcut-icon"/><ArrowUpRight size={19} aria-hidden="true"/></div>
           <div><h2>Track your impact</h2><p>See what you’ve saved.</p></div>
         </Link>
       </div>

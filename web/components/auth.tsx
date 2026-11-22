@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import { api, message, post, type Person } from "@/lib/api";
 import { Button } from "./ui/button";
+import { GuideMotion } from "./guide-motion";
 
 type Identity = {accounts: {id: {
   initialize: (options: {client_id: string; callback: (result: {credential: string}) => void}) => void;
@@ -14,6 +16,7 @@ export function Auth({onSuccess}: {onSuccess: (person: Person) => void}) {
   const [signup, setSignup] = useState(false);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const google = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,18 +60,34 @@ export function Auth({onSuccess}: {onSuccess: (person: Person) => void}) {
   }
 
   return <section className="auth-shell" aria-labelledby="auth-title">
-    <div className="auth-visual"><div><h2>Your recycling record</h2><p>Keep your photos’ results and impact in one place.</p></div></div>
+    <div className="auth-visual"><div>
+      <GuideMotion scene={signup ? "account" : "welcome"} className="auth-motion" onDark/>
+      <h2>{signup ? "Start with one scan" : "Pick up where you left off"}</h2>
+      <p>{signup ? "Photograph an item, review its material and record what you recycle." : "Find your previous scans and see your recycling impact."}</p>
+    </div></div>
     <div className="auth-body">
       <h1 id="auth-title">{signup ? "Create account" : "Welcome back"}</h1>
       <p>{signup ? "Start tracking the materials you recycle." : "Sign in to access your recycling history."}</p>
       <form className="auth-form" onSubmit={submit}>
         {signup && <label>Name<input required name="name" maxLength={80} autoComplete="name"/></label>}
         <label>Email<input required name="email" type="email" autoComplete="email"/></label>
-        <label>Password<input required name="password" type="password" minLength={10} maxLength={128} autoComplete={signup ? "new-password" : "current-password"}/></label>
+        <div className="password-field">
+          <label htmlFor="auth-password">Password</label>
+          <div className="password-control">
+            <input required id="auth-password" name="password" type={showPassword ? "text" : "password"}
+              minLength={10} maxLength={128} autoComplete={signup ? "new-password" : "current-password"}
+              aria-describedby={signup ? "password-hint" : undefined}/>
+            <button type="button" className="iconbtn password-toggle" onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? "Hide password" : "Show password"}>
+              {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
+            </button>
+          </div>
+          {signup && <small id="password-hint">Use at least 10 characters.</small>}
+        </div>
         {error && <p role="alert" className="error">{error}</p>}
         <Button disabled={busy}>{busy ? "Please wait…" : signup ? "Create account" : "Sign in"}</Button>
       </form>
-      <Button className="auth-switch" variant="ghost" onClick={() => { setSignup(!signup); setError(""); }}>
+      <Button className="auth-switch" variant="ghost" disabled={busy} onClick={() => { setSignup(!signup); setShowPassword(false); setError(""); }}>
         {signup ? "Already registered? Sign in" : "Create an account"}
       </Button>
       <div className="auth-provider" ref={google}/>

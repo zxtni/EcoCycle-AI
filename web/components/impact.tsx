@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Leaf, Zap, Scale, Wallet, Flame, Award } from "lucide-react";
 import { api, message, post } from "@/lib/api";
 import { Button } from "./ui/button";
+import { GuideMotion } from "./guide-motion";
 
 type Factor = {label:string; inr_per_kg:number; carbon_kg_per_kg:number; energy_kwh_per_kg:number; recyclability_score:number; proxy:string; score_source:string};
 type Totals = {value_inr:number; carbon_kg:number; energy_kwh:number; landfill_kg:number};
@@ -55,13 +56,13 @@ export function Impact({overview=false, signedIn=true}:{overview?:boolean; signe
     {!signedIn ? <section className="card"><p>Sign in to see your recycling history and lifetime totals.</p><Button asChild><Link href="/account">Sign in</Link></Button></section> : error ? <section className="card"><p role="alert">{error}</p><Button onClick={()=>{setError("");retry(attempt+1);}}>Retry</Button></section> : !data ? <div className="skeleton" aria-label="Loading impact"/> : <>
       <div className="stat-grid">{stats.map(({key,label,unit,icon:Icon}) => <motion.div key={key} className={`card stat-card stat-${key}`} initial={false} whileHover={reducedMotion ? undefined : {y:-3}} transition={{type:"spring",stiffness:320,damping:27}}><span className="stat-icon"><Icon size={21}/></span><p>{label}</p><strong><Counter value={data.totals[key]}/></strong> <small>{unit}</small></motion.div>)}</div>
       <div className="sectionhead"><h2>{overview ? "Recent activity" : "Recycling history"}</h2><span className="row"><Flame size={18}/>{data.streak} day streak</span></div>
-      {!data.history.length ? <section className="card"><h3>No recycling records yet</h3><p>Scan an item and confirm its weight to start.</p><Button asChild><Link href="/scan">Scan waste</Link></Button></section> : <section className="card activity-card">{data.history.slice(0,overview?5:undefined).map(entry => <div className="activity row between" key={entry.id}><div className="row activity-title"><span className="activity-icon"><Leaf size={19} aria-hidden="true"/></span><div><h3>{entry.factor.label}</h3><small>{new Date(entry.created).toLocaleDateString("en-IN")} · {entry.ward}</small></div></div><div className="activity-weight"><strong>{format(entry.weight)} kg</strong><small>₹{format(entry.value_inr)} est.</small></div></div>)}</section>}
+      {!data.history.length ? <section className="card guide-panel"><GuideMotion scene="impact"/><h3>No recycling records yet</h3><p>Scan an item and confirm its weight to start.</p><Button asChild><Link href="/scan">Scan waste</Link></Button></section> : <section className="card activity-card">{data.history.slice(0,overview?5:undefined).map(entry => <div className="activity row between" key={entry.id}><div className="row activity-title"><span className="activity-icon"><Leaf size={19} aria-hidden="true"/></span><div><h3>{entry.factor.label}</h3><small>{new Date(entry.created).toLocaleDateString("en-IN")} · {entry.ward}</small></div></div><div className="activity-weight"><strong>{format(entry.weight)} kg</strong><small>₹{format(entry.value_inr)} est.</small></div></div>)}</section>}
       {!overview && <><div className="sectionhead"><h2>Badges</h2></div><section className="card row">{data.badges.length ? data.badges.map(badge=><span key={badge} className="pill"><Award size={18}/>{badge}</span>) : <p>Record your first item to earn a badge.</p>}</section></>}
     </>}
   </>;
 }
 
-export function ValueForm({id, suggested}:{id:number; suggested?:string}) {
+export function ValueForm({id, suggested, onSaved}:{id:number; suggested?:string; onSaved:()=>void}) {
   const [material,setMaterial]=useState(suggested||""),[weight,setWeight]=useState(""),[ward,setWard]=useState("Central");
   const [discarded,setDiscarded]=useState(false);
   const [table,setTable]=useState<{materials:Record<string,Factor>;wards:string[];version:string;price_source:string;impact_source:string}>();
@@ -73,6 +74,7 @@ export function ValueForm({id, suggested}:{id:number; suggested?:string}) {
       const path=confirm ? "/scans/"+id+"/confirm" : "/materials/estimate";
       setResult(await api<Breakdown>(path,post({material,weight:Number(weight),ward,weight_source:estimated?"estimated":"user",discarded_electronics:discarded})));
       setSaved(confirm);
+      if (confirm) onSaved();
     } catch (error) {
       setError(message(error));
     } finally { setBusy(false); }
@@ -94,7 +96,7 @@ export function ValueForm({id, suggested}:{id:number; suggested?:string}) {
     {!saved && <div><Button disabled={busy||!material}>Calculate estimate</Button></div>}
   </form>}
   {error && <p role="alert" className="error">{error}</p>}
-  {result && table && <div className="estimate stack"><h3>₹{format(result.value_inr)} estimated value</h3><p>{format(result.weight)} kg × ₹{format(result.factor.inr_per_kg)}/kg. The buyer’s actual rate can vary.</p><p>{result.factor.recyclability_score}/100 recovery benchmark for {result.factor.proxy}.</p><div className="row">{stats.slice(0,3).map(({key,label,unit})=><span className="pill" key={key}>{format(result[key])} {unit} · {label}</span>)}</div><small>Factor version {result.version} · <a href={table.price_source}>Rate card</a> · <a href={table.impact_source}>EPA WARM</a> · <a href={result.factor.score_source}>Recovery data</a></small>{saved ? <p role="status">Saved to <Link href="/impact">your impact history</Link>.</p> : <div><Button disabled={busy||(material==="e-waste"&&!discarded)} onClick={()=>void submit(true)}>Save to my impact</Button></div>}</div>}
+  {result && table && <div className="estimate stack"><h3>₹{format(result.value_inr)} estimated value</h3><p>{format(result.weight)} kg × ₹{format(result.factor.inr_per_kg)}/kg. The buyer’s actual rate can vary.</p><p>{result.factor.recyclability_score}/100 recovery benchmark for {result.factor.proxy}.</p><div className="row">{stats.slice(0,3).map(({key,label,unit})=><span className="pill" key={key}>{format(result[key])} {unit} · {label}</span>)}</div><small>Factor version {result.version} · <a href={table.price_source}>Rate card</a> · <a href={table.impact_source}>EPA WARM</a> · <a href={result.factor.score_source}>Recovery data</a></small>{saved ? <div className="save-receipt" role="status"><GuideMotion scene="saved"/><p>Saved to <Link href="/impact">your impact history</Link>.</p></div> : <div><Button disabled={busy||(material==="e-waste"&&!discarded)} onClick={()=>void submit(true)}>Save to my impact</Button></div>}</div>}
   </section>;
 }
 

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { LocateFixed, MapPin, Navigation } from "lucide-react";
 import { Button } from "./ui/button";
+import { GuideMotion } from "./guide-motion";
 import { api, message } from "@/lib/api";
 
 export type Point = {
@@ -78,7 +79,9 @@ export function Locator() {
     </section>
     {error ? <section className="card scan-result">
       <p role="alert">{error}</p><Button onClick={() => { setError(""); setRetry(retry + 1); }}>Retry</Button>
-    </section> : !data ? <div className="skeleton scan-result map" aria-label="Finding centers"/> : <>
+    </section> : !data ? <section className="card scan-result guide-panel" role="status">
+      <GuideMotion scene="nearby"/><h2>Finding centers</h2><p>Checking recycling listings for your map area.</p>
+    </section> : <>
       <div className="map-layout locator-map">
         <Map points={data.centers} origin={position} selected={selected} onSelect={select}/>
         <section className="card results">

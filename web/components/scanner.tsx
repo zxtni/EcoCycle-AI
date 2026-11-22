@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Camera, Focus, ImagePlus, Lightbulb, ScanLine, Tag } from "lucide-react";
+import { Camera, Check, ImagePlus, Lightbulb, ScanLine, Tag } from "lucide-react";
 import { api, message } from "@/lib/api";
 import { Button } from "./ui/button";
 import { ValueForm } from "./impact";
+import { GuideMotion } from "./guide-motion";
 
 type Result = {
   id: number;
@@ -24,10 +25,13 @@ export function Scanner() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [feedback, setFeedback] = useState("");
+  const [saved, setSaved] = useState(false);
   const [camera, setCamera] = useState<MediaStream>();
   const [openingCamera, setOpeningCamera] = useState(false);
   const cameraRequest = useRef(0);
   const video = useRef<HTMLVideoElement>(null);
+  const resultHeading = useRef<HTMLHeadingElement>(null);
+  const step = saved ? 3 : result ? 2 : 1;
 
   useEffect(() => () => { cameraRequest.current++; }, []);
   useEffect(() => {
@@ -42,6 +46,10 @@ export function Scanner() {
     const frame = requestAnimationFrame(() => setPreview(url));
     return () => { cancelAnimationFrame(frame); URL.revokeObjectURL(url); };
   }, [image]);
+
+  useEffect(() => {
+    if (result) resultHeading.current?.focus();
+  }, [result]);
 
   async function startCamera() {
     setError("");
@@ -63,6 +71,7 @@ export function Scanner() {
     setImage(file);
     setCamera(undefined);
     setResult(undefined);
+    setSaved(false);
     setFeedback("");
     setError("");
   }
@@ -84,6 +93,7 @@ export function Scanner() {
     if (!image) return;
     setBusy(true);
     setResult(undefined);
+    setSaved(false);
     setFeedback("");
     setError("");
     const data = new FormData();
@@ -99,9 +109,16 @@ export function Scanner() {
 
   return <>
     <div className="heading"><div><h1>Scan waste</h1><p>Identify plastic, glass, metal and electronics from a photo.</p></div></div>
+    <ol className="scan-steps" role="list" aria-label="Scan progress">
+      {["Photo", "Review", "Save"].map((label, index) => <li key={label} aria-current={step === index + 1 ? "step" : undefined}>
+        <span className="scan-step-index" aria-hidden="true">{step > index + 1 || saved ? <Check size={15}/> : index + 1}</span>
+        <span>{label}</span>
+      </li>)}
+    </ol>
     <div className="scan-layout">
       <section className="card scan-card" aria-label="Material scanner">
         <div className="scan-stage" aria-busy={busy}>
+          {busy && <div className="scan-busy"><GuideMotion scene="loading" onDark/><span>Checking materials…</span></div>}
           {camera ? <video className="scan-video" ref={video} autoPlay playsInline muted aria-label="Camera preview"/>
             : image && preview ? <div className="scan-preview">
               {/* The image source is a transient local upload. */}
@@ -112,7 +129,7 @@ export function Scanner() {
                   <span>{materialLabel(material)} {Math.round(confidence * 100)}%</span>
                 </span>)}
             </div> : <div className="viewfinder">
-              <Focus size={62} strokeWidth={1.3} aria-hidden="true"/>
+              <GuideMotion scene="scan" onDark/>
               <h2>Frame the item</h2>
               <p>Use your camera or select a photo from this device.</p>
             </div>}
@@ -147,7 +164,9 @@ export function Scanner() {
       </aside>
     </div>
     {result && <section className="card scan-result" aria-live="polite">
-      <h2>{result.status === "detected" ? "Detected materials" : result.status === "blurry" ? "Try a clearer photo" : "No material detected"}</h2>
+      <div className="guide-state"><GuideMotion scene="review"/><h2 tabIndex={-1} ref={resultHeading}>
+        {result.status === "detected" ? "Detected materials" : result.status === "blurry" ? "Try a clearer photo" : "No material detected"}
+      </h2></div>
       {result.detections.length
         ? <ul className="detection-list">{result.detections.map((item, index) => <li className="pill" key={index}><Tag size={15} aria-hidden="true"/>{materialLabel(item.material)} · {Math.round(item.confidence * 100)}% confidence</li>)}</ul>
         : <p>Move closer and photograph one item against a plain background. You can also select a material below if you know it.</p>}
@@ -172,7 +191,7 @@ export function Scanner() {
         {feedback && <p role="status">{feedback}</p>}
       </details>
     </section>}
-    {result && <ValueForm key={result.id} id={result.id}
+    {result && <ValueForm key={result.id} id={result.id} onSaved={() => setSaved(true)}
       suggested={result.detections.length === 1 && result.detections[0].material !== "e-waste" ? result.detections[0].material : undefined}/>}
   </>;
 }
