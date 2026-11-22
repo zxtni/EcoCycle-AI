@@ -1,3 +1,8 @@
-# Only training and evaluation need the ONNX graph editor.
--r ../requirements.txt
-onnx>=1.17,<2
+# Measured training environment (Python 3.12); install in a separate venv.
+numpy==2.5.5
+onnx==1.23.2
+onnxruntime==1.32.0
+pillow==13.0.0
+scikit-learn==1.9.1
+scipy==1.18.1
+threadpoolctl==3.8.0

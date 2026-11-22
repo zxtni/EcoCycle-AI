@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ecocycle-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: forecast
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: WEB_ORIGIN
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: FORECAST_MODEL_PATH
+        value: /data/forecast.json
