@@ -41,6 +41,7 @@ export function Impact({overview=false, signedIn=true}:{overview?:boolean; signe
   const [data,setData]=useState<Report>();
   const [error,setError]=useState("");
   const [attempt,retry]=useState(0);
+  const reducedMotion = useReducedMotion();
   useEffect(() => {
     if (!signedIn) return;
     const controller=new AbortController();
@@ -52,9 +53,9 @@ export function Impact({overview=false, signedIn=true}:{overview?:boolean; signe
   return <>
     {overview ? <div className="sectionhead"><h2>My impact</h2><Link href="/impact" className="button ghost">View history</Link></div> : <div className="heading"><div><h1>My impact</h1><p>Estimated benefits from recycling you recorded.</p></div></div>}
     {!signedIn ? <section className="card"><p>Sign in to see your recycling history and lifetime totals.</p><Button asChild><Link href="/account">Sign in</Link></Button></section> : error ? <section className="card"><p role="alert">{error}</p><Button onClick={()=>{setError("");retry(attempt+1);}}>Retry</Button></section> : !data ? <div className="skeleton" aria-label="Loading impact"/> : <>
-      <div className="stat-grid">{stats.map(({key,label,unit,icon:Icon}) => <motion.div key={key} className="card stat-card" initial={false} whileHover={{y:-3}} transition={{type:"spring",stiffness:320,damping:27}}><span className="stat-icon"><Icon size={21}/></span><p>{label}</p><strong><Counter value={data.totals[key]}/></strong> <small>{unit}</small></motion.div>)}</div>
+      <div className="stat-grid">{stats.map(({key,label,unit,icon:Icon}) => <motion.div key={key} className={`card stat-card stat-${key}`} initial={false} whileHover={reducedMotion ? undefined : {y:-3}} transition={{type:"spring",stiffness:320,damping:27}}><span className="stat-icon"><Icon size={21}/></span><p>{label}</p><strong><Counter value={data.totals[key]}/></strong> <small>{unit}</small></motion.div>)}</div>
       <div className="sectionhead"><h2>{overview ? "Recent activity" : "Recycling history"}</h2><span className="row"><Flame size={18}/>{data.streak} day streak</span></div>
-      {!data.history.length ? <section className="card"><h3>No recycling records yet</h3><p>Scan an item and confirm its weight to start.</p><Button asChild><Link href="/scan">Scan waste</Link></Button></section> : <section className="card">{data.history.slice(0,overview?5:undefined).map(entry => <div className="activity row between" key={entry.id}><div><h3>{entry.factor.label}</h3><small>{new Date(entry.created).toLocaleDateString("en-IN")} · {entry.ward}</small></div><div>{format(entry.weight)} kg · ₹{format(entry.value_inr)}</div></div>)}</section>}
+      {!data.history.length ? <section className="card"><h3>No recycling records yet</h3><p>Scan an item and confirm its weight to start.</p><Button asChild><Link href="/scan">Scan waste</Link></Button></section> : <section className="card activity-card">{data.history.slice(0,overview?5:undefined).map(entry => <div className="activity row between" key={entry.id}><div className="row activity-title"><span className="activity-icon"><Leaf size={19} aria-hidden="true"/></span><div><h3>{entry.factor.label}</h3><small>{new Date(entry.created).toLocaleDateString("en-IN")} · {entry.ward}</small></div></div><div className="activity-weight"><strong>{format(entry.weight)} kg</strong><small>₹{format(entry.value_inr)} est.</small></div></div>)}</section>}
       {!overview && <><div className="sectionhead"><h2>Badges</h2></div><section className="card row">{data.badges.length ? data.badges.map(badge=><span key={badge} className="pill"><Award size={18}/>{badge}</span>) : <p>Record your first item to earn a badge.</p>}</section></>}
     </>}
   </>;
