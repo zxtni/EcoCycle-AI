@@ -88,10 +88,10 @@ export function ValueForm({id, suggested, onSaved}:{id:number; suggested?:string
       if(estimated){setWeight("");setEstimated(false);}
       invalidate();
     }}><option value="">Choose a material</option>{Object.entries(table.materials).map(([key,factor])=><option key={key} value={key}>{key==="e-waste"?"Electronics for recycling":factor.label}</option>)}</select></label>
-    <label>Weight (kg)<input required disabled={saved} type="number" min="0.001" max="10000" step="0.001" value={weight} onChange={event=>{setWeight(event.target.value);setEstimated(false);invalidate();}}/></label>
+    <label>Weight (kg)<input required disabled={busy||saved} type="number" min="0.001" max="10000" step="0.001" value={weight} onChange={event=>{setWeight(event.target.value);setEstimated(false);invalidate();}}/></label>
     <Button type="button" variant="secondary" disabled={!material||busy||saved} onClick={()=>{setWeight(({plastic:"0.025",glass:"0.250",metal:"0.050","e-waste":"0.150"} as Record<string,string>)[material]);setEstimated(true);invalidate();}}>Use a typical item weight</Button>
     {estimated && <p>Typical item assumption. Weigh the item for a more accurate result.</p>}
-    <label>Ward<select disabled={saved} value={ward} onChange={event=>setWard(event.target.value)}><option>Central</option>{table.wards.map(item=><option key={item}>{item}</option>)}</select></label>
+    <label>Ward<select disabled={busy||saved} value={ward} onChange={event=>setWard(event.target.value)}><option>Central</option>{table.wards.map(item=><option key={item}>{item}</option>)}</select></label>
     {material==="e-waste" && <label className="checkbox"><input type="checkbox" checked={discarded} disabled={busy||saved} onChange={event=>setDiscarded(event.target.checked)}/>I am discarding this device for recycling.</label>}
     {!saved && <div><Button disabled={busy||!material}>Calculate estimate</Button></div>}
   </form>}

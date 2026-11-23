@@ -2,6 +2,12 @@
 
 ## Photo scanner
 
+The v3 runtime uses the same ONNX weights and suppresses duplicate boxes around the same object across scales. The optional **Search for small items** mode checks nine overlapping tiles on suitable images. A controlled three-bottle composite produced two localized plastic detections on standard mode and three on detailed mode. The composite uses different sizes of one held-out bottle photograph. Scores displayed in the interface are model confidence scores, with the highest scores shown as 99%+.
+
+On the same 36 annotated TACO street photos, v2 found 2 correctly localized objects, v3 standard found 2, and v3 detailed found 3. These counts require the correct material and a box intersection-over-union of at least 0.50. Detailed mode emitted 10 boxes, of which 3 matched the annotations. This small sample illustrates the remaining gap on real street photos.
+
+V3 standard mode scored **399/521 correct (76.6%)** on the published target-material holdout, with **431/521 (82.7%)** coverage. It returned a target label on 45 of 207 out-of-scope photos. The detailed mode has only the street and controlled composite results above. These results do not support a general accuracy improvement over the original runtime.
+
 The v2 runtime uses the same ONNX weights with a second pass over four overlapping crops for larger photos with fewer than two accepted detections. A controlled regression scene assembled from a held-out plastic photo produced two separate detections in v2 and none in v1. This is a synthetic test of scale and position. The dataset metrics below are for v1. V2 performance on cluttered user photos remains unmeasured.
 
 The scanner displays electronic objects as **Electronics**. A user must confirm that they are discarding the device for recycling before the app records e-waste. Small wearables and composite eyewear are outside the app’s validated item coverage.

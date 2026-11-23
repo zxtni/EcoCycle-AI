@@ -21,6 +21,7 @@ test("citizen signs in, scans a photo, saves impact and locates centers",async({
  await page.getByRole("button",{name:"Save to my impact"}).click();
  await expect(page.getByText("Saved to")).toBeVisible();
  await expect(progress).toContainText("Save");
+ await expect(page.getByRole("button",{name:"Analyze photo"})).toBeDisabled();
  await page.getByRole("navigation").last().getByRole("link",{name:"Center locator"}).click();
  await expect(page.getByRole("heading",{name:"Center locator"})).toBeVisible();
  await expect(page.getByRole("heading",{name:/nearby results?/})).toBeVisible({timeout:45000});

@@ -2,10 +2,12 @@ import io
 import json
 from typing import Annotated, Literal
 
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from PIL import Image, ImageOps, UnidentifiedImageError
 from pydantic import BaseModel, Field
 from sqlalchemy import select
+from sqlalchemy.dialects.postgresql import insert as postgres_insert
+from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 
 from backend.auth import DB, Citizen
 from backend.db import Feedback, Scan
@@ -29,7 +31,9 @@ def owned_scan(scan_id: int, db: DB, user: Citizen) -> Scan:
 
 
 @router.post("", status_code=201)
-def scan_photo(db: DB, user: Citizen, image: Annotated[UploadFile, File()]):
+def scan_photo(
+    db: DB, user: Citizen, image: Annotated[UploadFile, File()], detail: Annotated[bool, Form()] = False
+):
     if image.content_type not in {"image/jpeg", "image/png", "image/webp"}:
         raise HTTPException(415, "Choose a JPEG, PNG or WebP photo.")
     data = image.file.read(MAX_BYTES + 1)
@@ -37,6 +41,10 @@ def scan_photo(db: DB, user: Citizen, image: Annotated[UploadFile, File()]):
         raise HTTPException(413, "Choose a photo under 8 MB.")
     try:
         with Image.open(io.BytesIO(data), formats=["JPEG", "PNG", "WEBP"]) as original:
+            if Image.MIME.get(original.format or "") != image.content_type:
+                raise HTTPException(415, "Photo content does not match the supplied image format.")
+            if getattr(original, "is_animated", False):
+                raise HTTPException(422, "Choose a still photo.")
             if original.width * original.height > 24_000_000:
                 raise HTTPException(413, "Choose a photo under 24 megapixels.")
             oriented = ImageOps.exif_transpose(original).convert("RGB")
@@ -44,7 +52,7 @@ def scan_photo(db: DB, user: Citizen, image: Annotated[UploadFile, File()]):
     except (UnidentifiedImageError, OSError, Image.DecompressionBombError) as exc:
         raise HTTPException(422, "The photo could not be decoded.") from exc
     try:
-        result = detect(oriented)
+        result = detect(oriented, detail=detail)
     except (OSError, RuntimeError) as exc:
         raise HTTPException(503, "The detection model is unavailable.") from exc
     entry = Scan(user_id=user.id, predictions=json.dumps(result))
@@ -56,13 +64,12 @@ def scan_photo(db: DB, user: Citizen, image: Annotated[UploadFile, File()]):
 @router.put("/{scan_id}/correction")
 def correct(scan_id: int, body: Correction, db: DB, user: Citizen):
     entry = owned_scan(scan_id, db, user)
-    feedback = db.scalar(select(Feedback).where(Feedback.scan_id == entry.id))
-    if feedback is None:
-        feedback = Feedback(scan_id=entry.id)
-        db.add(feedback)
-    feedback.material = body.material
-    feedback.note = body.note.strip()
-    feedback.status = "pending"
+    values = {"material": body.material, "note": body.note.strip(), "status": "pending"}
+    if db.get_bind().dialect.name == "postgresql":
+        stmt = postgres_insert(Feedback).values(scan_id=entry.id, **values)
+        db.execute(stmt.on_conflict_do_update(index_elements=[Feedback.scan_id], set_=values))
+    else:
+        sqlite_stmt = sqlite_insert(Feedback).values(scan_id=entry.id, **values)
+        db.execute(sqlite_stmt.on_conflict_do_update(index_elements=[Feedback.scan_id], set_=values))
     db.commit()
-    return {"status": feedback.status}
-
+    return {"status": "pending"}

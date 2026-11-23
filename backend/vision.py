@@ -9,7 +9,7 @@ import onnxruntime as ort
 from PIL import Image, ImageOps
 
 ASSETS = Path(__file__).with_name("vision_assets")
-MODEL_VERSION = "ecocycle-regions-v2"
+MODEL_VERSION = "ecocycle-regions-v3"
 MATERIALS = ("e-waste", "glass", "metal", "other", "plastic")
 Box = tuple[float, float, float, float]
 
@@ -46,6 +46,24 @@ def overlap(a: Box, b: Box) -> float:
     area_a = (a[2] - a[0]) * (a[3] - a[1])
     area_b = (b[2] - b[0]) * (b[3] - b[1])
     return intersection / max(area_a + area_b - intersection, 1e-9)
+
+
+def same_region(a: Box, b: Box) -> bool:
+    """Suppress alternative boxes around the same object across scan scales."""
+    if overlap(a, b) >= 0.40:
+        return True
+    larger, smaller = sorted((a, b), key=lambda box: (box[2] - box[0]) * (box[3] - box[1]), reverse=True)
+    width, height = larger[2] - larger[0], larger[3] - larger[1]
+    small_area = (smaller[2] - smaller[0]) * (smaller[3] - smaller[1])
+    if small_area < 0.18 * width * height:
+        return False
+    for axis, dimension in enumerate((width, height)):
+        inset = dimension * 0.04
+        if smaller[axis] < larger[axis] - inset or smaller[axis + 2] > larger[axis + 2] + inset:
+            return False
+        if abs(larger[axis] + larger[axis + 2] - smaller[axis] - smaller[axis + 2]) > 0.32 * dimension:
+            return False
+    return True
 
 
 def yolo_regions(image: Image.Image) -> list[Box]:
@@ -125,13 +143,19 @@ def crop_region(image: Image.Image, box: Box) -> Image.Image:
     )
 
 
-def tile_regions(image: Image.Image) -> list[Box]:
+def tile_regions(image: Image.Image, *, detail: bool = False) -> list[Box]:
     """Give small objects a second pass in overlapping, enlarged views."""
     width, height = image.size
-    tile_width, tile_height = round(width * 0.62), round(height * 0.62)
+    tile_scale = 0.55 if detail else 0.62
+    tile_width, tile_height = round(width * tile_scale), round(height * tile_scale)
+    columns = [0, width - tile_width]
+    rows = [0, height - tile_height]
+    if detail:
+        columns.insert(1, (width - tile_width) // 2)
+        rows.insert(1, (height - tile_height) // 2)
     regions: list[Box] = []
-    for left in (0, width - tile_width):
-        for top in (0, height - tile_height):
+    for left in columns:
+        for top in rows:
             tile = image.crop((left, top, left + tile_width, top + tile_height))
             for x1, y1, x2, y2 in yolo_regions(tile):
                 # Skip proposals clipped at a tile seam. Adjacent tiles overlap.
@@ -154,26 +178,26 @@ def tile_regions(image: Image.Image) -> list[Box]:
 
 
 def classify(image: Image.Image, boxes: list[Box]) -> list[Detection]:
-    if not boxes:
-        return []
-    patches = np.stack([pixels(crop_region(image, box)) for box in boxes])
-    probabilities = session("materials.onnx").run(None, {"pixel_values": patches})[0]
     detections: list[Detection] = []
-    for box, scores in zip(boxes, probabilities, strict=True):
-        label = int(np.argmax(scores))
-        score = float(scores[label])
-        if MATERIALS[label] != "other" and score >= 0.62:
-            detections.append(
-                {
-                    "material": MATERIALS[label],
-                    "confidence": round(score, 5),
-                    "box": (round(box[0], 5), round(box[1], 5), round(box[2], 5), round(box[3], 5)),
-                }
-            )
+    for start in range(0, len(boxes), 8):
+        batch = boxes[start : start + 8]
+        patches = np.stack([pixels(crop_region(image, box)) for box in batch])
+        probabilities = session("materials.onnx").run(None, {"pixel_values": patches})[0]
+        for box, scores in zip(batch, probabilities, strict=True):
+            label = int(np.argmax(scores))
+            score = float(scores[label])
+            if MATERIALS[label] != "other" and score >= 0.62:
+                detections.append(
+                    {
+                        "material": MATERIALS[label],
+                        "confidence": round(score, 5),
+                        "box": (round(box[0], 5), round(box[1], 5), round(box[2], 5), round(box[3], 5)),
+                    }
+                )
     return detections
 
 
-def detect(image: Image.Image) -> ScanResult:
+def detect(image: Image.Image, *, detail: bool = False) -> ScanResult:
     rgb = ImageOps.exif_transpose(image).convert("RGB")
     rgb.thumbnail((1280, 1280), Image.Resampling.LANCZOS)
     result: ScanResult = {"model": MODEL_VERSION, "status": "no_detection", "detections": []}
@@ -184,10 +208,15 @@ def detect(image: Image.Image) -> ScanResult:
         result["status"] = "blurry"
         return result
     detections = classify(rgb, yolo_regions(rgb))
-    if len(detections) < 2 and max(rgb.size) >= 500:
-        tiles = sorted(classify(rgb, tile_regions(rgb)), key=lambda item: item["confidence"], reverse=True)
+    tile_threshold = 320 if detail else 500
+    if (detail or len(detections) < 2) and max(rgb.size) >= tile_threshold:
+        tiles = sorted(
+            classify(rgb, tile_regions(rgb, detail=detail)),
+            key=lambda item: item["confidence"],
+            reverse=True,
+        )
         for candidate in tiles:
-            if all(overlap(candidate["box"], item["box"]) < 0.40 for item in detections):
+            if all(not same_region(candidate["box"], item["box"]) for item in detections):
                 detections.append(candidate)
             if len(detections) >= 8:
                 break

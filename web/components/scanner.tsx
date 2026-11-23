@@ -18,6 +18,10 @@ function materialLabel(material: string) {
   return material === "e-waste" ? "Electronics" : material;
 }
 
+function confidenceLabel(score: number) {
+  return score > 0.99 ? "99%+" : `${Math.round(score * 100)}%`;
+}
+
 export function Scanner() {
   const [image, setImage] = useState<File>();
   const [preview, setPreview] = useState("");
@@ -89,15 +93,14 @@ export function Scanner() {
     }, "image/jpeg", 0.9);
   }
 
-  async function scan() {
-    if (!image) return;
+  async function scan(detail = false) {
+    if (!image || busy || saved || camera || openingCamera) return;
     setBusy(true);
-    setResult(undefined);
-    setSaved(false);
     setFeedback("");
     setError("");
     const data = new FormData();
     data.set("image", image);
+    if (detail) data.set("detail", "true");
     try {
       setResult(await api<Result>("/scans", {method: "POST", body: data}));
     } catch (error) {
@@ -126,7 +129,7 @@ export function Scanner() {
               <img src={preview} alt="Your uploaded waste photo"/>
               {result?.detections.map(({material, confidence, box: [left, top, right, bottom]}, index) =>
                 <span className="scan-box" key={index} style={{left: left * 100 + "%", top: top * 100 + "%", width: (right - left) * 100 + "%", height: (bottom - top) * 100 + "%"}} aria-hidden="true">
-                  <span>{materialLabel(material)} {Math.round(confidence * 100)}%</span>
+                  <span>{materialLabel(material)} {confidenceLabel(confidence)}</span>
                 </span>)}
             </div> : <div className="viewfinder">
               <GuideMotion scene="scan" onDark/>
@@ -150,12 +153,13 @@ export function Scanner() {
             <Button variant="secondary" disabled={busy || openingCamera} onClick={startCamera}>
               <Camera size={17} aria-hidden="true"/>{openingCamera ? "Opening…" : "Open camera"}
             </Button>
-            <Button className="scan-submit" disabled={!image || busy || openingCamera} onClick={scan}>
+            <Button className="scan-submit" disabled={!image || busy || openingCamera || saved} onClick={() => void scan()}>
               <ScanLine size={17} aria-hidden="true"/>{busy ? "Analyzing photo…" : "Analyze photo"}
             </Button>
           </>}
         </div>
         {error && <p role="alert" className="error">{error}</p>}
+        {saved && <p role="status">Upload or take a new photo to record another item.</p>}
       </section>
       <aside className="card scan-hints">
         <span className="stat-icon"><Lightbulb size={21} aria-hidden="true"/></span>
@@ -163,15 +167,17 @@ export function Scanner() {
         <ul><li>Photograph one item in good light.</li><li>Show its full shape against a plain background.</li><li>Upload JPEG, PNG or WebP up to 8 MB.</li></ul>
       </aside>
     </div>
-    {result && <section className="card scan-result" aria-live="polite">
+    {result && !busy && <section className="card scan-result" aria-live="polite">
       <div className="guide-state"><GuideMotion scene="review"/><h2 tabIndex={-1} ref={resultHeading}>
         {result.status === "detected" ? "Detected materials" : result.status === "blurry" ? "Try a clearer photo" : "No material detected"}
       </h2></div>
       {result.detections.length
-        ? <ul className="detection-list">{result.detections.map((item, index) => <li className="pill" key={index}><Tag size={15} aria-hidden="true"/>{materialLabel(item.material)} · {Math.round(item.confidence * 100)}% confidence</li>)}</ul>
+        ? <ul className="detection-list">{result.detections.map((item, index) => <li className="pill" key={index}><Tag size={15} aria-hidden="true"/>{materialLabel(item.material)} · {confidenceLabel(item.confidence)} model confidence</li>)}</ul>
         : <p>Move closer and photograph one item against a plain background. You can also select a material below if you know it.</p>}
       {result.detections.some(item => item.material === "e-waste") &&
         <p>The photo shows electronics. Record the device as e-waste only if you are discarding it for recycling.</p>}
+      {!saved && result.status !== "blurry" &&
+        <Button variant="secondary" disabled={!!camera || openingCamera} onClick={() => void scan(true)}>Search for small items</Button>}
       <details><summary>Wrong result?</summary>
         <form onSubmit={async event => {
           event.preventDefault();
@@ -191,7 +197,7 @@ export function Scanner() {
         {feedback && <p role="status">{feedback}</p>}
       </details>
     </section>}
-    {result && <ValueForm key={result.id} id={result.id} onSaved={() => setSaved(true)}
+    {result && !busy && <ValueForm key={result.id} id={result.id} onSaved={() => setSaved(true)}
       suggested={result.detections.length === 1 && result.detections[0].material !== "e-waste" ? result.detections[0].material : undefined}/>}
   </>;
 }

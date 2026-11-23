@@ -35,7 +35,9 @@ export function Locator() {
     const controller = new AbortController();
     const params = new URLSearchParams({lat: String(position[0]), lon: String(position[1])});
     if (filter) params.set("material", filter);
-    api<typeof data>("/centers?" + params, {signal: controller.signal}).then(setData).catch(error => {
+    api<typeof data>("/centers?" + params, {signal: controller.signal}).then(results => {
+      if (!controller.signal.aborted) setData(results);
+    }).catch(error => {
       if (!controller.signal.aborted) setError(message(error));
     });
     return () => controller.abort();
