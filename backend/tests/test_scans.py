@@ -68,9 +68,10 @@ def test_real_model_detects_held_out_plastic(citizen):
     detection = response.json()["detections"][0]
     assert detection["material"] == "plastic"
     assert all(0 <= coordinate <= 1 for coordinate in detection["box"])
+    assert isinstance(response.json()["identified_objects"], list)
 
 
-def test_wide_scene_recovers_two_separate_bottles(citizen):
+def test_wide_scene_recovers_two_separate_containers(citizen):
     fixture = Path(__file__).resolve().parents[1] / "vision_assets" / "demo-plastic.jpg"
     scene = Image.new("RGB", (1100, 760), "white")
     with Image.open(fixture) as source:
@@ -87,7 +88,7 @@ def test_wide_scene_recovers_two_separate_bottles(citizen):
     assert sorted(item["box"][0] > 0.5 for item in plastics) == [False, True]
 
 
-def test_detail_scan_recovers_small_bottle_when_standard_already_detects_two(citizen):
+def test_detail_scan_recovers_small_container_when_standard_already_detects_two(citizen):
     fixture = Path(__file__).resolve().parents[1] / "vision_assets" / "demo-plastic.jpg"
     scene = Image.new("RGB", (980, 700), "white")
     with Image.open(fixture) as source:

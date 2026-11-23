@@ -7,11 +7,14 @@ import { Button } from "./ui/button";
 import { ValueForm } from "./impact";
 import { GuideMotion } from "./guide-motion";
 
+type Box = [number, number, number, number];
+
 type Result = {
   id: number;
   status: "detected" | "blurry" | "no_detection";
   model: string;
-  detections: {material: string; confidence: number; box: [number, number, number, number]}[];
+  detections: {material: string; confidence: number; box: Box}[];
+  identified_objects?: {name: string; confidence: number; box: Box}[];
 };
 
 function materialLabel(material: string) {
@@ -30,12 +33,19 @@ export function Scanner() {
   const [error, setError] = useState("");
   const [feedback, setFeedback] = useState("");
   const [saved, setSaved] = useState(false);
+  const [showObjects, setShowObjects] = useState(false);
   const [camera, setCamera] = useState<MediaStream>();
   const [openingCamera, setOpeningCamera] = useState(false);
   const cameraRequest = useRef(0);
   const video = useRef<HTMLVideoElement>(null);
   const resultHeading = useRef<HTMLHeadingElement>(null);
   const step = saved ? 3 : result ? 2 : 1;
+  const objects = result?.identified_objects ?? [];
+  const materials = result?.detections ?? [];
+  const objectOverlay = objects.length > 0 && (showObjects || materials.length === 0);
+  const boxes = objectOverlay
+    ? objects.map(item => ({...item, label: item.name}))
+    : materials.map(item => ({...item, label: materialLabel(item.material)}));
 
   useEffect(() => () => { cameraRequest.current++; }, []);
   useEffect(() => {
@@ -75,6 +85,7 @@ export function Scanner() {
     setImage(file);
     setCamera(undefined);
     setResult(undefined);
+    setShowObjects(false);
     setSaved(false);
     setFeedback("");
     setError("");
@@ -103,6 +114,7 @@ export function Scanner() {
     if (detail) data.set("detail", "true");
     try {
       setResult(await api<Result>("/scans", {method: "POST", body: data}));
+      setShowObjects(false);
     } catch (error) {
       setError(message(error));
     } finally {
@@ -127,9 +139,9 @@ export function Scanner() {
               {/* The image source is a transient local upload. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={preview} alt="Your uploaded waste photo"/>
-              {result?.detections.map(({material, confidence, box: [left, top, right, bottom]}, index) =>
-                <span className="scan-box" key={index} style={{left: left * 100 + "%", top: top * 100 + "%", width: (right - left) * 100 + "%", height: (bottom - top) * 100 + "%"}} aria-hidden="true">
-                  <span>{materialLabel(material)} {confidenceLabel(confidence)}</span>
+              {boxes.map(({label, confidence, box: [left, top, right, bottom]}, index) =>
+                <span className={objectOverlay ? "scan-box scan-object-box" : "scan-box"} key={index} style={{left: left * 100 + "%", top: top * 100 + "%", width: (right - left) * 100 + "%", height: (bottom - top) * 100 + "%"}} aria-hidden="true">
+                  <span>{label} {confidenceLabel(confidence)}</span>
                 </span>)}
             </div> : <div className="viewfinder">
               <GuideMotion scene="scan" onDark/>
@@ -137,6 +149,10 @@ export function Scanner() {
               <p>Use your camera or select a photo from this device.</p>
             </div>}
         </div>
+        {objects.length > 0 && materials.length > 0 && !busy && !camera && <div className="row scan-overlay-controls" role="group" aria-label="Photo overlay">
+          <Button variant={showObjects ? "secondary" : "default"} aria-pressed={!showObjects} onClick={() => setShowObjects(false)}>Material boxes</Button>
+          <Button variant={showObjects ? "default" : "secondary"} aria-pressed={showObjects} onClick={() => setShowObjects(true)}>Object boxes</Button>
+        </div>}
         <div className="scan-actions">
           {camera ? <>
             <Button variant="secondary" onClick={() => setCamera(undefined)}>Close camera</Button>
@@ -169,11 +185,16 @@ export function Scanner() {
     </div>
     {result && !busy && <section className="card scan-result" aria-live="polite">
       <div className="guide-state"><GuideMotion scene="review"/><h2 tabIndex={-1} ref={resultHeading}>
-        {result.status === "detected" ? "Detected materials" : result.status === "blurry" ? "Try a clearer photo" : "No material detected"}
+        {result.status === "detected" ? "Detected materials" : result.status === "blurry" ? "Try a clearer photo" : objects.length ? "Objects recognized" : "No material detected"}
       </h2></div>
       {result.detections.length
         ? <ul className="detection-list">{result.detections.map((item, index) => <li className="pill" key={index}><Tag size={15} aria-hidden="true"/>{materialLabel(item.material)} · {confidenceLabel(item.confidence)} model confidence</li>)}</ul>
-        : <p>Move closer and photograph one item against a plain background. You can also select a material below if you know it.</p>}
+        : <p>{objects.length ? "Choose a material below if you know what the item is made of." : "Move closer and photograph one item against a plain background. You can also select a material below if you know it."}</p>}
+      {objects.length > 0 && <div className="scan-object-results">
+        {result.status === "detected" && <h3>Recognized objects</h3>}
+        <ul className="detection-list">{objects.map((item, index) => <li className="pill" key={index}>{item.name} · {confidenceLabel(item.confidence)} object confidence</li>)}</ul>
+        <p>Object names help identify the item. Check its material before recording it.</p>
+      </div>}
       {result.detections.some(item => item.material === "e-waste") &&
         <p>The photo shows electronics. Record the device as e-waste only if you are discarding it for recycling.</p>}
       {!saved && result.status !== "blurry" &&

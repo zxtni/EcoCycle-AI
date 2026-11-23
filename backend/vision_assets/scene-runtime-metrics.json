@@ -1,0 +1,52 @@
+{
+  "model": "ecocycle-regions-v4",
+  "object_score_threshold": 0.2,
+  "iou_threshold": 0.5,
+  "test_images": 48,
+  "results": {
+    "standard": {
+      "Bottle": {
+        "total": 12,
+        "matched": 7,
+        "emitted": 47
+      },
+      "Laptop": {
+        "total": 12,
+        "matched": 8,
+        "emitted": 17
+      },
+      "Sunglasses": {
+        "total": 12,
+        "matched": 10,
+        "emitted": 25
+      },
+      "Watch": {
+        "total": 12,
+        "matched": 6,
+        "emitted": 15
+      }
+    },
+    "detailed": {
+      "Bottle": {
+        "total": 12,
+        "matched": 8,
+        "emitted": 55
+      },
+      "Laptop": {
+        "total": 12,
+        "matched": 9,
+        "emitted": 35
+      },
+      "Sunglasses": {
+        "total": 12,
+        "matched": 10,
+        "emitted": 36
+      },
+      "Watch": {
+        "total": 12,
+        "matched": 8,
+        "emitted": 21
+      }
+    }
+  }
+}

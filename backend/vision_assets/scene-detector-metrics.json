@@ -1,0 +1,98 @@
+{
+  "checkpoint_sha256": "3851dfbf39ed2a076b1f39215cc22dba64eb5646f282bf964703785b0bed6a41",
+  "score_threshold": 0.2,
+  "iou_threshold": 0.5,
+  "fit_images": 95,
+  "internal_validation_images": 25,
+  "held_out_images": 60,
+  "epochs": 4,
+  "pretrained_internal_validation": {
+    "Bottle": {
+      "total": 5,
+      "matched": 3
+    },
+    "Human hand": {
+      "total": 5,
+      "matched": 0
+    },
+    "Laptop": {
+      "total": 5,
+      "matched": 1
+    },
+    "Sunglasses": {
+      "total": 5,
+      "matched": 2
+    },
+    "Watch": {
+      "total": 5,
+      "matched": 2
+    }
+  },
+  "fine_tuned_internal_validation": {
+    "Bottle": {
+      "total": 5,
+      "matched": 4
+    },
+    "Human hand": {
+      "total": 5,
+      "matched": 0
+    },
+    "Laptop": {
+      "total": 5,
+      "matched": 3
+    },
+    "Sunglasses": {
+      "total": 5,
+      "matched": 2
+    },
+    "Watch": {
+      "total": 5,
+      "matched": 3
+    }
+  },
+  "selected": "fine-tuned",
+  "pretrained_holdout": {
+    "Bottle": {
+      "total": 12,
+      "matched": 7
+    },
+    "Human hand": {
+      "total": 12,
+      "matched": 0
+    },
+    "Laptop": {
+      "total": 12,
+      "matched": 3
+    },
+    "Sunglasses": {
+      "total": 12,
+      "matched": 6
+    },
+    "Watch": {
+      "total": 12,
+      "matched": 4
+    }
+  },
+  "fine_tuned_holdout": {
+    "Bottle": {
+      "total": 12,
+      "matched": 9
+    },
+    "Human hand": {
+      "total": 12,
+      "matched": 7
+    },
+    "Laptop": {
+      "total": 12,
+      "matched": 8
+    },
+    "Sunglasses": {
+      "total": 12,
+      "matched": 10
+    },
+    "Watch": {
+      "total": 12,
+      "matched": 6
+    }
+  }
+}

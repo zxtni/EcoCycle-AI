@@ -462,3 +462,8 @@ ul { list-style: disc inside; }
   .scan-steps { gap: 4px; }
   .scan-steps li { gap: 5px; }
 }
+
+.scan-overlay-controls { padding: 10px 2px 0; }
+.scan-object-box { border-color: #8de4ff; border-style: dashed; }
+.scan-object-box span { background: #124352; }
+.scan-object-results { margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--stroke); }

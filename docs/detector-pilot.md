@@ -36,3 +36,40 @@ The cache contains the image IDs used for fitting and testing in `scene-pilot-me
 ## Validate with phone scenes
 
 Start with the original mixed photo, the laptop photo and additional photos of separate objects in different lighting. Keep shots of the same physical object together in a single split. Annotate one box per object and mark the material only where it is known. Keep mixed-material and uncertain items labeled separately. Keep a small untouched test set of whole scenes for measuring both missed objects and incorrect material labels before changing the production model.
+
+## V4 object detector
+
+The release fine-tunes the official YOLOv8n Open Images checkpoint for four epochs at 384 pixels with its first ten modules frozen. It updates the detector on **95 annotated photos**, uses **25 separate photos** for checkpoint selection and evaluates on **60 Open Images test photos** held out from fine-tuning. Mosaic augmentation supplies mixed layouts during training. The frozen backbone and small fitting sample limit adaptation to new phone-camera conditions. [Ultralytics Open Images models](https://docs.ultralytics.com/datasets/detect/open-images-v7/) · [Training benchmark](../backend/vision_assets/scene-detector-metrics.json)
+
+With correct item name and IoU at least 0.50, the pretrained checkpoint matched 20/60 annotations. The fine-tuned checkpoint matched 40/60. The app exposes four of the five trained object categories and treats hands as out of scope. Its exported CPU ONNX detector measured:
+
+| Recognized object | Standard scan | Search for small items |
+| --- | ---: | ---: |
+| Bottle | 7/12 | 8/12 |
+| Laptop | 8/12 | 9/12 |
+| Sunglasses | 10/12 | 10/12 |
+| Watch | 6/12 | 8/12 |
+| **Total correct names and boxes** | **31/48 (64.6%)** | **35/48 (72.9%)** |
+
+Both columns require a localization match at IoU 0.50 and the correct category. Each image supplies one sampled annotation for scoring. The metrics do not characterize all false positives in these photos or predict performance on the original user scene. A watch prediction does not distinguish ordinary watches from smartwatches. The material classifier still produces the material estimates shown in the separate result list. [ONNX runtime benchmark](../backend/vision_assets/scene-runtime-metrics.json)
+
+### Reproduce the detector training
+
+Run the pilot first to cache the selected JPEGs. Use Python 3.12 with the pilot dependencies and install PyTorch 2.7.1, torchvision 0.22.1 and Ultralytics 8.3.200 in the training environment. Download [the pinned YOLOv8n checkpoint](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n-oiv7.pt) into the cache. The trainer validates the checkpoint checksum before loading it.
+
+```sh
+python -m backend.vision_tools.fit_scene_detector .tools/openimages .tools/detector-fit .tools/openimages/yolov8n-oiv7.pt
+```
+
+The training command writes the chosen CPU ONNX graph and measured validation and holdout results. Replacing the app artifact requires rerunning the runtime and API checks. [Asset provenance and license](../backend/vision_assets/NOTICE.md)
+
+```sh
+python -m backend.vision_tools.audit_scene_runtime .tools/openimages
+node scripts/check.mjs
+```
+
+### Demonstrate the two result types
+
+Sign in, open **Scan waste**, and upload the held-out sunglasses example. In standard mode it shows **Objects recognized** and a sunglasses box. The sample does not generate a material estimate until the user picks a material. [Open Images sunglasses photo](https://open-images-dataset.s3.amazonaws.com/test/97be1d6bd32aec1b.jpg)
+
+Upload the held-out bottle example and switch between **Material boxes** and **Object boxes**. The preview and the separate result lists let the reviewer demonstrate the difference between identifying an item and estimating what it is made of. [Open Images bottle photo](https://open-images-dataset.s3.amazonaws.com/test/f351efbc9ae278f1.jpg)

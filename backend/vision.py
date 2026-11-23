@@ -1,5 +1,7 @@
 """CPU waste detection with YOLO region proposals and a trained material head."""
 
+from ast import literal_eval
+from collections.abc import Iterator
 from functools import lru_cache
 from pathlib import Path
 from typing import Literal, TypedDict
@@ -9,7 +11,7 @@ import onnxruntime as ort
 from PIL import Image, ImageOps
 
 ASSETS = Path(__file__).with_name("vision_assets")
-MODEL_VERSION = "ecocycle-regions-v3"
+MODEL_VERSION = "ecocycle-regions-v4"
 MATERIALS = ("e-waste", "glass", "metal", "other", "plastic")
 Box = tuple[float, float, float, float]
 
@@ -20,13 +22,20 @@ class Detection(TypedDict):
     box: Box
 
 
+class IdentifiedObject(TypedDict):
+    name: str
+    confidence: float
+    box: Box
+
+
 class ScanResult(TypedDict):
     status: Literal["detected", "no_detection", "blurry"]
     model: str
     detections: list[Detection]
+    identified_objects: list[IdentifiedObject]
 
 
-@lru_cache(maxsize=2)
+@lru_cache(maxsize=3)
 def session(filename: str) -> ort.InferenceSession:
     options = ort.SessionOptions()
     options.intra_op_num_threads = 2
@@ -66,7 +75,13 @@ def same_region(a: Box, b: Box) -> bool:
     return True
 
 
-def yolo_regions(image: Image.Image) -> list[Box]:
+def proposals(
+    image: Image.Image,
+    filename: str,
+    class_ids: list[int],
+    threshold: float,
+    min_area: float,
+) -> list[tuple[int, float, Box]]:
     w, h = image.size
     scale = 640 / max(w, h)
     nw, nh = max(1, round(w * scale)), max(1, round(h * scale))
@@ -74,14 +89,12 @@ def yolo_regions(image: Image.Image) -> list[Box]:
     padded = Image.new("RGB", (640, 640), (114, 114, 114))
     padded.paste(image.resize((nw, nh), Image.Resampling.BILINEAR), (left, top))
     inputs = np.asarray(padded, dtype=np.float32).transpose(2, 0, 1)[None] / 255
-    network = session("regions.onnx")
+    network = session(filename)
     rows = network.run(None, {"images": inputs})[0][0].T
     classes = rows[:, 4:].argmax(axis=1)
     scores = rows[:, 4:].max(axis=1)
-    # Prior classes include containers, tableware and common electronics.
-    objects = np.isin(classes, [*range(39, 46), *range(62, 71), 72, 74, 75, 76, 78])
-    indices = np.flatnonzero((scores >= 0.18) & objects)
-    selected: list[Box] = []
+    indices = np.flatnonzero((scores >= threshold) & np.isin(classes, class_ids))
+    selected: list[tuple[int, float, Box]] = []
     for index in indices[np.argsort(-scores[indices])[:100]]:
         x, y, width, height = rows[index, :4]
         bounds = np.clip(
@@ -95,13 +108,47 @@ def yolo_regions(image: Image.Image) -> list[Box]:
             1,
         )
         box = (float(bounds[0]), float(bounds[1]), float(bounds[2]), float(bounds[3]))
-        if (box[2] - box[0]) * (box[3] - box[1]) < 0.004:
+        if (box[2] - box[0]) * (box[3] - box[1]) < min_area:
             continue
-        if all(overlap(box, old) < 0.45 for old in selected):
-            selected.append(box)
+        if all(overlap(box, old) < 0.45 for _, _, old in selected):
+            selected.append((int(classes[index]), float(scores[index]), box))
         if len(selected) == 8:
             break
     return selected
+
+
+def yolo_regions(image: Image.Image) -> list[Box]:
+    categories = [*range(39, 46), *range(62, 71), 72, 74, 75, 76, 78]
+    return [box for _, _, box in proposals(image, "regions.onnx", categories, 0.18, 0.004)]
+
+
+@lru_cache(maxsize=1)
+def object_names() -> dict[int, str]:
+    names = literal_eval(session("objects.onnx").get_modelmeta().custom_metadata_map["names"])
+    return {
+        int(index): label
+        for index, label in names.items()
+        if label in {"Bottle", "Laptop", "Sunglasses", "Watch"}
+    }
+
+
+def identify_objects(image: Image.Image, *, detail: bool = False) -> list[IdentifiedObject]:
+    names = object_names()
+    class_ids = list(names)
+    candidates = proposals(image, "objects.onnx", class_ids, 0.20, 0.001)
+    if detail and max(image.size) >= 500:
+        for tile, left, top in image_tiles(image, 0.62):
+            for index, score, box in proposals(tile, "objects.onnx", class_ids, 0.20, 0.001):
+                mapped = map_tile_box(image.size, tile.size, left, top, box)
+                if mapped is not None:
+                    candidates.append((index, score, mapped))
+    chosen: list[IdentifiedObject] = []
+    for index, score, box in sorted(candidates, key=lambda item: item[1], reverse=True):
+        if all(not same_region(box, item["box"]) for item in chosen):
+            chosen.append({"name": names[index], "confidence": round(score, 5), "box": box})
+        if len(chosen) == 8:
+            break
+    return chosen
 
 
 def foreground_region(image: Image.Image) -> Box | None:
@@ -143,37 +190,52 @@ def crop_region(image: Image.Image, box: Box) -> Image.Image:
     )
 
 
-def tile_regions(image: Image.Image, *, detail: bool = False) -> list[Box]:
-    """Give small objects a second pass in overlapping, enlarged views."""
+def image_tiles(
+    image: Image.Image, scale: float, *, center_tiles: bool = False
+) -> Iterator[tuple[Image.Image, int, int]]:
     width, height = image.size
-    tile_scale = 0.55 if detail else 0.62
-    tile_width, tile_height = round(width * tile_scale), round(height * tile_scale)
+    tile_width, tile_height = round(width * scale), round(height * scale)
     columns = [0, width - tile_width]
     rows = [0, height - tile_height]
-    if detail:
+    if center_tiles:
         columns.insert(1, (width - tile_width) // 2)
         rows.insert(1, (height - tile_height) // 2)
-    regions: list[Box] = []
     for left in columns:
         for top in rows:
             tile = image.crop((left, top, left + tile_width, top + tile_height))
-            for x1, y1, x2, y2 in yolo_regions(tile):
-                # Skip proposals clipped at a tile seam. Adjacent tiles overlap.
-                if (
-                    (left and x1 < 0.02)
-                    or (top and y1 < 0.02)
-                    or (left + tile_width < width and x2 > 0.98)
-                    or (top + tile_height < height and y2 > 0.98)
-                ):
-                    continue
-                regions.append(
-                    (
-                        (left + x1 * tile_width) / width,
-                        (top + y1 * tile_height) / height,
-                        (left + x2 * tile_width) / width,
-                        (top + y2 * tile_height) / height,
-                    )
-                )
+            yield tile, left, top
+
+
+def map_tile_box(
+    size: tuple[int, int], tile_size: tuple[int, int], left: int, top: int, box: Box
+) -> Box | None:
+    width, height = size
+    tile_width, tile_height = tile_size
+    x1, y1, x2, y2 = box
+    # Adjacent tiles can recover proposals cut at an artificial internal seam.
+    if (
+        (left and x1 < 0.02)
+        or (top and y1 < 0.02)
+        or (left + tile_width < width and x2 > 0.98)
+        or (top + tile_height < height and y2 > 0.98)
+    ):
+        return None
+    return (
+        (left + x1 * tile_width) / width,
+        (top + y1 * tile_height) / height,
+        (left + x2 * tile_width) / width,
+        (top + y2 * tile_height) / height,
+    )
+
+
+def tile_regions(image: Image.Image, *, detail: bool = False) -> list[Box]:
+    """Give small objects a second pass in overlapping, enlarged views."""
+    regions: list[Box] = []
+    for tile, left, top in image_tiles(image, 0.55 if detail else 0.62, center_tiles=detail):
+        for box in yolo_regions(tile):
+            mapped = map_tile_box(image.size, tile.size, left, top, box)
+            if mapped is not None:
+                regions.append(mapped)
     return regions
 
 
@@ -200,7 +262,12 @@ def classify(image: Image.Image, boxes: list[Box]) -> list[Detection]:
 def detect(image: Image.Image, *, detail: bool = False) -> ScanResult:
     rgb = ImageOps.exif_transpose(image).convert("RGB")
     rgb.thumbnail((1280, 1280), Image.Resampling.LANCZOS)
-    result: ScanResult = {"model": MODEL_VERSION, "status": "no_detection", "detections": []}
+    result: ScanResult = {
+        "model": MODEL_VERSION,
+        "status": "no_detection",
+        "detections": [],
+        "identified_objects": [],
+    }
     gray = np.asarray(rgb.convert("L").resize((150, 150)), dtype=float)
     edges = 4 * gray[1:-1, 1:-1] - gray[2:, 1:-1] - gray[:-2, 1:-1]
     edges -= gray[1:-1, 2:] + gray[1:-1, :-2]
@@ -225,6 +292,7 @@ def detect(image: Image.Image, *, detail: bool = False) -> ScanResult:
         if foreground:
             detections = classify(rgb, [foreground])
     result["detections"] = sorted(detections, key=lambda item: item["confidence"], reverse=True)
+    result["identified_objects"] = identify_objects(rgb, detail=detail)
     if detections:
         result["status"] = "detected"
     return result
