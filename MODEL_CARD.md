@@ -2,6 +2,8 @@
 
 ## Photo scanner
 
+The separate phone-photo pilot evaluates object localization and classification on annotated Open Images examples. It trains an experimental object-category head and measures which boxes the shipped scanner can recover. [Pilot results and reproduction](docs/detector-pilot.md)
+
 The v3 runtime uses the same ONNX weights and suppresses duplicate boxes around the same object across scales. The optional **Search for small items** mode checks nine overlapping tiles on suitable images. A controlled three-bottle composite produced two localized plastic detections on standard mode and three on detailed mode. The composite uses different sizes of one held-out bottle photograph. Scores displayed in the interface are model confidence scores, with the highest scores shown as 99%+.
 
 On the same 36 annotated TACO street photos, v2 found 2 correctly localized objects, v3 standard found 2, and v3 detailed found 3. These counts require the correct material and a box intersection-over-union of at least 0.50. Detailed mode emitted 10 boxes, of which 3 matched the annotations. This small sample illustrates the remaining gap on real street photos.
