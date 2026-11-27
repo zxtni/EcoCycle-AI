@@ -20,18 +20,21 @@ const Map = dynamic(() => import("./recycling-map"), {
 const materialChoices = [
   ["plastic", "Plastic"], ["glass", "Glass"], ["metal", "Metal"], ["e-waste", "E-waste"],
 ];
+const BENGALURU: Coordinate = [12.9716, 77.5946];
 
 export function Locator() {
-  const [position, setPosition] = useState<Coordinate>([12.9716, 77.5946]);
+  const [position, setPosition] = useState<Coordinate>();
   const [filter, setFilter] = useState("");
   const [selected, select] = useState("");
   const [data, setData] = useState<{centers: Point[]; live_available: boolean}>();
   const [error, setError] = useState("");
   const [geo, setGeo] = useState("");
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState(true);
+  const [locationRequest, requestLocation] = useState(0);
   const [retry, setRetry] = useState(0);
 
   useEffect(() => {
+    if (!position) return;
     const controller = new AbortController();
     const params = new URLSearchParams({lat: String(position[0]), lon: String(position[1])});
     if (filter) params.set("material", filter);
@@ -49,19 +52,35 @@ export function Locator() {
     select("");
   }
 
-  function locate() {
-    if (!navigator.geolocation) { setGeo("Location is unavailable on this browser."); return; }
-    setBusy(true);
-    setGeo("");
+  useEffect(() => {
+    let active = true;
+    const unavailable = () => {
+      if (!active) return;
+      setGeo("Location unavailable. Allow location access and retry, or search Bengaluru.");
+      setBusy(false);
+    };
+    if (!navigator.geolocation) {
+      const frame = requestAnimationFrame(unavailable);
+      return () => cancelAnimationFrame(frame);
+    }
     navigator.geolocation.getCurrentPosition(({coords}) => {
+      if (!active) return;
       setPosition([coords.latitude, coords.longitude]);
       resetResults();
+      setGeo("Searching near your location.");
       setBusy(false);
-    }, () => {
-      setGeo("We couldn’t get your location. Showing results near your last map position.");
-      setBusy(false);
-    }, {timeout: 8000, maximumAge: 300000});
+    }, unavailable, {timeout: 8000, maximumAge: 300000});
+    return () => { active = false; };
+  }, [locationRequest]);
+
+  function locate() {
+    setBusy(true);
+    setGeo("");
+    requestLocation(count => count + 1);
   }
+
+  const mapsQuery = filter === "e-waste" ? "e-waste collection" : filter ? filter + " recycling center" : "recycling drop-off";
+  const mapsLink = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapsQuery + (position ? " near " + position.join(",") : " near me"));
 
   return <>
     <div className="heading"><div><h1>Center locator</h1><p>Find recycling drop-off points within 1,000 km.</p></div></div>
@@ -78,8 +97,12 @@ export function Locator() {
         </Button>
       </div>
       {geo && <p role="status">{geo}</p>}
+      {!busy && !position && <div className="row">
+        <Button variant="secondary" onClick={() => { setPosition(BENGALURU); setGeo("Searching near Bengaluru."); }}>Search Bengaluru</Button>
+        <Button variant="secondary" asChild><a href={mapsLink} target="_blank" rel="noreferrer">Search in Google Maps</a></Button>
+      </div>}
     </section>
-    {error ? <section className="card scan-result">
+    {busy || !position ? null : error ? <section className="card scan-result">
       <p role="alert">{error}</p><Button onClick={() => { setError(""); setRetry(retry + 1); }}>Retry</Button>
     </section> : !data ? <section className="card scan-result guide-panel" role="status">
       <GuideMotion scene="nearby"/><h2>Finding centers</h2><p>Checking recycling listings for your map area.</p>
@@ -96,10 +119,7 @@ export function Locator() {
               ? "No listed centers matched. Some facilities may be missing from the map or their accepted materials may be unlisted."
               : "The live directory did not respond and there are no matching saved listings in this area."}</p>
             <Button asChild variant="secondary"><a target="_blank" rel="noreferrer"
-              href={"https://www.google.com/maps/search/" + encodeURIComponent(
-                (filter === "e-waste" ? "e-waste collection" : filter ? filter + " recycling center" : "recycling drop-off")
-                + " near " + position.join(",")
-              )}>Search in Google Maps</a></Button>
+              href={mapsLink}>Search in Google Maps</a></Button>
             <a href="https://apps.bbmpgov.in/SWM/Home/Forms/Home.aspx" target="_blank" rel="noreferrer">Bengaluru municipal waste directory</a>
           </div>}
           {data.centers.map(center => <article className="activity place-card" key={center.id}>
