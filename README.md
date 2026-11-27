@@ -4,6 +4,8 @@ Identify everyday non-biodegradable waste, estimate material value and recycling
 
 ## Local setup
 
+For Windows laptop setup, demo logins, and an offline walkthrough, see [the local demo guide](LOCAL_DEMO.md).
+
 Install Node.js 24, pnpm 11 and uv. From the project root, run:
 
 ```sh
