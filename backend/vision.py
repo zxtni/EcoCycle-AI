@@ -11,7 +11,8 @@ import onnxruntime as ort
 from PIL import Image, ImageOps
 
 ASSETS = Path(__file__).with_name("vision_assets")
-MODEL_VERSION = "ecocycle-regions-v4"
+MODEL_VERSION = "ecocycle-regions-v4.1"
+OBJECT_THRESHOLDS = {"Bottle": 0.40, "Laptop": 0.75, "Mobile phone": 0.60, "Sunglasses": 0.50, "Watch": 0.75}
 MATERIALS = ("e-waste", "glass", "metal", "other", "plastic")
 Box = tuple[float, float, float, float]
 
@@ -125,11 +126,7 @@ def yolo_regions(image: Image.Image) -> list[Box]:
 @lru_cache(maxsize=1)
 def object_names() -> dict[int, str]:
     names = literal_eval(session("objects.onnx").get_modelmeta().custom_metadata_map["names"])
-    return {
-        int(index): label
-        for index, label in names.items()
-        if label in {"Bottle", "Laptop", "Sunglasses", "Watch"}
-    }
+    return {int(index): label for index, label in names.items() if label in OBJECT_THRESHOLDS}
 
 
 def identify_objects(image: Image.Image, *, detail: bool = False) -> list[IdentifiedObject]:
@@ -144,6 +141,8 @@ def identify_objects(image: Image.Image, *, detail: bool = False) -> list[Identi
                     candidates.append((index, score, mapped))
     chosen: list[IdentifiedObject] = []
     for index, score, box in sorted(candidates, key=lambda item: item[1], reverse=True):
+        if score < OBJECT_THRESHOLDS[names[index]]:
+            continue
         if all(not same_region(box, item["box"]) for item in chosen):
             chosen.append({"name": names[index], "confidence": round(score, 5), "box": box})
         if len(chosen) == 8:

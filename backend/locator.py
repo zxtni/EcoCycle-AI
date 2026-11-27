@@ -22,6 +22,7 @@ BENGALURU = (12.9716, 77.5946)
 PROVIDERS = (
     "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter",
 )
 
 
@@ -35,7 +36,11 @@ def distance(lat: float, lon: float, dest_lat: float, dest_lon: float) -> float:
 @lru_cache(maxsize=96)
 def overpass(lat: float, lon: float, bucket: int) -> list[dict] | None:
     # Include a margin for rounding the cache coordinates. Filter exact distances below.
-    query = f"[out:json][timeout:7];nwr[amenity=recycling](around:101000,{lat},{lon});out center;"
+    scope = f"(around:101000,{lat},{lon})"
+    query = (
+        f"[out:json][timeout:7];(nwr[amenity=recycling]{scope};"
+        f"nwr[recycling_type=centre]{scope};);out center;"
+    )
     for url in PROVIDERS:
         try:
             response = requests.get(
@@ -48,6 +53,8 @@ def overpass(lat: float, lon: float, bucket: int) -> list[dict] | None:
             )
             response.raise_for_status()
             doc = response.json()
+            if "remark" in doc or not isinstance(doc.get("elements"), list):
+                continue
             break
         except (requests.RequestException, ValueError):
             continue

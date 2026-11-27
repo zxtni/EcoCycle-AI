@@ -2,6 +2,8 @@
 
 ## Photo scanner
 
+V4.1 makes object reporting more conservative and enables the Mobile phone class already present in the object network. The watch and laptop cutoff is 0.75. On crops of two user screenshots, standard and detailed mode abstained on both the cap and the phone. Those crops test the reported errors, and the original camera uploads were unavailable. The V4 benchmark below used its original thresholds. V4.1 accuracy requires a separate benchmark.
+
 V4 adds a fine-tuned object detector that reports bottle, laptop, sunglasses and watch boxes separately from material guesses. The detailed runtime matched the correct name and box for **35 of 48 held-out object annotations (72.9%)**. The test does not measure material accuracy on those objects. [V4 training, runtime results and reproduction](docs/detector-pilot.md)
 
 The separate phone-photo pilot evaluates object localization and classification on annotated Open Images examples. It trains an experimental object-category head and measures which boxes the shipped scanner can recover. [Pilot results and reproduction](docs/detector-pilot.md)

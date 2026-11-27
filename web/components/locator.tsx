@@ -91,7 +91,17 @@ export function Locator() {
           <p className="listing-source" role="status">
             {data.live_available ? "OpenStreetMap and local listings." : "Showing local listings while live results are unavailable."}
           </p>
-          {data.centers.length === 0 && <p>No centers matched. Try a different filter or location.</p>}
+          {data.centers.length === 0 && <div className="stack">
+            <p>{data.live_available
+              ? "No listed centers matched. Some facilities may be missing from the map or their accepted materials may be unlisted."
+              : "The live directory did not respond and there are no matching saved listings in this area."}</p>
+            <Button asChild variant="secondary"><a target="_blank" rel="noreferrer"
+              href={"https://www.google.com/maps/search/" + encodeURIComponent(
+                (filter === "e-waste" ? "e-waste collection" : filter ? filter + " recycling center" : "recycling drop-off")
+                + " near " + position.join(",")
+              )}>Search in Google Maps</a></Button>
+            <a href="https://apps.bbmpgov.in/SWM/Home/Forms/Home.aspx" target="_blank" rel="noreferrer">Bengaluru municipal waste directory</a>
+          </div>}
           {data.centers.map(center => <article className="activity place-card" key={center.id}>
             <button className="button ghost place-title" aria-pressed={selected === center.id} onClick={() => select(center.id)}>
               <span className="place-icon"><MapPin size={18} aria-hidden="true"/></span>
