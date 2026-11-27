@@ -1,6 +1,7 @@
 import json
 import math
 from functools import lru_cache
+from pathlib import Path
 from time import monotonic
 
 import requests
@@ -65,7 +66,7 @@ def overpass(lat: float, lon: float, bucket: int) -> list[dict] | None:
     for element in doc.get("elements", []):
         tags = element.get("tags", {})
         center = element.get("center", element)
-        if "lat" not in center or "lon" not in center:
+        if tags.get("access") in {"private", "no"} or "lat" not in center or "lon" not in center:
             continue
         matches = [
             material
@@ -100,6 +101,11 @@ def center_payload(row: Center) -> dict:
     }
 
 
+@lru_cache(maxsize=1)
+def directory_snapshot() -> dict:
+    return json.loads(Path(__file__).with_name("recycling_india.json").read_text(encoding="utf-8"))
+
+
 @router.get("/centers")
 def centers(
     db: DB,
@@ -108,13 +114,23 @@ def centers(
     lon: float = Query(BENGALURU[1], ge=-180, le=180),
     material: Material | None = None,
 ):
-    live = overpass(round(lat, 2), round(lon, 2), int(monotonic() // 900))
+    snapshot = directory_snapshot()
     local = [center_payload(row) for row in db.scalars(select(Center)).all()]
-    combined = (live or []) + local
-    results = []
-    for center in combined:
-        km = distance(lat, lon, center["lat"], center["lon"])
-        if km <= SEARCH_RADIUS_KM and (material is None or material in center["materials"]):
-            results.append({**center, "distance": round(km, 2)})
+
+    def nearby(listings: list[dict]) -> list[dict]:
+        matches = []
+        for center in listings:
+            km = distance(lat, lon, center["lat"], center["lon"])
+            if km <= SEARCH_RADIUS_KM and (material is None or material in center["materials"]):
+                matches.append({**center, "distance": round(km, 2)})
+        return matches
+
+    saved = nearby(snapshot["centers"])
+    live = None if saved else overpass(round(lat, 2), round(lon, 2), int(monotonic() // 900))
+    results = saved + nearby((live or []) + local)
     results.sort(key=lambda item: item["distance"])
-    return {"centers": results[:150], "live_available": live is not None}
+    return {
+        "centers": results[:150],
+        "live_available": live is not None,
+        "snapshot_date": snapshot["date"] if saved else None,
+    }

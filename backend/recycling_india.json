@@ -1,0 +1,4067 @@
+{
+  "date": "2026-11-25",
+  "centers": [
+    {
+      "id": "osm-node-10242924672",
+      "name": "Recycling center",
+      "lat": 12.909,
+      "lon": 77.695,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924672"
+    },
+    {
+      "id": "osm-node-10242924673",
+      "name": "Recycling center",
+      "lat": 12.9223189,
+      "lon": 77.7168686,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924673"
+    },
+    {
+      "id": "osm-node-10242924674",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 13.058757,
+      "lon": 77.5913487,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924674"
+    },
+    {
+      "id": "osm-node-10242924675",
+      "name": "Recycling center",
+      "lat": 12.872932,
+      "lon": 77.626696,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924675"
+    },
+    {
+      "id": "osm-node-10242924676",
+      "name": "Recycling center",
+      "lat": 12.8937647,
+      "lon": 77.6450451,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924676"
+    },
+    {
+      "id": "osm-node-10242924677",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.9324471,
+      "lon": 77.5804136,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924677"
+    },
+    {
+      "id": "osm-node-10242924678",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.9362883,
+      "lon": 77.5799038,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924678"
+    },
+    {
+      "id": "osm-node-10242924679",
+      "name": "Recycling center",
+      "lat": 12.9340268,
+      "lon": 77.6141786,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924679"
+    },
+    {
+      "id": "osm-node-10242924680",
+      "name": "Recycling center",
+      "lat": 12.918,
+      "lon": 77.57,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924680"
+    },
+    {
+      "id": "osm-node-10242924681",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.9675164,
+      "lon": 77.5635708,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924681"
+    },
+    {
+      "id": "osm-node-10242924682",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 13.0390052,
+      "lon": 77.5610671,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924682"
+    },
+    {
+      "id": "osm-node-10242924683",
+      "name": "Recycling center",
+      "lat": 12.988047,
+      "lon": 77.5797237,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924683"
+    },
+    {
+      "id": "osm-node-10242924684",
+      "name": "Recycling center",
+      "lat": 12.9750091,
+      "lon": 77.6441623,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924684"
+    },
+    {
+      "id": "osm-node-10242924685",
+      "name": "Recycling center",
+      "lat": 13.0092852,
+      "lon": 77.6187774,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924685"
+    },
+    {
+      "id": "osm-node-10242924687",
+      "name": "Recycling center",
+      "lat": 13.038,
+      "lon": 77.562,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10242924687"
+    },
+    {
+      "id": "osm-node-10554245165",
+      "name": "Recycling drop-off",
+      "lat": 28.6195187,
+      "lon": 77.2275302,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10554245165"
+    },
+    {
+      "id": "osm-node-10632949330",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.9169027,
+      "lon": 77.6021902,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10632949330"
+    },
+    {
+      "id": "osm-node-10632949345",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.9188098,
+      "lon": 77.5848297,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10632949345"
+    },
+    {
+      "id": "osm-node-10926234349",
+      "name": "Khan Enterprises",
+      "lat": 28.7531465,
+      "lon": 77.161122,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/10926234349"
+    },
+    {
+      "id": "osm-node-11031707784",
+      "name": "Recycling drop-off",
+      "lat": 16.3582203,
+      "lon": 80.4014453,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11031707784"
+    },
+    {
+      "id": "osm-node-11116269055",
+      "name": "Akri Kada",
+      "lat": 10.0015917,
+      "lon": 76.357397,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11116269055"
+    },
+    {
+      "id": "osm-node-11152241096",
+      "name": "Recycling center",
+      "lat": 28.584371,
+      "lon": 77.2579622,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11152241096"
+    },
+    {
+      "id": "osm-node-11156162841",
+      "name": "Recycling drop-off",
+      "lat": 13.0053751,
+      "lon": 77.6234665,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11156162841"
+    },
+    {
+      "id": "osm-node-11216175696",
+      "name": "Aakri Kada",
+      "lat": 9.9465634,
+      "lon": 76.302549,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11216175696"
+    },
+    {
+      "id": "osm-node-11228345162",
+      "name": "M D Old Scrap",
+      "lat": 28.4733778,
+      "lon": 77.0921321,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11228345162"
+    },
+    {
+      "id": "osm-node-11257267129",
+      "name": "Recycling center",
+      "lat": 9.946118,
+      "lon": 76.2953581,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11257267129"
+    },
+    {
+      "id": "osm-node-11257293113",
+      "name": "Recycling center",
+      "lat": 9.9459645,
+      "lon": 76.2946822,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11257293113"
+    },
+    {
+      "id": "osm-node-11289565574",
+      "name": "Recycling center",
+      "lat": 9.9494814,
+      "lon": 76.2920145,
+      "materials": [
+        "metal",
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11289565574"
+    },
+    {
+      "id": "osm-node-11412682620",
+      "name": "Recycling center",
+      "lat": 22.120141,
+      "lon": 69.3852697,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11412682620"
+    },
+    {
+      "id": "osm-node-11698577861",
+      "name": "Recycling drop-off",
+      "lat": 27.1946716,
+      "lon": 77.9659043,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11698577861"
+    },
+    {
+      "id": "osm-node-11704272915",
+      "name": "Recycling center",
+      "lat": 28.5490833,
+      "lon": 77.2517979,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11704272915"
+    },
+    {
+      "id": "osm-node-11795892107",
+      "name": "Recycling drop-off",
+      "lat": 28.5927792,
+      "lon": 77.2558441,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11795892107"
+    },
+    {
+      "id": "osm-node-11904083759",
+      "name": "Malik Scrape",
+      "lat": 28.5933623,
+      "lon": 77.120804,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11904083759"
+    },
+    {
+      "id": "osm-node-11998405887",
+      "name": "Recycling drop-off",
+      "lat": 17.561062,
+      "lon": 80.6105383,
+      "materials": [
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/11998405887"
+    },
+    {
+      "id": "osm-node-12049307381",
+      "name": "Recycling drop-off",
+      "lat": 30.4643,
+      "lon": 79.4473351,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12049307381"
+    },
+    {
+      "id": "osm-node-12066252754",
+      "name": "Recycling drop-off",
+      "lat": 31.62804,
+      "lon": 74.868285,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12066252754"
+    },
+    {
+      "id": "osm-node-12066262320",
+      "name": "Recycling drop-off",
+      "lat": 31.628937,
+      "lon": 74.8691067,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12066262320"
+    },
+    {
+      "id": "osm-node-12101166217",
+      "name": "Recycling center",
+      "lat": 9.9495349,
+      "lon": 76.2921111,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12101166217"
+    },
+    {
+      "id": "osm-node-12188404633",
+      "name": "Recycling drop-off",
+      "lat": 9.9492717,
+      "lon": 76.2917457,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12188404633"
+    },
+    {
+      "id": "osm-node-12192862002",
+      "name": "Recycling drop-off",
+      "lat": 9.9482927,
+      "lon": 76.292332,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12192862002"
+    },
+    {
+      "id": "osm-node-12192884993",
+      "name": "Recycling drop-off",
+      "lat": 9.9488342,
+      "lon": 76.2998927,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12192884993"
+    },
+    {
+      "id": "osm-node-12197516922",
+      "name": "Recycling drop-off",
+      "lat": 9.9527607,
+      "lon": 76.2993322,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12197516922"
+    },
+    {
+      "id": "osm-node-12205246814",
+      "name": "Recycling drop-off",
+      "lat": 9.9534962,
+      "lon": 76.2987797,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12205246814"
+    },
+    {
+      "id": "osm-node-12355197262",
+      "name": "Ijaz Mon Scrap",
+      "lat": 10.8765643,
+      "lon": 76.1011261,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12355197262"
+    },
+    {
+      "id": "osm-node-12361544647",
+      "name": "Recycling drop-off",
+      "lat": 11.5298144,
+      "lon": 76.0151553,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12361544647"
+    },
+    {
+      "id": "osm-node-12419251754",
+      "name": "Solid Liquid Resource Management Centre, Vandse",
+      "lat": 13.7186922,
+      "lon": 74.7577849,
+      "materials": [
+        "plastic",
+        "metal",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12419251754"
+    },
+    {
+      "id": "osm-node-12423562858",
+      "name": "Recycling drop-off",
+      "lat": 9.9923134,
+      "lon": 76.2897302,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12423562858"
+    },
+    {
+      "id": "osm-node-12458790385",
+      "name": "Recycling Collection Center",
+      "lat": 13.1824682,
+      "lon": 80.3157682,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12458790385"
+    },
+    {
+      "id": "osm-node-12465547911",
+      "name": "Recycling drop-off",
+      "lat": 11.642644,
+      "lon": 76.1453099,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12465547911"
+    },
+    {
+      "id": "osm-node-12558214491",
+      "name": "Recycling drop-off",
+      "lat": 9.5277762,
+      "lon": 76.8220929,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12558214491"
+    },
+    {
+      "id": "osm-node-12558214492",
+      "name": "Recycling drop-off",
+      "lat": 9.527781,
+      "lon": 76.8221007,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12558214492"
+    },
+    {
+      "id": "osm-node-12599821152",
+      "name": "Recycling drop-off",
+      "lat": 15.6109386,
+      "lon": 73.8274082,
+      "materials": [
+        "plastic",
+        "metal",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12599821152"
+    },
+    {
+      "id": "osm-node-12599821160",
+      "name": "Recycling drop-off",
+      "lat": 15.6043372,
+      "lon": 73.8307601,
+      "materials": [
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12599821160"
+    },
+    {
+      "id": "osm-node-12599902658",
+      "name": "Recycling drop-off",
+      "lat": 15.5808857,
+      "lon": 73.7584628,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12599902658"
+    },
+    {
+      "id": "osm-node-12602879440",
+      "name": "Recycling drop-off",
+      "lat": 15.5977442,
+      "lon": 73.750524,
+      "materials": [
+        "plastic",
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12602879440"
+    },
+    {
+      "id": "osm-node-12635095082",
+      "name": "Recycling drop-off",
+      "lat": 15.5953085,
+      "lon": 73.7429346,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12635095082"
+    },
+    {
+      "id": "osm-node-12654892195",
+      "name": "Bastora Panchayat Material Recovery Facility",
+      "lat": 15.576606,
+      "lon": 73.8222693,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12654892195"
+    },
+    {
+      "id": "osm-node-12695806331",
+      "name": "Recycling drop-off",
+      "lat": 15.5821971,
+      "lon": 73.822044,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12695806331"
+    },
+    {
+      "id": "osm-node-12740950397",
+      "name": "Recycling drop-off",
+      "lat": 15.5969973,
+      "lon": 73.8155539,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12740950397"
+    },
+    {
+      "id": "osm-node-12743627501",
+      "name": "MSW Dumping Site",
+      "lat": 22.6483874,
+      "lon": 88.3961478,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12743627501"
+    },
+    {
+      "id": "osm-node-12747359273",
+      "name": "Recycling drop-off",
+      "lat": 15.6005807,
+      "lon": 73.8099654,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12747359273"
+    },
+    {
+      "id": "osm-node-12794240466",
+      "name": "Om Shakti Old Paper Mart",
+      "lat": 13.0669404,
+      "lon": 77.5569476,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12794240466"
+    },
+    {
+      "id": "osm-node-12850249307",
+      "name": "Recycling drop-off",
+      "lat": 25.2395656,
+      "lon": 86.9353191,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12850249307"
+    },
+    {
+      "id": "osm-node-12850249308",
+      "name": "Recycling drop-off",
+      "lat": 25.2395016,
+      "lon": 86.9362603,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12850249308"
+    },
+    {
+      "id": "osm-node-12850256311",
+      "name": "Recycling drop-off",
+      "lat": 25.2396268,
+      "lon": 86.9326322,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12850256311"
+    },
+    {
+      "id": "osm-node-12850256312",
+      "name": "Recycling drop-off",
+      "lat": 25.2396308,
+      "lon": 86.9334486,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12850256312"
+    },
+    {
+      "id": "osm-node-12850256313",
+      "name": "Recycling drop-off",
+      "lat": 25.2396196,
+      "lon": 86.9343394,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12850256313"
+    },
+    {
+      "id": "osm-node-12850287213",
+      "name": "Recycling drop-off",
+      "lat": 25.2398274,
+      "lon": 86.9410508,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12850287213"
+    },
+    {
+      "id": "osm-node-12864663165",
+      "name": "Sarvoday Paper And Metal Mart",
+      "lat": 19.1685867,
+      "lon": 72.9318659,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12864663165"
+    },
+    {
+      "id": "osm-node-12915988673",
+      "name": "Recycling drop-off",
+      "lat": 28.5740751,
+      "lon": 77.2301709,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12915988673"
+    },
+    {
+      "id": "osm-node-12950860525",
+      "name": "Recycling drop-off",
+      "lat": 28.6005108,
+      "lon": 77.2237609,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12950860525"
+    },
+    {
+      "id": "osm-node-12950994393",
+      "name": "Recycling drop-off",
+      "lat": 34.1641101,
+      "lon": 77.5842086,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12950994393"
+    },
+    {
+      "id": "osm-node-12950996893",
+      "name": "Recycling drop-off",
+      "lat": 28.600806,
+      "lon": 77.2240744,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12950996893"
+    },
+    {
+      "id": "osm-node-12965729419",
+      "name": "Recycling drop-off",
+      "lat": 28.5799826,
+      "lon": 77.1861848,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12965729419"
+    },
+    {
+      "id": "osm-node-12987525251",
+      "name": "Recycling drop-off",
+      "lat": 34.1640805,
+      "lon": 77.5842035,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12987525251"
+    },
+    {
+      "id": "osm-node-12987525252",
+      "name": "Recycling drop-off",
+      "lat": 34.1640491,
+      "lon": 77.5841971,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12987525252"
+    },
+    {
+      "id": "osm-node-12987525253",
+      "name": "Recycling drop-off",
+      "lat": 34.164018,
+      "lon": 77.5841923,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12987525253"
+    },
+    {
+      "id": "osm-node-12991072340",
+      "name": "Recycling drop-off",
+      "lat": 16.4934741,
+      "lon": 80.6897839,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12991072340"
+    },
+    {
+      "id": "osm-node-12993627312",
+      "name": "Kasturi Old Iron",
+      "lat": 16.5069966,
+      "lon": 80.6783582,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12993627312"
+    },
+    {
+      "id": "osm-node-12993630809",
+      "name": "Samba Siva Plastic",
+      "lat": 16.5071105,
+      "lon": 80.6789611,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12993630809"
+    },
+    {
+      "id": "osm-node-12993639246",
+      "name": "Venkatesh Iron Trash",
+      "lat": 16.506492,
+      "lon": 80.6795474,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12993639246"
+    },
+    {
+      "id": "osm-node-12993700347",
+      "name": "Recycling drop-off",
+      "lat": 16.5092318,
+      "lon": 80.7219534,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12993700347"
+    },
+    {
+      "id": "osm-node-12995805823",
+      "name": "Samvariya Old Paper Mart",
+      "lat": 19.2993135,
+      "lon": 72.8638312,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/12995805823"
+    },
+    {
+      "id": "osm-node-13075354407",
+      "name": "Recycling center",
+      "lat": 15.6304181,
+      "lon": 73.7743218,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13075354407"
+    },
+    {
+      "id": "osm-node-13075365274",
+      "name": "Tropical Dreams Recycling",
+      "lat": 15.6350129,
+      "lon": 73.7729574,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13075365274"
+    },
+    {
+      "id": "osm-node-13114134420",
+      "name": "Recycling center",
+      "lat": 15.5887295,
+      "lon": 73.8147813,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13114134420"
+    },
+    {
+      "id": "osm-node-13120597293",
+      "name": "Recycling center",
+      "lat": 15.5886202,
+      "lon": 73.8142584,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13120597293"
+    },
+    {
+      "id": "osm-node-13123604175",
+      "name": "Bottle Booth",
+      "lat": 8.7438714,
+      "lon": 76.698212,
+      "materials": [
+        "metal",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13123604175"
+    },
+    {
+      "id": "osm-node-13137385571",
+      "name": "Bottle Booth",
+      "lat": 8.7472018,
+      "lon": 76.7196603,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13137385571"
+    },
+    {
+      "id": "osm-node-13137392721",
+      "name": "Bottle Booth",
+      "lat": 8.7638359,
+      "lon": 76.7109122,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13137392721"
+    },
+    {
+      "id": "osm-node-13138233798",
+      "name": "Bottle Booth",
+      "lat": 8.8163841,
+      "lon": 76.704874,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13138233798"
+    },
+    {
+      "id": "osm-node-13138236572",
+      "name": "Bottle Booth",
+      "lat": 8.8096704,
+      "lon": 76.7017381,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13138236572"
+    },
+    {
+      "id": "osm-node-13138274573",
+      "name": "Bottle Booth",
+      "lat": 8.7686238,
+      "lon": 76.725094,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13138274573"
+    },
+    {
+      "id": "osm-node-13138277544",
+      "name": "Bottle Booth",
+      "lat": 8.805235,
+      "lon": 76.7004807,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13138277544"
+    },
+    {
+      "id": "osm-node-13138310659",
+      "name": "Bottle Booth",
+      "lat": 8.7670951,
+      "lon": 76.7127223,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13138310659"
+    },
+    {
+      "id": "osm-node-13140379463",
+      "name": "Bottle Booth",
+      "lat": 8.731386,
+      "lon": 76.7139633,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140379463"
+    },
+    {
+      "id": "osm-node-13140387911",
+      "name": "Bottle Booth",
+      "lat": 8.750923,
+      "lon": 76.7025021,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140387911"
+    },
+    {
+      "id": "osm-node-13140387918",
+      "name": "Bottle Booth",
+      "lat": 8.7851499,
+      "lon": 76.6707469,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140387918"
+    },
+    {
+      "id": "osm-node-13140388388",
+      "name": "Bottle Booth",
+      "lat": 8.7352664,
+      "lon": 76.7044513,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140388388"
+    },
+    {
+      "id": "osm-node-13140404265",
+      "name": "Bottle Booth",
+      "lat": 8.7361428,
+      "lon": 76.709365,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140404265"
+    },
+    {
+      "id": "osm-node-13140404915",
+      "name": "Bottle Booth",
+      "lat": 8.7359307,
+      "lon": 76.7040891,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140404915"
+    },
+    {
+      "id": "osm-node-13140414225",
+      "name": "Bottle Booth",
+      "lat": 8.7842488,
+      "lon": 76.6713893,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140414225"
+    },
+    {
+      "id": "osm-node-13140429606",
+      "name": "Bottle Booth",
+      "lat": 8.7641705,
+      "lon": 76.6964487,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140429606"
+    },
+    {
+      "id": "osm-node-13140433010",
+      "name": "Bottle Booth",
+      "lat": 8.7813274,
+      "lon": 76.6766715,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140433010"
+    },
+    {
+      "id": "osm-node-13140479391",
+      "name": "Recycling drop-off",
+      "lat": 8.7394455,
+      "lon": 76.7062198,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13140479391"
+    },
+    {
+      "id": "osm-node-13141030246",
+      "name": "Bottle Booth",
+      "lat": 8.7522757,
+      "lon": 76.718976,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13141030246"
+    },
+    {
+      "id": "osm-node-13144834802",
+      "name": "Recycling drop-off",
+      "lat": 12.4789361,
+      "lon": 75.2737007,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13144834802"
+    },
+    {
+      "id": "osm-node-13155263016",
+      "name": "Bottle Booth",
+      "lat": 8.7393446,
+      "lon": 76.730568,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13155263016"
+    },
+    {
+      "id": "osm-node-13155784310",
+      "name": "Bottle Booth",
+      "lat": 8.7630144,
+      "lon": 76.701622,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13155784310"
+    },
+    {
+      "id": "osm-node-13158238604",
+      "name": "Recycling drop-off",
+      "lat": 9.7177464,
+      "lon": 76.3190589,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13158238604"
+    },
+    {
+      "id": "osm-node-13159202246",
+      "name": "Bottle Booth",
+      "lat": 8.7440197,
+      "lon": 76.7355607,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13159202246"
+    },
+    {
+      "id": "osm-node-13159485657",
+      "name": "Recycling drop-off",
+      "lat": 9.6837937,
+      "lon": 76.3410703,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13159485657"
+    },
+    {
+      "id": "osm-node-13167724773",
+      "name": "Recycling drop-off",
+      "lat": 9.6740037,
+      "lon": 76.4215297,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13167724773"
+    },
+    {
+      "id": "osm-node-13167724778",
+      "name": "Recycling drop-off",
+      "lat": 9.6695384,
+      "lon": 76.4224351,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13167724778"
+    },
+    {
+      "id": "osm-node-13207278584",
+      "name": "Bottle Booth",
+      "lat": 10.1934937,
+      "lon": 76.5267238,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13207278584"
+    },
+    {
+      "id": "osm-node-13207278585",
+      "name": "Recycling drop-off",
+      "lat": 10.1935135,
+      "lon": 76.5264537,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13207278585"
+    },
+    {
+      "id": "osm-node-13376659944",
+      "name": "Recycling drop-off",
+      "lat": 9.6862982,
+      "lon": 76.3426732,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13376659944"
+    },
+    {
+      "id": "osm-node-13376659945",
+      "name": "Recycling drop-off",
+      "lat": 9.6862972,
+      "lon": 76.3426743,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13376659945"
+    },
+    {
+      "id": "osm-node-13390287201",
+      "name": "Recycling drop-off",
+      "lat": 9.6678018,
+      "lon": 76.5560722,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13390287201"
+    },
+    {
+      "id": "osm-node-13407018112",
+      "name": "Paper Mart",
+      "lat": 12.990815,
+      "lon": 77.7217097,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13407018112"
+    },
+    {
+      "id": "osm-node-13420305653",
+      "name": "Bharat Paper Marr",
+      "lat": 19.1640596,
+      "lon": 72.9387497,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13420305653"
+    },
+    {
+      "id": "osm-node-13447443830",
+      "name": "Amrita Recycling Centre",
+      "lat": 9.0892482,
+      "lon": 76.4876173,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13447443830"
+    },
+    {
+      "id": "osm-node-13447844328",
+      "name": "Recycling drop-off",
+      "lat": 9.0882646,
+      "lon": 76.4859221,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13447844328"
+    },
+    {
+      "id": "osm-node-13555911024",
+      "name": "Recycling drop-off",
+      "lat": 9.6761344,
+      "lon": 76.3921759,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911024"
+    },
+    {
+      "id": "osm-node-13555911025",
+      "name": "Recycling drop-off",
+      "lat": 9.6761362,
+      "lon": 76.392179,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911025"
+    },
+    {
+      "id": "osm-node-13555911026",
+      "name": "Recycling drop-off",
+      "lat": 9.6750703,
+      "lon": 76.3913112,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911026"
+    },
+    {
+      "id": "osm-node-13555911027",
+      "name": "Recycling drop-off",
+      "lat": 9.6750691,
+      "lon": 76.3913146,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911027"
+    },
+    {
+      "id": "osm-node-13555911028",
+      "name": "Recycling drop-off",
+      "lat": 9.6720924,
+      "lon": 76.3882009,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911028"
+    },
+    {
+      "id": "osm-node-13555911029",
+      "name": "Recycling drop-off",
+      "lat": 9.6720889,
+      "lon": 76.388202,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911029"
+    },
+    {
+      "id": "osm-node-13555911030",
+      "name": "Recycling drop-off",
+      "lat": 9.6636376,
+      "lon": 76.3828292,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911030"
+    },
+    {
+      "id": "osm-node-13555911031",
+      "name": "Recycling drop-off",
+      "lat": 9.6636369,
+      "lon": 76.3828328,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911031"
+    },
+    {
+      "id": "osm-node-13555911032",
+      "name": "Recycling drop-off",
+      "lat": 9.6522943,
+      "lon": 76.3741871,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911032"
+    },
+    {
+      "id": "osm-node-13555911033",
+      "name": "Recycling drop-off",
+      "lat": 9.6522925,
+      "lon": 76.3741903,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911033"
+    },
+    {
+      "id": "osm-node-13555911034",
+      "name": "Recycling drop-off",
+      "lat": 9.654977,
+      "lon": 76.3693214,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911034"
+    },
+    {
+      "id": "osm-node-13555911035",
+      "name": "Recycling drop-off",
+      "lat": 9.6549743,
+      "lon": 76.369319,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911035"
+    },
+    {
+      "id": "osm-node-13555911036",
+      "name": "Recycling drop-off",
+      "lat": 9.6565361,
+      "lon": 76.3681824,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911036"
+    },
+    {
+      "id": "osm-node-13555911037",
+      "name": "Recycling drop-off",
+      "lat": 9.6565337,
+      "lon": 76.3681851,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911037"
+    },
+    {
+      "id": "osm-node-13555911038",
+      "name": "Recycling drop-off",
+      "lat": 9.6578286,
+      "lon": 76.3665718,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911038"
+    },
+    {
+      "id": "osm-node-13555911039",
+      "name": "Recycling drop-off",
+      "lat": 9.6578281,
+      "lon": 76.3665755,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911039"
+    },
+    {
+      "id": "osm-node-13555911040",
+      "name": "Recycling drop-off",
+      "lat": 9.6582773,
+      "lon": 76.3644077,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911040"
+    },
+    {
+      "id": "osm-node-13555911041",
+      "name": "Recycling drop-off",
+      "lat": 9.658277,
+      "lon": 76.3644113,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911041"
+    },
+    {
+      "id": "osm-node-13555911042",
+      "name": "Recycling drop-off",
+      "lat": 9.6566433,
+      "lon": 76.358839,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911042"
+    },
+    {
+      "id": "osm-node-13555911043",
+      "name": "Recycling drop-off",
+      "lat": 9.6566443,
+      "lon": 76.3588425,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911043"
+    },
+    {
+      "id": "osm-node-13555911045",
+      "name": "Recycling drop-off",
+      "lat": 9.655534,
+      "lon": 76.3516083,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911045"
+    },
+    {
+      "id": "osm-node-13555911046",
+      "name": "Recycling drop-off",
+      "lat": 9.6555345,
+      "lon": 76.351612,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911046"
+    },
+    {
+      "id": "osm-node-13555911047",
+      "name": "Recycling drop-off",
+      "lat": 9.654429,
+      "lon": 76.3466807,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911047"
+    },
+    {
+      "id": "osm-node-13555911048",
+      "name": "Recycling drop-off",
+      "lat": 9.65443,
+      "lon": 76.3466843,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911048"
+    },
+    {
+      "id": "osm-node-13555911049",
+      "name": "Recycling drop-off",
+      "lat": 9.6544067,
+      "lon": 76.3428249,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911049"
+    },
+    {
+      "id": "osm-node-13555911050",
+      "name": "Recycling drop-off",
+      "lat": 9.6544031,
+      "lon": 76.3428247,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911050"
+    },
+    {
+      "id": "osm-node-13555911051",
+      "name": "Recycling drop-off",
+      "lat": 9.6543773,
+      "lon": 76.3406964,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911051"
+    },
+    {
+      "id": "osm-node-13555911052",
+      "name": "Recycling drop-off",
+      "lat": 9.6543774,
+      "lon": 76.3407001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911052"
+    },
+    {
+      "id": "osm-node-13555911053",
+      "name": "Recycling drop-off",
+      "lat": 9.684988,
+      "lon": 76.351686,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911053"
+    },
+    {
+      "id": "osm-node-13555911054",
+      "name": "Recycling drop-off",
+      "lat": 9.6849873,
+      "lon": 76.3516896,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13555911054"
+    },
+    {
+      "id": "osm-node-13572628390",
+      "name": "Recycling drop-off",
+      "lat": 28.591489,
+      "lon": 77.2309323,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572628390"
+    },
+    {
+      "id": "osm-node-13572902172",
+      "name": "Recycling drop-off",
+      "lat": 9.6550894,
+      "lon": 76.3377171,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572902172"
+    },
+    {
+      "id": "osm-node-13572902173",
+      "name": "Recycling drop-off",
+      "lat": 9.6551002,
+      "lon": 76.3376609,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572902173"
+    },
+    {
+      "id": "osm-node-13572902174",
+      "name": "Recycling drop-off",
+      "lat": 9.6651738,
+      "lon": 76.3422214,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572902174"
+    },
+    {
+      "id": "osm-node-13572902175",
+      "name": "Recycling drop-off",
+      "lat": 9.665171,
+      "lon": 76.3422239,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572902175"
+    },
+    {
+      "id": "osm-node-13572923334",
+      "name": "Bottle Booth",
+      "lat": 9.6761435,
+      "lon": 76.3921555,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572923334"
+    },
+    {
+      "id": "osm-node-13572923335",
+      "name": "Recycling drop-off",
+      "lat": 9.6767553,
+      "lon": 76.39323,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572923335"
+    },
+    {
+      "id": "osm-node-13572923336",
+      "name": "Recycling drop-off",
+      "lat": 9.6767531,
+      "lon": 76.3932328,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13572923336"
+    },
+    {
+      "id": "osm-node-13574906009",
+      "name": "Recycling drop-off",
+      "lat": 28.5730792,
+      "lon": 77.2304906,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13574906009"
+    },
+    {
+      "id": "osm-node-13576667532",
+      "name": "Recycling drop-off",
+      "lat": 9.5573804,
+      "lon": 76.5728945,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13576667532"
+    },
+    {
+      "id": "osm-node-13576667533",
+      "name": "Recycling drop-off",
+      "lat": 9.5573824,
+      "lon": 76.5728913,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13576667533"
+    },
+    {
+      "id": "osm-node-13593505895",
+      "name": "Recycling drop-off",
+      "lat": 9.6748437,
+      "lon": 76.3978259,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13593505895"
+    },
+    {
+      "id": "osm-node-13593505896",
+      "name": "Recycling drop-off",
+      "lat": 9.6748407,
+      "lon": 76.397824,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13593505896"
+    },
+    {
+      "id": "osm-node-13593505897",
+      "name": "Recycling drop-off",
+      "lat": 9.6715569,
+      "lon": 76.4082716,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13593505897"
+    },
+    {
+      "id": "osm-node-13593505898",
+      "name": "Recycling drop-off",
+      "lat": 9.6715562,
+      "lon": 76.4082751,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13593505898"
+    },
+    {
+      "id": "osm-node-13593505899",
+      "name": "Recycling drop-off",
+      "lat": 9.6716602,
+      "lon": 76.4147247,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13593505899"
+    },
+    {
+      "id": "osm-node-13593505900",
+      "name": "Recycling drop-off",
+      "lat": 9.6716614,
+      "lon": 76.4147281,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13593505900"
+    },
+    {
+      "id": "osm-node-13602673821",
+      "name": "Selvam Old Paper Mart",
+      "lat": 12.9574601,
+      "lon": 77.6594624,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13602673821"
+    },
+    {
+      "id": "osm-node-13607844518",
+      "name": "Priya Old Paper",
+      "lat": 12.9609617,
+      "lon": 77.7137155,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13607844518"
+    },
+    {
+      "id": "osm-node-13620896620",
+      "name": "Recycling drop-off",
+      "lat": 17.4470503,
+      "lon": 78.3479735,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13620896620"
+    },
+    {
+      "id": "osm-node-13679632525",
+      "name": "Bottle Booth",
+      "lat": 9.8311671,
+      "lon": 76.3611218,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13679632525"
+    },
+    {
+      "id": "osm-node-13703652001",
+      "name": "Micro Composting Center (MCC), Bhubaneswar Municipal Corporation (BMC)",
+      "lat": 20.2853125,
+      "lon": 85.8339375,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13703652001"
+    },
+    {
+      "id": "osm-node-13773028239",
+      "name": "Recycling drop-off",
+      "lat": 19.0786782,
+      "lon": 72.8376471,
+      "materials": [
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13773028239"
+    },
+    {
+      "id": "osm-node-13867131372",
+      "name": "Recycling center",
+      "lat": 12.9377353,
+      "lon": 80.1345033,
+      "materials": [
+        "plastic",
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13867131372"
+    },
+    {
+      "id": "osm-node-13945738972",
+      "name": "Recycling center",
+      "lat": 28.6414057,
+      "lon": 77.2998998,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13945738972"
+    },
+    {
+      "id": "osm-node-13962925341",
+      "name": "Recycling drop-off",
+      "lat": 11.9293717,
+      "lon": 79.8352573,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962925341"
+    },
+    {
+      "id": "osm-node-13962925342",
+      "name": "Recycling drop-off",
+      "lat": 11.9312456,
+      "lon": 79.8356125,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962925342"
+    },
+    {
+      "id": "osm-node-13962961032",
+      "name": "Recycling drop-off",
+      "lat": 11.9331075,
+      "lon": 79.8359743,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962961032"
+    },
+    {
+      "id": "osm-node-13962968210",
+      "name": "Recycling drop-off",
+      "lat": 11.9303845,
+      "lon": 79.8354394,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962968210"
+    },
+    {
+      "id": "osm-node-13962969970",
+      "name": "Recycling drop-off",
+      "lat": 11.9308526,
+      "lon": 79.8355393,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962969970"
+    },
+    {
+      "id": "osm-node-13962975877",
+      "name": "Recycling drop-off",
+      "lat": 11.9290729,
+      "lon": 79.8351906,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962975877"
+    },
+    {
+      "id": "osm-node-13962975878",
+      "name": "Recycling drop-off",
+      "lat": 11.9335227,
+      "lon": 79.8360472,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962975878"
+    },
+    {
+      "id": "osm-node-13962982291",
+      "name": "Recycling drop-off",
+      "lat": 11.9339981,
+      "lon": 79.8361124,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13962982291"
+    },
+    {
+      "id": "osm-node-13995354057",
+      "name": "KGN Enterprises",
+      "lat": 17.4171787,
+      "lon": 78.493829,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/13995354057"
+    },
+    {
+      "id": "osm-node-14001871598",
+      "name": "Recycling drop-off",
+      "lat": 10.2697429,
+      "lon": 76.4001154,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14001871598"
+    },
+    {
+      "id": "osm-node-14080202223",
+      "name": "Recycling drop-off",
+      "lat": 15.351768,
+      "lon": 76.492484,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14080202223"
+    },
+    {
+      "id": "osm-node-14080202257",
+      "name": "Recycling drop-off",
+      "lat": 15.351765,
+      "lon": 76.4925114,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14080202257"
+    },
+    {
+      "id": "osm-node-14119433241",
+      "name": "Recycling center",
+      "lat": 13.039855,
+      "lon": 80.2517055,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14119433241"
+    },
+    {
+      "id": "osm-node-14119496707",
+      "name": "AS Metal",
+      "lat": 13.0407103,
+      "lon": 80.2490351,
+      "materials": [
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14119496707"
+    },
+    {
+      "id": "osm-node-14219832480",
+      "name": "Recycling drop-off",
+      "lat": 9.564161,
+      "lon": 76.5172704,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14219832480"
+    },
+    {
+      "id": "osm-node-14219860550",
+      "name": "Recycling drop-off",
+      "lat": 9.5635162,
+      "lon": 76.5181323,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14219860550"
+    },
+    {
+      "id": "osm-node-14219860551",
+      "name": "Recycling drop-off",
+      "lat": 9.5641459,
+      "lon": 76.5183072,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14219860551"
+    },
+    {
+      "id": "osm-node-14219860552",
+      "name": "Recycling drop-off",
+      "lat": 9.5644742,
+      "lon": 76.5178545,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14219860552"
+    },
+    {
+      "id": "osm-node-14280592350",
+      "name": "Recycling drop-off",
+      "lat": 10.0993861,
+      "lon": 76.3327839,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14280592350"
+    },
+    {
+      "id": "osm-node-14285771889",
+      "name": "Recycling drop-off",
+      "lat": 15.4960236,
+      "lon": 73.8343116,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14285771889"
+    },
+    {
+      "id": "osm-node-14309126260",
+      "name": "Recycling drop-off",
+      "lat": 9.2071505,
+      "lon": 76.5968667,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14309126260"
+    },
+    {
+      "id": "osm-node-14309126261",
+      "name": "Recycling drop-off",
+      "lat": 9.2071798,
+      "lon": 76.5967604,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14309126261"
+    },
+    {
+      "id": "osm-node-14309231304",
+      "name": "Recycling drop-off",
+      "lat": 9.6703331,
+      "lon": 76.4222277,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14309231304"
+    },
+    {
+      "id": "osm-node-14309231305",
+      "name": "Recycling drop-off",
+      "lat": 9.6697819,
+      "lon": 76.422366,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14309231305"
+    },
+    {
+      "id": "osm-node-14309236255",
+      "name": "Recycling drop-off",
+      "lat": 9.1979811,
+      "lon": 76.5980329,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14309236255"
+    },
+    {
+      "id": "osm-node-14313368801",
+      "name": "Panchayat Bio-degradable waste recycling centre",
+      "lat": 11.9640277,
+      "lon": 79.7963822,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14313368801"
+    },
+    {
+      "id": "osm-node-14335713101",
+      "name": "Swach V Collect Centre, Aundh",
+      "lat": 18.5608858,
+      "lon": 73.8148283,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14335713101"
+    },
+    {
+      "id": "osm-node-14377332441",
+      "name": "Sri Ganpathi Old Paper Mart",
+      "lat": 12.9223549,
+      "lon": 77.5932674,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14377332441"
+    },
+    {
+      "id": "osm-node-14405300565",
+      "name": "Recycling drop-off",
+      "lat": 11.2999512,
+      "lon": 76.2219926,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14405300565"
+    },
+    {
+      "id": "osm-node-14405670633",
+      "name": "Recycling drop-off",
+      "lat": 11.2901047,
+      "lon": 76.2159601,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14405670633"
+    },
+    {
+      "id": "osm-node-14408529728",
+      "name": "Recycling drop-off",
+      "lat": 10.2025831,
+      "lon": 76.3790234,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14408529728"
+    },
+    {
+      "id": "osm-node-14408529730",
+      "name": "Recycling drop-off",
+      "lat": 10.2031594,
+      "lon": 76.3773964,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14408529730"
+    },
+    {
+      "id": "osm-node-14408529731",
+      "name": "Recycling drop-off",
+      "lat": 10.2001392,
+      "lon": 76.3789558,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/14408529731"
+    },
+    {
+      "id": "osm-node-1498574276",
+      "name": "M. Srinivasan",
+      "lat": 12.206896,
+      "lon": 78.054756,
+      "materials": [
+        "plastic",
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/1498574276"
+    },
+    {
+      "id": "osm-node-1611575656",
+      "name": "Biomass Gasifier Plant",
+      "lat": 13.4163918,
+      "lon": 75.2504965,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/1611575656"
+    },
+    {
+      "id": "osm-node-1826690209",
+      "name": "Recycling drop-off",
+      "lat": 28.718103,
+      "lon": 77.0872168,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/1826690209"
+    },
+    {
+      "id": "osm-node-1907931957",
+      "name": "Shimoga Water Supply Board",
+      "lat": 13.9135002,
+      "lon": 75.5646503,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/1907931957"
+    },
+    {
+      "id": "osm-node-1955943165",
+      "name": "Paper Plastic Metal Recycler",
+      "lat": 13.0369167,
+      "lon": 80.2163431,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/1955943165"
+    },
+    {
+      "id": "osm-node-2388205776",
+      "name": "Recycling drop-off",
+      "lat": 9.0891863,
+      "lon": 76.4877215,
+      "materials": [
+        "plastic",
+        "metal",
+        "glass",
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/2388205776"
+    },
+    {
+      "id": "osm-node-2788733297",
+      "name": "Recycling drop-off",
+      "lat": 32.1895559,
+      "lon": 76.3567876,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/2788733297"
+    },
+    {
+      "id": "osm-node-2858442344",
+      "name": "Recycling drop-off",
+      "lat": 32.2000572,
+      "lon": 76.3685289,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/2858442344"
+    },
+    {
+      "id": "osm-node-3153843550",
+      "name": "E-Waste Disposal Kiosk",
+      "lat": 12.8502327,
+      "lon": 77.6626971,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3153843550"
+    },
+    {
+      "id": "osm-node-3298923876",
+      "name": "Recycling drop-off",
+      "lat": 12.9566382,
+      "lon": 77.6560608,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3298923876"
+    },
+    {
+      "id": "osm-node-3313847819",
+      "name": "Recycling drop-off",
+      "lat": 12.9568134,
+      "lon": 77.6545474,
+      "materials": [
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3313847819"
+    },
+    {
+      "id": "osm-node-3369894895",
+      "name": "Recycling center",
+      "lat": 12.975857,
+      "lon": 77.6444886,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3369894895"
+    },
+    {
+      "id": "osm-node-3710229275",
+      "name": "Newspaper recycling store",
+      "lat": 12.9481356,
+      "lon": 77.5999766,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3710229275"
+    },
+    {
+      "id": "osm-node-3836988199",
+      "name": "Recycling center",
+      "lat": 12.978618,
+      "lon": 77.6360047,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3836988199"
+    },
+    {
+      "id": "osm-node-3921942655",
+      "name": "Recycling drop-off",
+      "lat": 15.4157405,
+      "lon": 75.0426682,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3921942655"
+    },
+    {
+      "id": "osm-node-3993262535",
+      "name": "Sri Vinayaka Old Paper Mart",
+      "lat": 12.9571268,
+      "lon": 77.6550423,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3993262535"
+    },
+    {
+      "id": "osm-node-3997777103",
+      "name": "Muniyappa Recycling",
+      "lat": 13.0045986,
+      "lon": 77.6250087,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/3997777103"
+    },
+    {
+      "id": "osm-node-4005718301",
+      "name": "Recycling center",
+      "lat": 12.9622101,
+      "lon": 77.6444944,
+      "materials": [
+        "plastic",
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4005718301"
+    },
+    {
+      "id": "osm-node-4063568048",
+      "name": "Recycling center",
+      "lat": 12.9449679,
+      "lon": 77.628935,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4063568048"
+    },
+    {
+      "id": "osm-node-4195979556",
+      "name": "Recycling center",
+      "lat": 12.9181994,
+      "lon": 77.5958138,
+      "materials": [
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4195979556"
+    },
+    {
+      "id": "osm-node-4197757513",
+      "name": "Mahesh Waste Paper Mart",
+      "lat": 12.9204873,
+      "lon": 77.5957966,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4197757513"
+    },
+    {
+      "id": "osm-node-4386506500",
+      "name": "Omshakti Paper Mart",
+      "lat": 13.0261242,
+      "lon": 77.6039117,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4386506500"
+    },
+    {
+      "id": "osm-node-4386506989",
+      "name": "Murugan Old Paper Mart",
+      "lat": 13.0240899,
+      "lon": 77.6032598,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4386506989"
+    },
+    {
+      "id": "osm-node-4782947621",
+      "name": "Paper Mart",
+      "lat": 12.963322,
+      "lon": 77.6568552,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4782947621"
+    },
+    {
+      "id": "osm-node-4810068222",
+      "name": "Recycling drop-off",
+      "lat": 18.9843198,
+      "lon": 72.8261077,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4810068222"
+    },
+    {
+      "id": "osm-node-4922432823",
+      "name": "Waste Warriors",
+      "lat": 32.2448593,
+      "lon": 76.3303195,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/4922432823"
+    },
+    {
+      "id": "osm-node-5147014550",
+      "name": "Waste Papers Mart",
+      "lat": 12.8063468,
+      "lon": 80.2246887,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5147014550"
+    },
+    {
+      "id": "osm-node-5170711399",
+      "name": "Kisan Plastic Collection Centre",
+      "lat": 11.876159,
+      "lon": 75.368837,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5170711399"
+    },
+    {
+      "id": "osm-node-5301695521",
+      "name": "Recycling drop-off",
+      "lat": 12.9576577,
+      "lon": 77.6622725,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5301695521"
+    },
+    {
+      "id": "osm-node-5530794628",
+      "name": "Recycling center",
+      "lat": 11.9397206,
+      "lon": 79.8202705,
+      "materials": [
+        "plastic",
+        "metal",
+        "glass",
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5530794628"
+    },
+    {
+      "id": "osm-node-5537917121",
+      "name": "Venkateswara Paper Mart",
+      "lat": 12.9760697,
+      "lon": 77.6378342,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5537917121"
+    },
+    {
+      "id": "osm-node-5570584569",
+      "name": "Tirumani Waste Paper Mart",
+      "lat": 12.9816004,
+      "lon": 80.2294099,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5570584569"
+    },
+    {
+      "id": "osm-node-5585635622",
+      "name": "Paper Mart",
+      "lat": 12.9745744,
+      "lon": 77.6393838,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5585635622"
+    },
+    {
+      "id": "osm-node-5665966355",
+      "name": "Recycling center",
+      "lat": 11.9378435,
+      "lon": 79.8205176,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5665966355"
+    },
+    {
+      "id": "osm-node-5751458822",
+      "name": "Recycling drop-off",
+      "lat": 11.9902484,
+      "lon": 79.8341991,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5751458822"
+    },
+    {
+      "id": "osm-node-5960737890",
+      "name": "Wajid",
+      "lat": 28.5309101,
+      "lon": 77.21717,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/5960737890"
+    },
+    {
+      "id": "osm-node-604185916",
+      "name": "Recycling drop-off",
+      "lat": 13.0354299,
+      "lon": 80.2507421,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/604185916"
+    },
+    {
+      "id": "osm-node-669245460",
+      "name": "Ravi Chandra's Shop",
+      "lat": 12.9476788,
+      "lon": 77.6244575,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/669245460"
+    },
+    {
+      "id": "osm-node-671960254",
+      "name": "Nazeer Aahamad",
+      "lat": 12.952612,
+      "lon": 77.6145588,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/671960254"
+    },
+    {
+      "id": "osm-node-671960262",
+      "name": "Chinni Raju",
+      "lat": 12.9528804,
+      "lon": 77.6152377,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/671960262"
+    },
+    {
+      "id": "osm-node-672011674",
+      "name": "Recycling drop-off",
+      "lat": 12.9515185,
+      "lon": 77.6142644,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011674"
+    },
+    {
+      "id": "osm-node-672011678",
+      "name": "Recycling drop-off",
+      "lat": 12.9517365,
+      "lon": 77.6139065,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011678"
+    },
+    {
+      "id": "osm-node-672011694",
+      "name": "Kumar",
+      "lat": 12.9511406,
+      "lon": 77.6174732,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011694"
+    },
+    {
+      "id": "osm-node-672011697",
+      "name": "Recycling drop-off",
+      "lat": 12.95132,
+      "lon": 77.6171638,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011697"
+    },
+    {
+      "id": "osm-node-672011699",
+      "name": "Recycling drop-off",
+      "lat": 12.9518495,
+      "lon": 77.6179311,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011699"
+    },
+    {
+      "id": "osm-node-672011700",
+      "name": "Recycling drop-off",
+      "lat": 12.9527732,
+      "lon": 77.6173961,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011700"
+    },
+    {
+      "id": "osm-node-672011704",
+      "name": "Sapha",
+      "lat": 12.9530481,
+      "lon": 77.6159168,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011704"
+    },
+    {
+      "id": "osm-node-672011707",
+      "name": "Palani",
+      "lat": 12.9537341,
+      "lon": 77.6168951,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011707"
+    },
+    {
+      "id": "osm-node-672011711",
+      "name": "Muniswamy",
+      "lat": 12.9529841,
+      "lon": 77.6175394,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672011711"
+    },
+    {
+      "id": "osm-node-672055796",
+      "name": "Baba shop",
+      "lat": 12.9495725,
+      "lon": 77.6176442,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672055796"
+    },
+    {
+      "id": "osm-node-672055799",
+      "name": "Vinayakai",
+      "lat": 12.9519474,
+      "lon": 77.6196686,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672055799"
+    },
+    {
+      "id": "osm-node-672055806",
+      "name": "sagai",
+      "lat": 12.9492855,
+      "lon": 77.617491,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672055806"
+    },
+    {
+      "id": "osm-node-672060567",
+      "name": "dumping site",
+      "lat": 12.9490485,
+      "lon": 77.6174494,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672060567"
+    },
+    {
+      "id": "osm-node-672071448",
+      "name": "Recycling drop-off",
+      "lat": 12.94905,
+      "lon": 77.617456,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672071448"
+    },
+    {
+      "id": "osm-node-672579813",
+      "name": "Sakappan",
+      "lat": 12.941691,
+      "lon": 77.6190666,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672579813"
+    },
+    {
+      "id": "osm-node-672579825",
+      "name": "Elumalai",
+      "lat": 12.9433716,
+      "lon": 77.6180879,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672579825"
+    },
+    {
+      "id": "osm-node-672579826",
+      "name": "Mukesh",
+      "lat": 12.9419692,
+      "lon": 77.6193404,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672579826"
+    },
+    {
+      "id": "osm-node-672579834",
+      "name": "Gajendra",
+      "lat": 12.9430309,
+      "lon": 77.6193113,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672579834"
+    },
+    {
+      "id": "osm-node-672579841",
+      "name": "Recycling drop-off",
+      "lat": 12.9433546,
+      "lon": 77.6187346,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/672579841"
+    },
+    {
+      "id": "osm-node-7464621312",
+      "name": "Recycling drop-off",
+      "lat": 10.1669659,
+      "lon": 76.4381982,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/7464621312"
+    },
+    {
+      "id": "osm-node-7472996221",
+      "name": "Recycling drop-off",
+      "lat": 9.3780732,
+      "lon": 76.5644502,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/7472996221"
+    },
+    {
+      "id": "osm-node-7525398616",
+      "name": "Recycling center",
+      "lat": 10.4693127,
+      "lon": 76.1164129,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/7525398616"
+    },
+    {
+      "id": "osm-node-7944497755",
+      "name": "Recycling center",
+      "lat": 22.030581,
+      "lon": 82.9584591,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/7944497755"
+    },
+    {
+      "id": "osm-node-8156850917",
+      "name": "Recycling center",
+      "lat": 11.0244157,
+      "lon": 76.9013107,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8156850917"
+    },
+    {
+      "id": "osm-node-8284509723",
+      "name": "fulchan scrap",
+      "lat": 28.5169422,
+      "lon": 77.1797173,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8284509723"
+    },
+    {
+      "id": "osm-node-8284556362",
+      "name": "Recycling drop-off",
+      "lat": 28.6383872,
+      "lon": 77.1362982,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8284556362"
+    },
+    {
+      "id": "osm-node-8324256154",
+      "name": "Recycling center",
+      "lat": 10.5957105,
+      "lon": 76.152649,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8324256154"
+    },
+    {
+      "id": "osm-node-8339483098",
+      "name": "Recycling drop-off",
+      "lat": 28.6254873,
+      "lon": 77.0490079,
+      "materials": [
+        "plastic",
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8339483098"
+    },
+    {
+      "id": "osm-node-8339515088",
+      "name": "Recycling drop-off",
+      "lat": 28.6074861,
+      "lon": 77.1024056,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8339515088"
+    },
+    {
+      "id": "osm-node-8339612102",
+      "name": "Recycling drop-off",
+      "lat": 28.5331739,
+      "lon": 77.2178316,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8339612102"
+    },
+    {
+      "id": "osm-node-8339647415",
+      "name": "Recycling drop-off",
+      "lat": 28.5328614,
+      "lon": 77.2185319,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8339647415"
+    },
+    {
+      "id": "osm-node-8347822974",
+      "name": "Recycling center",
+      "lat": 9.1611224,
+      "lon": 76.5220841,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8347822974"
+    },
+    {
+      "id": "osm-node-8375317477",
+      "name": "Recycling drop-off",
+      "lat": 28.5586561,
+      "lon": 77.2281475,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8375317477"
+    },
+    {
+      "id": "osm-node-8375360191",
+      "name": "Recycling drop-off",
+      "lat": 28.5780627,
+      "lon": 77.20107,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8375360191"
+    },
+    {
+      "id": "osm-node-8399912960",
+      "name": "Recycling drop-off",
+      "lat": 9.2246372,
+      "lon": 76.6776055,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8399912960"
+    },
+    {
+      "id": "osm-node-8402401551",
+      "name": "Recycling center",
+      "lat": 9.9719596,
+      "lon": 76.6040689,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8402401551"
+    },
+    {
+      "id": "osm-node-8414540543",
+      "name": "Recycling center",
+      "lat": 9.9712028,
+      "lon": 76.6076605,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8414540543"
+    },
+    {
+      "id": "osm-node-8426912850",
+      "name": "Recycling drop-off",
+      "lat": 28.505545,
+      "lon": 77.1987643,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8426912850"
+    },
+    {
+      "id": "osm-node-8455171858",
+      "name": "Recycling drop-off",
+      "lat": 28.6477207,
+      "lon": 77.1830783,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455171858"
+    },
+    {
+      "id": "osm-node-8455231127",
+      "name": "Recycling drop-off",
+      "lat": 28.6248149,
+      "lon": 77.0827928,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455231127"
+    },
+    {
+      "id": "osm-node-8455252056",
+      "name": "Recycling drop-off",
+      "lat": 28.6553854,
+      "lon": 77.2252907,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455252056"
+    },
+    {
+      "id": "osm-node-8455263990",
+      "name": "Recycling drop-off",
+      "lat": 28.6018363,
+      "lon": 77.0674785,
+      "materials": [
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455263990"
+    },
+    {
+      "id": "osm-node-8455268502",
+      "name": "Recycling drop-off",
+      "lat": 28.5722813,
+      "lon": 77.1674037,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455268502"
+    },
+    {
+      "id": "osm-node-8455286937",
+      "name": "Recycling drop-off",
+      "lat": 28.5384502,
+      "lon": 77.28421,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455286937"
+    },
+    {
+      "id": "osm-node-8455319978",
+      "name": "Recycling drop-off",
+      "lat": 28.6685658,
+      "lon": 77.0719804,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455319978"
+    },
+    {
+      "id": "osm-node-8455326766",
+      "name": "Recycling drop-off",
+      "lat": 28.6123037,
+      "lon": 77.288571,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455326766"
+    },
+    {
+      "id": "osm-node-8455357906",
+      "name": "Recycling drop-off",
+      "lat": 28.6793814,
+      "lon": 77.262765,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455357906"
+    },
+    {
+      "id": "osm-node-8455375050",
+      "name": "Recycling drop-off",
+      "lat": 28.6715035,
+      "lon": 77.1493226,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8455375050"
+    },
+    {
+      "id": "osm-node-8457578540",
+      "name": "Recycling drop-off",
+      "lat": 28.7372689,
+      "lon": 77.1374533,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8457578540"
+    },
+    {
+      "id": "osm-node-8457599488",
+      "name": "Recycling drop-off",
+      "lat": 28.7323467,
+      "lon": 77.1907981,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8457599488"
+    },
+    {
+      "id": "osm-node-8457624562",
+      "name": "Recycling drop-off",
+      "lat": 28.6791528,
+      "lon": 77.2066068,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8457624562"
+    },
+    {
+      "id": "osm-node-8457645380",
+      "name": "Recycling drop-off",
+      "lat": 28.7624535,
+      "lon": 77.1860686,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8457645380"
+    },
+    {
+      "id": "osm-node-8457662200",
+      "name": "Recycling drop-off",
+      "lat": 28.6666537,
+      "lon": 77.078082,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8457662200"
+    },
+    {
+      "id": "osm-node-8458397474",
+      "name": "Recycling drop-off",
+      "lat": 28.7003092,
+      "lon": 77.2070039,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458397474"
+    },
+    {
+      "id": "osm-node-8458448673",
+      "name": "Recycling drop-off",
+      "lat": 28.6701278,
+      "lon": 77.2989946,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458448673"
+    },
+    {
+      "id": "osm-node-8458619368",
+      "name": "Recycling drop-off",
+      "lat": 28.618785,
+      "lon": 77.0887856,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458619368"
+    },
+    {
+      "id": "osm-node-8458633498",
+      "name": "Recycling drop-off",
+      "lat": 28.6553647,
+      "lon": 77.1598564,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458633498"
+    },
+    {
+      "id": "osm-node-8458707446",
+      "name": "Recycling drop-off",
+      "lat": 28.7145401,
+      "lon": 77.2280371,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458707446"
+    },
+    {
+      "id": "osm-node-8458748804",
+      "name": "Recycling drop-off",
+      "lat": 28.6077031,
+      "lon": 77.0482428,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458748804"
+    },
+    {
+      "id": "osm-node-8458777636",
+      "name": "Recycling drop-off",
+      "lat": 28.6402218,
+      "lon": 77.0673658,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458777636"
+    },
+    {
+      "id": "osm-node-8458851899",
+      "name": "Recycling drop-off",
+      "lat": 28.4681478,
+      "lon": 77.0869142,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458851899"
+    },
+    {
+      "id": "osm-node-8458890524",
+      "name": "Recycling drop-off",
+      "lat": 28.4945954,
+      "lon": 77.0597164,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458890524"
+    },
+    {
+      "id": "osm-node-8458905264",
+      "name": "Recycling drop-off",
+      "lat": 28.6974922,
+      "lon": 77.1859588,
+      "materials": [
+        "plastic",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8458905264"
+    },
+    {
+      "id": "osm-node-8570694213",
+      "name": "3R",
+      "lat": 8.4727924,
+      "lon": 76.9794386,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8570694213"
+    },
+    {
+      "id": "osm-node-8725224024",
+      "name": "Recycling center",
+      "lat": 9.5940052,
+      "lon": 76.4670018,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8725224024"
+    },
+    {
+      "id": "osm-node-8838981069",
+      "name": "Akri kada",
+      "lat": 9.2666903,
+      "lon": 76.7854596,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8838981069"
+    },
+    {
+      "id": "osm-node-8898496399",
+      "name": "Recycling center",
+      "lat": 10.6932874,
+      "lon": 76.3436033,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/8898496399"
+    },
+    {
+      "id": "osm-node-9104733803",
+      "name": "Recycling center",
+      "lat": 10.3680391,
+      "lon": 77.9874534,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/9104733803"
+    },
+    {
+      "id": "osm-node-9354555917",
+      "name": "Adoor muncipality plastic shredding centre",
+      "lat": 9.1534314,
+      "lon": 76.7372943,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/9354555917"
+    },
+    {
+      "id": "osm-node-9864897717",
+      "name": "न्यू महाराष्ट्र स्क्रॅप सेंटर",
+      "lat": 18.5972303,
+      "lon": 73.7692466,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/node/9864897717"
+    },
+    {
+      "id": "osm-way-1020603769",
+      "name": "Margao Material Recovery Facility",
+      "lat": 15.25859165,
+      "lon": 74.016813,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1020603769"
+    },
+    {
+      "id": "osm-way-1086044094",
+      "name": "BBMP",
+      "lat": 12.9508087,
+      "lon": 77.62158325,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1086044094"
+    },
+    {
+      "id": "osm-way-1119416862",
+      "name": "Recycling drop-off",
+      "lat": 21.17836075,
+      "lon": 79.06260474999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1119416862"
+    },
+    {
+      "id": "osm-way-1119896626",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.9646757,
+      "lon": 77.61455649999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1119896626"
+    },
+    {
+      "id": "osm-way-1119921709",
+      "name": "Dry Waste Collection Center",
+      "lat": 13.089203600000001,
+      "lon": 77.58933175,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1119921709"
+    },
+    {
+      "id": "osm-way-1119921713",
+      "name": "Wet Waste Transfer Station",
+      "lat": 12.961001450000001,
+      "lon": 77.64012615,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1119921713"
+    },
+    {
+      "id": "osm-way-1119921714",
+      "name": "Recycling center",
+      "lat": 13.003890649999999,
+      "lon": 77.54269819999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1119921714"
+    },
+    {
+      "id": "osm-way-1119921719",
+      "name": "BBMP Dry Waste Collection Centre",
+      "lat": 13.0258745,
+      "lon": 77.57771205,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1119921719"
+    },
+    {
+      "id": "osm-way-1149853388",
+      "name": "Recycling center",
+      "lat": 12.9576843,
+      "lon": 80.24364815,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1149853388"
+    },
+    {
+      "id": "osm-way-1180631172",
+      "name": "Recycling center",
+      "lat": 15.600248650000001,
+      "lon": 73.75341075,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1180631172"
+    },
+    {
+      "id": "osm-way-1182220276",
+      "name": "Recycling center",
+      "lat": 15.62002235,
+      "lon": 73.8121712,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1182220276"
+    },
+    {
+      "id": "osm-way-1190302279",
+      "name": "Recycling center",
+      "lat": 28.73525645,
+      "lon": 77.1674323,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1190302279"
+    },
+    {
+      "id": "osm-way-1203153945",
+      "name": "Panjim Wet Waste Centre",
+      "lat": 15.4959355,
+      "lon": 73.83996605,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1203153945"
+    },
+    {
+      "id": "osm-way-1213287256",
+      "name": "Plastic Shredding Unit",
+      "lat": 9.961929999999999,
+      "lon": 76.29342045,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1213287256"
+    },
+    {
+      "id": "osm-way-1283523536",
+      "name": "Recycling drop-off",
+      "lat": 18.7585379,
+      "lon": 73.5537411,
+      "materials": [
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1283523536"
+    },
+    {
+      "id": "osm-way-1283852689",
+      "name": "Recycling drop-off",
+      "lat": 23.0916333,
+      "lon": 72.5233764,
+      "materials": [
+        "e-waste"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1283852689"
+    },
+    {
+      "id": "osm-way-1284617387",
+      "name": "Recycling center",
+      "lat": 28.5532215,
+      "lon": 77.25252599999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1284617387"
+    },
+    {
+      "id": "osm-way-1300887618",
+      "name": "Recycling center",
+      "lat": 28.645370800000002,
+      "lon": 77.19147665,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1300887618"
+    },
+    {
+      "id": "osm-way-1311251817",
+      "name": "BBMP Waste Transfer Station",
+      "lat": 12.976999849999999,
+      "lon": 77.58043624999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1311251817"
+    },
+    {
+      "id": "osm-way-133611907",
+      "name": "Water Treatment Plant Udupi",
+      "lat": 13.358218449999999,
+      "lon": 74.7425009,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/133611907"
+    },
+    {
+      "id": "osm-way-1340245552",
+      "name": "Recycling Center",
+      "lat": 15.495512300000001,
+      "lon": 73.8360289,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1340245552"
+    },
+    {
+      "id": "osm-way-1354899692",
+      "name": "Recycling center",
+      "lat": 28.5904655,
+      "lon": 77.04165255,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1354899692"
+    },
+    {
+      "id": "osm-way-1359276164",
+      "name": "Project Lighthouse For Plastics",
+      "lat": 15.58957285,
+      "lon": 73.81091035,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1359276164"
+    },
+    {
+      "id": "osm-way-1361157948",
+      "name": "Recycling center",
+      "lat": 25.2976484,
+      "lon": 82.99373485,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1361157948"
+    },
+    {
+      "id": "osm-way-1370770543",
+      "name": "SVCC Waste Treatment",
+      "lat": 13.02323265,
+      "lon": 77.75927375,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1370770543"
+    },
+    {
+      "id": "osm-way-1377260790",
+      "name": "Recycling center",
+      "lat": 12.7871515,
+      "lon": 77.85318649999999,
+      "materials": [
+        "plastic",
+        "metal",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1377260790"
+    },
+    {
+      "id": "osm-way-1379865597",
+      "name": "Bicholim Material Recovery Facility",
+      "lat": 15.60549935,
+      "lon": 73.96326540000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379865597"
+    },
+    {
+      "id": "osm-way-1379870552",
+      "name": "Sankhali Material Recovery Facility",
+      "lat": 15.560565050000001,
+      "lon": 74.03050300000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379870552"
+    },
+    {
+      "id": "osm-way-1379871001",
+      "name": "Valpoi Material Recovery Facility",
+      "lat": 15.5309114,
+      "lon": 74.1257992,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379871001"
+    },
+    {
+      "id": "osm-way-1379871859",
+      "name": "Ponda Material Recovery Facility",
+      "lat": 15.412687250000001,
+      "lon": 74.03537929999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379871859"
+    },
+    {
+      "id": "osm-way-1379875442",
+      "name": "Sonsodo Material Recovery Facility",
+      "lat": 15.2930388,
+      "lon": 73.98899320000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379875442"
+    },
+    {
+      "id": "osm-way-1379878763",
+      "name": "Cuncolim Material Recovery Facility",
+      "lat": 15.17886435,
+      "lon": 74.02466795,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379878763"
+    },
+    {
+      "id": "osm-way-1379880047",
+      "name": "Canacona Material Recovery Facility",
+      "lat": 15.02991115,
+      "lon": 74.02199775,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379880047"
+    },
+    {
+      "id": "osm-way-1379881091",
+      "name": "Quepem Wet Waste Management Site",
+      "lat": 15.19518115,
+      "lon": 74.1073698,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379881091"
+    },
+    {
+      "id": "osm-way-1379881658",
+      "name": "Panjim Recycling Centre",
+      "lat": 15.492294900000001,
+      "lon": 73.83491365,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379881658"
+    },
+    {
+      "id": "osm-way-1379887501",
+      "name": "Panjim Material Recovery Facility",
+      "lat": 15.48724425,
+      "lon": 73.8212049,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1379887501"
+    },
+    {
+      "id": "osm-way-1428267279",
+      "name": "Recycling center",
+      "lat": 21.849119,
+      "lon": 83.9213711,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1428267279"
+    },
+    {
+      "id": "osm-way-1453334104",
+      "name": "Mayapur Clean & Green",
+      "lat": 23.427490900000002,
+      "lon": 88.4068889,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1453334104"
+    },
+    {
+      "id": "osm-way-1460418465",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.961130050000001,
+      "lon": 77.64039,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1460418465"
+    },
+    {
+      "id": "osm-way-1468457576",
+      "name": "Solid Waste Management",
+      "lat": 13.21041435,
+      "lon": 77.68094515,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1468457576"
+    },
+    {
+      "id": "osm-way-1510600884",
+      "name": "BBMP Dry Waste Collection Deposit",
+      "lat": 13.04265635,
+      "lon": 77.64179975,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1510600884"
+    },
+    {
+      "id": "osm-way-1528397695",
+      "name": "Recycling center",
+      "lat": 32.1968909,
+      "lon": 76.3658985,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1528397695"
+    },
+    {
+      "id": "osm-way-1540972242",
+      "name": "Recycling drop-off",
+      "lat": 12.37156205,
+      "lon": 92.92343885,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1540972242"
+    },
+    {
+      "id": "osm-way-1540972243",
+      "name": "Recycling drop-off",
+      "lat": 12.37133905,
+      "lon": 92.92345155,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1540972243"
+    },
+    {
+      "id": "osm-way-1552976991",
+      "name": "Junnar Pastic Recycling Centre",
+      "lat": 19.191223,
+      "lon": 73.88861825000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1552976991"
+    },
+    {
+      "id": "osm-way-1562039097",
+      "name": "Recycling drop-off",
+      "lat": 22.40908125,
+      "lon": 69.00980335,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1562039097"
+    },
+    {
+      "id": "osm-way-1562039098",
+      "name": "Recycling drop-off",
+      "lat": 22.40914945,
+      "lon": 69.0093008,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1562039098"
+    },
+    {
+      "id": "osm-way-1569181379",
+      "name": "Waste Transfer Station",
+      "lat": 12.917383099999999,
+      "lon": 77.49088789999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1569181379"
+    },
+    {
+      "id": "osm-way-1575669503",
+      "name": "Plastic Recycling",
+      "lat": 15.500889050000001,
+      "lon": 73.85746035,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/1575669503"
+    },
+    {
+      "id": "osm-way-166560378",
+      "name": "BBMP Dry Waste Collection Center",
+      "lat": 12.96122485,
+      "lon": 77.64038740000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/166560378"
+    },
+    {
+      "id": "osm-way-166953984",
+      "name": "Recycling drop-off",
+      "lat": 13.32751395,
+      "lon": 77.5492528,
+      "materials": [
+        "metal",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/166953984"
+    },
+    {
+      "id": "osm-way-168700098",
+      "name": "Muncipality Water purification Plant",
+      "lat": 13.6868753,
+      "lon": 75.23671255,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/168700098"
+    },
+    {
+      "id": "osm-way-180353237",
+      "name": "Water Treatment Plant",
+      "lat": 13.91295575,
+      "lon": 75.56460625,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/180353237"
+    },
+    {
+      "id": "osm-way-180353623",
+      "name": "Water Treatment Plant",
+      "lat": 13.91331635,
+      "lon": 75.5653144,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/180353623"
+    },
+    {
+      "id": "osm-way-186263434",
+      "name": "Sewage Treatment Plant",
+      "lat": 13.340353100000002,
+      "lon": 74.7957643,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/186263434"
+    },
+    {
+      "id": "osm-way-230315339",
+      "name": "Amrita compost",
+      "lat": 9.08775365,
+      "lon": 76.48623710000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/230315339"
+    },
+    {
+      "id": "osm-way-296602327",
+      "name": "BBMP Dry Waste Segregation Center",
+      "lat": 12.9609722,
+      "lon": 77.6419534,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/296602327"
+    },
+    {
+      "id": "osm-way-310521019",
+      "name": "Brahmapuram Waste recycling Plant",
+      "lat": 9.9929655,
+      "lon": 76.3636542,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/310521019"
+    },
+    {
+      "id": "osm-way-345831165",
+      "name": "OSMAN TRADERS",
+      "lat": 16.7488952,
+      "lon": 78.00530069999999,
+      "materials": [
+        "plastic",
+        "metal",
+        "glass"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/345831165"
+    },
+    {
+      "id": "osm-way-351582432",
+      "name": "Kamala Refinery",
+      "lat": 12.99695745,
+      "lon": 77.61912615,
+      "materials": [
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/351582432"
+    },
+    {
+      "id": "osm-way-388082554",
+      "name": "Recycling center",
+      "lat": 12.014360750000002,
+      "lon": 79.80797725,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/388082554"
+    },
+    {
+      "id": "osm-way-388082555",
+      "name": "Recycling center",
+      "lat": 12.0141388,
+      "lon": 79.8078659,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/388082555"
+    },
+    {
+      "id": "osm-way-388083699",
+      "name": "Eco Service",
+      "lat": 12.014111,
+      "lon": 79.80773185000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/388083699"
+    },
+    {
+      "id": "osm-way-411039957",
+      "name": "Recycling center",
+      "lat": 12.959773850000001,
+      "lon": 77.64650685000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/411039957"
+    },
+    {
+      "id": "osm-way-430785921",
+      "name": "Manikyakuppa - Waste Yard",
+      "lat": 11.57104725,
+      "lon": 75.75449019999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/430785921"
+    },
+    {
+      "id": "osm-way-450584256",
+      "name": "Recycling center",
+      "lat": 12.944966350000001,
+      "lon": 77.68655774999999,
+      "materials": [
+        "plastic",
+        "metal"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/450584256"
+    },
+    {
+      "id": "osm-way-497319706",
+      "name": "Compost Yard-Vellalore",
+      "lat": 10.958416249999999,
+      "lon": 76.9999547,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/497319706"
+    },
+    {
+      "id": "osm-way-530598182",
+      "name": "BBMP Dry Waste Collection Deposit",
+      "lat": 13.04250415,
+      "lon": 77.6418281,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/530598182"
+    },
+    {
+      "id": "osm-way-577482816",
+      "name": "Recycling center",
+      "lat": 12.969903949999999,
+      "lon": 77.71516075,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/577482816"
+    },
+    {
+      "id": "osm-way-584424774",
+      "name": "Recycling center",
+      "lat": 10.01307585,
+      "lon": 76.3634521,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/584424774"
+    },
+    {
+      "id": "osm-way-647132338",
+      "name": "Recycling center",
+      "lat": 10.707069950000001,
+      "lon": 76.31255215,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/647132338"
+    },
+    {
+      "id": "osm-way-736693648",
+      "name": "Recycling drop-off",
+      "lat": 8.6091863,
+      "lon": 76.99792445,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/736693648"
+    },
+    {
+      "id": "osm-way-738328722",
+      "name": "Recycling center",
+      "lat": 9.9647143,
+      "lon": 76.40964844999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/738328722"
+    },
+    {
+      "id": "osm-way-756175737",
+      "name": "Recycling center",
+      "lat": 32.03640715,
+      "lon": 76.71496690000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/756175737"
+    },
+    {
+      "id": "osm-way-756928552",
+      "name": "Keeti Panchyat Recyle area",
+      "lat": 11.3701481,
+      "lon": 76.72717985,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/756928552"
+    },
+    {
+      "id": "osm-way-765737495",
+      "name": "Saligao Solid Waste Management Facility",
+      "lat": 15.5289176,
+      "lon": 73.7810522,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/765737495"
+    },
+    {
+      "id": "osm-way-789750613",
+      "name": "Sivasakthi Old Scrap,Karukachal",
+      "lat": 9.50410075,
+      "lon": 76.63983395,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/789750613"
+    },
+    {
+      "id": "osm-way-796458056",
+      "name": "BBMP Waste Transfer Station",
+      "lat": 12.966749499999999,
+      "lon": 77.61412535,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/796458056"
+    },
+    {
+      "id": "osm-way-798396551",
+      "name": "Recycling drop-off",
+      "lat": 9.397288199999998,
+      "lon": 76.5772084,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/798396551"
+    },
+    {
+      "id": "osm-way-798412021",
+      "name": "Recycling drop-off",
+      "lat": 10.01410885,
+      "lon": 76.94485750000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/798412021"
+    },
+    {
+      "id": "osm-way-799570017",
+      "name": "Recycling center",
+      "lat": 8.95958325,
+      "lon": 76.83993655,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/799570017"
+    },
+    {
+      "id": "osm-way-801612994",
+      "name": "Muncipality Recyling Palakkad",
+      "lat": 10.7666161,
+      "lon": 76.68803274999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/801612994"
+    },
+    {
+      "id": "osm-way-801665282",
+      "name": "Recycling center",
+      "lat": 8.529213649999999,
+      "lon": 76.92851635,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/801665282"
+    },
+    {
+      "id": "osm-way-804897196",
+      "name": "Recycling center",
+      "lat": 11.1143282,
+      "lon": 76.3234836,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/804897196"
+    },
+    {
+      "id": "osm-way-817760982",
+      "name": "Recycling drop-off",
+      "lat": 8.5761676,
+      "lon": 77.08449884999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/817760982"
+    },
+    {
+      "id": "osm-way-827759583",
+      "name": "Recycling center",
+      "lat": 10.99373345,
+      "lon": 76.14885459999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/827759583"
+    },
+    {
+      "id": "osm-way-893313873",
+      "name": "Recycling drop-off",
+      "lat": 19.17725545,
+      "lon": 72.97244105,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/893313873"
+    },
+    {
+      "id": "osm-way-914301125",
+      "name": "Recycling center",
+      "lat": 19.2105712,
+      "lon": 72.98298935,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/914301125"
+    },
+    {
+      "id": "osm-way-922383172",
+      "name": "Government Organic Fertilizer Store",
+      "lat": 12.958542999999999,
+      "lon": 80.18742854999999,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/922383172"
+    },
+    {
+      "id": "osm-way-934320934",
+      "name": "Haritha Keralam Garbage Collection Centre, Padinjare Vemballur",
+      "lat": 10.26812525,
+      "lon": 76.1457351,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/934320934"
+    },
+    {
+      "id": "osm-way-947219596",
+      "name": "PLastic Recycling Plant",
+      "lat": 11.861257,
+      "lon": 75.44985994999999,
+      "materials": [
+        "plastic"
+      ],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/947219596"
+    },
+    {
+      "id": "osm-way-988443221",
+      "name": "YAVATMAL MAHANAGARPALIKA WASTE MANAGEMENT SYSTEM",
+      "lat": 20.3363996,
+      "lon": 78.15532755000001,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/988443221"
+    },
+    {
+      "id": "osm-way-996044807",
+      "name": "BBMP Waste Collection Center",
+      "lat": 13.0159004,
+      "lon": 77.5553757,
+      "materials": [],
+      "source": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/996044807"
+    }
+  ]
+}

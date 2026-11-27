@@ -26,7 +26,7 @@ export function Locator() {
   const [position, setPosition] = useState<Coordinate>();
   const [filter, setFilter] = useState("");
   const [selected, select] = useState("");
-  const [data, setData] = useState<{centers: Point[]; live_available: boolean}>();
+  const [data, setData] = useState<{centers: Point[]; live_available: boolean; snapshot_date: string | null}>();
   const [error, setError] = useState("");
   const [geo, setGeo] = useState("");
   const [busy, setBusy] = useState(true);
@@ -116,13 +116,14 @@ export function Locator() {
         <section className="card results">
           <h2>{data.centers.length} nearby {data.centers.length === 1 ? "result" : "results"}</h2>
           <p className="listing-source" role="status">
-            {data.live_available ? "OpenStreetMap and local listings." : "Showing local listings while live results are unavailable."}
+            {data.snapshot_date ? <>Saved <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> listings ({data.snapshot_date}).</>
+              : data.live_available ? "OpenStreetMap and local listings." : "Showing local listings while live results are unavailable."}
           </p>
           {data.centers.length === 0 && <div className="stack">
             <p>{data.live_available
               ? "No listed centers matched. Some facilities may be missing from the map or their accepted materials may be unlisted."
               : "The live directory did not respond and there are no matching saved listings in this area."}</p>
-            <a href="https://apps.bbmpgov.in/SWM/Home/Forms/Home.aspx" target="_blank" rel="noreferrer">Bengaluru municipal waste directory</a>
+            {position === BENGALURU && <a href="https://apps.bbmpgov.in/SWM/Home/Forms/Home.aspx" target="_blank" rel="noreferrer">Bengaluru municipal waste directory</a>}
           </div>}
           {data.centers.map(center => <article className="activity place-card" key={center.id}>
             <button className="button ghost place-title" aria-pressed={selected === center.id} onClick={() => select(center.id)}>
