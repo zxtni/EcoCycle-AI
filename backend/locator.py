@@ -19,6 +19,7 @@ MATERIAL_TAGS = {
     "e-waste": ("electrical_items", "small_appliances", "electronics", "computers"),
 }
 BENGALURU = (12.9716, 77.5946)
+SEARCH_RADIUS_KM = 1000
 PROVIDERS = (
     "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
@@ -36,7 +37,7 @@ def distance(lat: float, lon: float, dest_lat: float, dest_lon: float) -> float:
 @lru_cache(maxsize=96)
 def overpass(lat: float, lon: float, bucket: int) -> list[dict] | None:
     # Include a margin for rounding the cache coordinates. Filter exact distances below.
-    scope = f"(around:101000,{lat},{lon})"
+    scope = f"(around:{(SEARCH_RADIUS_KM + 1) * 1000},{lat},{lon})"
     query = (
         f"[out:json][timeout:7];(nwr[amenity=recycling]{scope};"
         f"nwr[recycling_type=centre]{scope};);out center;"
@@ -113,7 +114,7 @@ def centers(
     results = []
     for center in combined:
         km = distance(lat, lon, center["lat"], center["lon"])
-        if km <= 100 and (material is None or material in center["materials"]):
+        if km <= SEARCH_RADIUS_KM and (material is None or material in center["materials"]):
             results.append({**center, "distance": round(km, 2)})
     results.sort(key=lambda item: item["distance"])
     return {"centers": results[:150], "live_available": live is not None}
