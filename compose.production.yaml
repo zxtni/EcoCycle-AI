@@ -6,7 +6,6 @@ services:
       APP_ENV: production
       DATABASE_URL: "${DATABASE_URL:?Set the Supabase PostgreSQL URI in .env}"
       WEB_ORIGIN: "${WEB_ORIGIN:?Set the website HTTPS origin in .env}"
-      GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
     volumes:
       - forecast:/data
     healthcheck:

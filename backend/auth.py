@@ -7,8 +7,6 @@ from datetime import timedelta
 from typing import Annotated
 
 from fastapi import APIRouter, Cookie, Depends, HTTPException, Response
-from google.auth.transport.requests import Request as GoogleRequest
-from google.oauth2 import id_token
 from pydantic import BaseModel, EmailStr, Field
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
@@ -28,10 +26,6 @@ class Credentials(BaseModel):
 
 class Registration(Credentials):
     name: str = Field(min_length=1, max_length=80, pattern=r"\S")
-
-
-class GoogleToken(BaseModel):
-    credential: str = Field(min_length=20, max_length=8192)
 
 
 def password_hash(password: str, salt: bytes | None = None) -> str:
@@ -113,33 +107,6 @@ def login(body: Credentials, db: DB, response: Response):
     check = password_hash(body.password, salt)
     if not user or not hmac.compare_digest(stored, check):
         raise HTTPException(401, "Email or password is incorrect.")
-    return issue(db, user, response)
-
-
-@router.get("/google/config")
-def google_config():
-    return {"client_id": os.getenv("GOOGLE_CLIENT_ID", "")}
-
-
-@router.post("/google")
-def google_signin(body: GoogleToken, db: DB, response: Response):
-    audience = os.getenv("GOOGLE_CLIENT_ID")
-    if not audience:
-        raise HTTPException(503, "Google sign-in needs a configured OAuth client.")
-    try:
-        claims = id_token.verify_oauth2_token(body.credential, GoogleRequest(), audience)
-    except ValueError:
-        raise HTTPException(401, "Invalid Google identity.")
-    if not claims.get("email_verified"):
-        raise HTTPException(403, "Verify your Google email first.")
-    email = str(claims["email"]).lower()
-    user = db.scalar(select(User).where(User.email == email))
-    if user and not (email.endswith("@gmail.com") or claims.get("hd")):
-        raise HTTPException(403, "Use the original sign-in method for this email.")
-    if not user:
-        user = User(name=str(claims.get("name") or email)[:80], email=email, password=None)
-        db.add(user)
-        db.flush()
     return issue(db, user, response)
 
 

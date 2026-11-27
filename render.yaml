@@ -15,7 +15,5 @@ services:
         sync: false
       - key: WEB_ORIGIN
         sync: false
-      - key: GOOGLE_CLIENT_ID
-        sync: false
       - key: FORECAST_MODEL_PATH
         value: /data/forecast.json

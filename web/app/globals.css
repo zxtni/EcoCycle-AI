@@ -243,7 +243,6 @@ ul { list-style: disc inside; }
 .auth-form { display: grid; gap: 14px; margin: 20px 0 4px; }
 .auth-form .button { width: 100%; }
 .auth-switch { padding-inline: 0; justify-content: start; }
-.auth-provider:not(:empty) { margin-top: 11px; }
 
 .scan-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .52fr); gap: 16px; align-items: start; }
 .scan-card { padding: 12px; overflow: hidden; }

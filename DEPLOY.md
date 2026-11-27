@@ -4,7 +4,7 @@
 2. Create a PostgreSQL database in Supabase. Copy a direct connection string or a session-mode pooler string for IPv4 hosting. Keep the credentials private.
 3. Create a Vercel project with root directory `web`. Record its production HTTPS origin.
 4. Import `render.yaml` as a Render Blueprint. Set `DATABASE_URL` to the PostgreSQL connection string and `WEB_ORIGIN` to the Vercel origin. The Docker entrypoint applies Alembic migrations and starts the API. Verify `/api/health`.
-5. Set `API_ORIGIN` in Vercel to the Render HTTPS origin and deploy. Create a Google OAuth Web client with the browser origin registered and set the public client ID on Render as `GOOGLE_CLIENT_ID`.
+5. Set `API_ORIGIN` in Vercel to the Render HTTPS origin and deploy.
 6. To create the initial administrator, run `python -m backend.provision` in the Render shell with `ECO_ADMIN_EMAIL` and `ECO_ADMIN_PASSWORD` set. Remove these bootstrap variables after provisioning.
 7. On the hosted site, verify login, scanning, reports and model refresh. Configure storage backups and alerting in the providers.
 
@@ -16,7 +16,7 @@ Use `docker compose up --build` for a local SQLite API. Start the frontend with 
 2. Set `APP_ENV=production`. In Supabase, copy the **Session pooler** PostgreSQL URI and set it as `DATABASE_URL` in Railway Variables. Supply the database password there and append `?sslmode=require` if no query string is present. Keep the connection string private.
 3. Set the service healthcheck path to `/api/health` and generate a public HTTPS domain in Railway. For persistent forecast refreshes, attach a volume at `/data`, make it writable by the container's app user, and retain `FORECAST_MODEL_PATH=/data/forecast.json`.
 4. Verify that the Railway HTTPS endpoint `/api/health` returns `{"status":"ready"}`. Set Vercel's `API_ORIGIN` to the Railway origin and Railway's `WEB_ORIGIN` to the Vercel origin. Redeploy after the variables are saved.
-5. Set `GOOGLE_CLIENT_ID` after adding your Vercel origin to the Google OAuth web client. To provision the first admin, open the deployed service shell with Railway CLI's `railway ssh` and run `python -m backend.provision` with the bootstrap credentials in the service environment. Remove the bootstrap variables after provisioning.
+5. To provision the first admin, open the deployed service shell with Railway CLI's `railway ssh` and run `python -m backend.provision` with the bootstrap credentials in the service environment. Remove the bootstrap variables after provisioning.
 
 [Railway Dockerfile setup](https://docs.railway.com/builds/dockerfiles) · [Railway healthchecks](https://docs.railway.com/deployments/healthchecks) · [Railway volumes](https://docs.railway.com/volumes)
 
@@ -40,7 +40,7 @@ Use `docker compose up --build` for a local SQLite API. Start the frontend with 
    nano .env
    ```
 
-   Set `DATABASE_URL` and `WEB_ORIGIN=https://eco.zxtni.in` in `.env`. Set `GOOGLE_CLIENT_ID` when OAuth is configured for that origin. Leave `ECO_WEB_PORT` unset to use host port 8108 or choose another unused port.
+   Set `DATABASE_URL` and `WEB_ORIGIN=https://eco.zxtni.in` in `.env`. Leave `ECO_WEB_PORT` unset to use host port 8108 or choose another unused port.
 
 3. Start both services. The API container applies Alembic migrations at startup. A named volume saves refreshed forecasts. The Next.js container serves the site and forwards `/api/` requests across the Docker network. The VPS publishes only the web port, bound to localhost.
 

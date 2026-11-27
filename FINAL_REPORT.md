@@ -2,7 +2,7 @@
 
 ## Implemented
 
-EcoCycle AI includes email/password sessions, configured Google sign-in, citizen and municipality roles, photo analysis with CPU ONNX inference, saved corrections, versioned value and impact estimates, recycling history, streaks and badges. The locator combines Overpass results with local listings on a clustered Leaflet map. Municipal tools include date-filtered summaries, CSV and PDF exports, weekly hotspot scenarios and a suggested stop sequence. Administration includes center CRUD, feedback review, forecast retraining and audit history. The installable PWA provides a cached offline page.
+EcoCycle AI includes email/password sessions, citizen and municipality roles, photo analysis with CPU ONNX inference, saved corrections, versioned value and impact estimates, recycling history, streaks and badges. The locator combines Overpass results with local listings on a clustered Leaflet map. Municipal tools include date-filtered summaries, CSV and PDF exports, weekly hotspot scenarios and a suggested stop sequence. Administration includes center CRUD, feedback review, forecast retraining and audit history. The installable PWA provides a cached offline page.
 
 ## Verified
 
@@ -30,7 +30,7 @@ Demo accounts, saved demo scans, local sample collection points and Bengaluru wa
 
 ## Deployment and verification limits
 
-Vercel, Render, PostgreSQL and Google OAuth are configured through environment variables and documented. Live hosting, Google OAuth, production database connectivity, and physical-device camera and installation remain unverified. The browser walkthrough verifies locator rendering and can use seed listings when Overpass is unavailable. Local Playwright used Brave. Formal WCAG AA conformance remains unaudited. The hotspot map uses intensity-scaled ward circles, and suggested stops use straight-line distance. The rate limiter is per API process.
+The application runs on the Ubuntu VPS at https://eco.zxtni.in with Supabase PostgreSQL. Live registration, scanning and impact saving have been verified. Production administrator access, physical-device camera and installation still require verification. The browser walkthrough verifies locator rendering and can use seed listings when Overpass is unavailable. Local Playwright used Brave. Formal WCAG AA conformance remains unaudited. The hotspot map uses intensity-scaled ward circles, and suggested stops use straight-line distance. The rate limiter is per API process.
 
 ## Commands
 

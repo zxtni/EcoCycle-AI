@@ -1,49 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { api, message, post, type Person } from "@/lib/api";
 import { Button } from "./ui/button";
 import { GuideMotion } from "./guide-motion";
-
-type Identity = {accounts: {id: {
-  initialize: (options: {client_id: string; callback: (result: {credential: string}) => void}) => void;
-  renderButton: (element: HTMLElement, options: object) => void;
-}}};
-declare global { interface Window { google?: Identity } }
 
 export function Auth({onSuccess}: {onSuccess: (person: Person) => void}) {
   const [signup, setSignup] = useState(false);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const google = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let alive = true;
-    let script: HTMLScriptElement | undefined;
-    api<{client_id: string}>("/auth/google/config").then(({client_id}) => {
-      if (!client_id || !alive) return;
-      const start = () => {
-        if (!alive || !google.current || !window.google) return;
-        window.google.accounts.id.initialize({
-          client_id,
-          callback: result => api<Person>("/auth/google", post(result)).then(onSuccess).catch(error => setError(message(error))),
-        });
-        window.google.accounts.id.renderButton(google.current, {theme: "outline", size: "large"});
-      };
-      if (window.google) {
-        start();
-      } else {
-        script = document.createElement("script");
-        script.src = "https://accounts.google.com/gsi/client";
-        script.async = true;
-        script.onload = start;
-        document.head.append(script);
-      }
-    }).catch(error => { if (alive) setError(message(error)); });
-    return () => { alive = false; script?.remove(); };
-  }, [onSuccess]);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -90,7 +57,6 @@ export function Auth({onSuccess}: {onSuccess: (person: Person) => void}) {
       <Button className="auth-switch" variant="ghost" disabled={busy} onClick={() => { setSignup(!signup); setShowPassword(false); setError(""); }}>
         {signup ? "Already registered? Sign in" : "Create an account"}
       </Button>
-      <div className="auth-provider" ref={google}/>
     </div>
   </section>;
 }

@@ -4,7 +4,7 @@ Run the app and visit http://localhost:3000/api/docs for the interactive OpenAPI
 
 | Group | Routes |
 | --- | --- |
-| Identity | `/auth/register`, `/auth/login`, `/auth/me`, `/auth/logout`, `/auth/google` |
+| Identity | `/auth/register`, `/auth/login`, `/auth/me`, `/auth/logout` |
 | Scanner | `POST /scans` multipart image, `PUT /scans/{id}/correction`, `POST /scans/{id}/confirm` |
 | Citizen data | `GET /materials`, `POST /materials/estimate`, `GET /impact`, `GET /centers` |
 | Municipality | `GET /municipality/summary`, `GET /municipality/forecast`, `GET /municipality/report/{csv or pdf}` |
