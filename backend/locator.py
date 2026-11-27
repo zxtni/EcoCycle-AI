@@ -34,7 +34,8 @@ def distance(lat: float, lon: float, dest_lat: float, dest_lon: float) -> float:
 
 @lru_cache(maxsize=96)
 def overpass(lat: float, lon: float, bucket: int) -> list[dict] | None:
-    query = f"[out:json][timeout:7];nwr[amenity=recycling](around:18000,{lat},{lon});out center 150;"
+    # Include a margin for rounding the cache coordinates. Filter exact distances below.
+    query = f"[out:json][timeout:7];nwr[amenity=recycling](around:101000,{lat},{lon});out center;"
     for url in PROVIDERS:
         try:
             response = requests.get(
@@ -105,7 +106,7 @@ def centers(
     results = []
     for center in combined:
         km = distance(lat, lon, center["lat"], center["lon"])
-        if km <= 20 and (material is None or material in center["materials"]):
+        if km <= 100 and (material is None or material in center["materials"]):
             results.append({**center, "distance": round(km, 2)})
     results.sort(key=lambda item: item["distance"])
-    return {"centers": results, "live_available": live is not None}
+    return {"centers": results[:150], "live_available": live is not None}

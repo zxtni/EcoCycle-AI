@@ -64,7 +64,7 @@ export function Locator() {
   }
 
   return <>
-    <div className="heading"><div><h1>Center locator</h1><p>Find recycling drop-off points within 20 km.</p></div></div>
+    <div className="heading"><div><h1>Center locator</h1><p>Find recycling drop-off points within 100 km.</p></div></div>
     <section className="card locator-controls">
       <div className="row between">
         <label>Accepted material
