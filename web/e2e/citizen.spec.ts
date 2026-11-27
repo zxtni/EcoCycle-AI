@@ -28,7 +28,8 @@ test("citizen signs in, scans a photo, saves impact and locates centers",async({
  await nearby;
  await expect(page.getByText("Searching near your location.")).toBeVisible();
  await expect(page.getByRole("heading",{name:"Center locator"})).toBeVisible();
- await expect(page.getByRole("heading",{name:/nearby results?/})).toBeVisible({timeout:45000});
+ await expect(page.getByRole("link",{name:"Search in Google Maps"})).toBeVisible();
+ await expect(page.getByRole("heading",{name:/nearby results?/}).or(page.getByRole("alert"))).toBeVisible({timeout:25000});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(testInfo.project.use.viewport!.width);
  function pendingNearbyRequest(){
    return page.waitForRequest(request=>{

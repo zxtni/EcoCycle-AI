@@ -38,10 +38,14 @@ export function Locator() {
     const controller = new AbortController();
     const params = new URLSearchParams({lat: String(position[0]), lon: String(position[1])});
     if (filter) params.set("material", filter);
-    api<typeof data>("/centers?" + params, {signal: controller.signal}).then(results => {
+    const deadline = AbortSignal.timeout(15000);
+    const signal = AbortSignal.any([controller.signal, deadline]);
+    api<typeof data>("/centers?" + params, {signal}).then(results => {
       if (!controller.signal.aborted) setData(results);
     }).catch(error => {
-      if (!controller.signal.aborted) setError(message(error));
+      if (!controller.signal.aborted) {
+        setError(deadline.aborted ? "The recycling directory is taking too long. Try Google Maps or retry here." : message(error));
+      }
     });
     return () => controller.abort();
   }, [position, filter, retry]);
@@ -97,8 +101,8 @@ export function Locator() {
         </Button>
       </div>
       {geo && <p role="status">{geo}</p>}
-      {!busy && !position && <div className="row">
-        <Button variant="secondary" onClick={() => { setPosition(BENGALURU); setGeo("Searching near Bengaluru."); }}>Search Bengaluru</Button>
+      {!busy && <div className="row">
+        {!position && <Button variant="secondary" onClick={() => { setPosition(BENGALURU); setGeo("Searching near Bengaluru."); }}>Search Bengaluru</Button>}
         <Button variant="secondary" asChild><a href={mapsLink} target="_blank" rel="noreferrer">Search in Google Maps</a></Button>
       </div>}
     </section>
@@ -118,8 +122,6 @@ export function Locator() {
             <p>{data.live_available
               ? "No listed centers matched. Some facilities may be missing from the map or their accepted materials may be unlisted."
               : "The live directory did not respond and there are no matching saved listings in this area."}</p>
-            <Button asChild variant="secondary"><a target="_blank" rel="noreferrer"
-              href={mapsLink}>Search in Google Maps</a></Button>
             <a href="https://apps.bbmpgov.in/SWM/Home/Forms/Home.aspx" target="_blank" rel="noreferrer">Bengaluru municipal waste directory</a>
           </div>}
           {data.centers.map(center => <article className="activity place-card" key={center.id}>
